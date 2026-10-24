@@ -468,6 +468,8 @@ footer{
 .step-media{ max-width:680px; margin:0 auto; }
 .info-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px; margin-top:16px; }
 .info-img{ width:100%; height:auto; display:block; border-radius:14px; }
+/* หลายรูป: จอคอมเรียง 2×2, มือถือเรียงทีละรูปให้อ่านตัวหนังสือในภาพได้ */
+.info-gallery{ display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:10px; }
 .info-empty{
   aspect-ratio:4/3; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
   border:2px dashed rgba(28,127,196,0.35); border-radius:14px; background:var(--sky-soft);
@@ -1034,8 +1036,11 @@ const SKILL_MEDIA = [
   { // 1 การเข้าถึงข้อมูล
     video:{title:"วิธีอ่านฉลากโภชนาการและฉลาก GDA หวาน มัน เค็ม", url:"https://www.youtube.com/watch?v=6kXx9G19mzM&t=2s", source:"กรมอนามัย กระทรวงสาธารณสุข (YouTube)"},
     infographics:[
-      {title:"อ่านฉลาก: หนึ่งหน่วยบริโภค / จำนวนหน่วยบริโภค / โซเดียม", img:"", source:""},
-      {title:"สัญลักษณ์ \"ทางเลือกสุขภาพ\"", img:"", source:""}
+      {title:"อ่านฉลาก: หนึ่งหน่วยบริโภค / จำนวนหน่วยบริโภค / โซเดียม",
+       img:["images/gda-1.jpg","images/gda-2.jpg","images/gda-3.jpg","images/gda-4.jpg"],
+       source:"กรมอนามัย กระทรวงสาธารณสุข (อนามัยมีเดีย: GDA คืออะไร)"},
+      {title:"สัญลักษณ์ \"ทางเลือกสุขภาพ\"", img:"images/healthier-drink.jpg",
+       source:"healthierlogo.com (สัญลักษณ์โภชนาการ \"ทางเลือกสุขภาพ\" กลุ่มเครื่องดื่ม)"}
     ]
   },
   { // 2 การสื่อสาร
@@ -1495,10 +1500,11 @@ function renderVideoSlot(v){
   </div>`;
 }
 
+// img ใส่ได้ทั้งลิงก์เดียว หรือหลายรูปเป็น array เช่น ["a.jpg","b.jpg"]
 function renderInfographicSlot(info){
-  const src = imageUrl(info.img);
-  const body = src
-    ? `<a href="${src}" target="_blank" rel="noopener"><img class="info-img" src="${src}" alt="${info.title}" loading="lazy"></a>`
+  const srcs = [].concat(info.img || []).map(imageUrl).filter(Boolean);
+  const body = srcs.length
+    ? `<div class="info-gallery">${srcs.map((src,i)=>`<a href="${src}" target="_blank" rel="noopener"><img class="info-img" src="${src}" alt="${info.title}${srcs.length>1 ? ` (ภาพที่ ${i+1})` : ''}" loading="lazy"></a>`).join('')}</div>`
     : `<div class="info-empty"><span class="vp-icon">🖼️</span>เร็วๆ นี้<br>รอครูผู้สอนเพิ่มอินโฟกราฟิก</div>`;
   return `<div class="media-card">
     <div class="media-card-title">${info.title}</div>
