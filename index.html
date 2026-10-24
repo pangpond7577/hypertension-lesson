@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บทเรียนออนไลน์ | โรคความดันโลหิตสูง</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   ธีม: แอนิเมชัน 3D โทนสดใส อบอุ่น (ท้องฟ้ายามกลางวัน)
+   แก้สีทั้งหมดได้ที่ :root จุดเดียว
+   ========================================================= */
+:root{
+  /* --- สีหลักของธีม --- */
+  --green:#22A050;          /* เขียวสด: สีหลัก */
+  --green-d:#17803D;
+  --green-text:#167A3A;     /* เขียวสำหรับตัวอักษรบนพื้นขาว (อ่านชัด) */
+  --green-soft:#C9F0D4;     /* ตอบถูก */
+  --orange:#F07A22;         /* ส้มอบอุ่น: ปุ่มหลัก (บน) */
+  --orange-d:#C9520A;       /* ส้มอบอุ่น: ปุ่มหลัก (ล่าง) */
+  --yellow:#FFE27A;         /* เหลืองแดดอ่อน: จุดเน้น/ตัวเลือกที่เลือก */
+  --yellow-soft:#FFF5CC;
+  --sky:#1C7FC4;            /* ฟ้าท้องฟ้า: ข้อมูล (ตัวอักษร) */
+  --sky-soft:#DDF0FF;
+  --red-soft:#FFD9D4;       /* ตอบผิด: แดงอ่อน */
+  --red-line:#E2574C;
+  --ink:#2E2418;            /* ตัวอักษรหลัก */
+  --ink-soft:#5B4A38;       /* ตัวอักษรรอง */
+  --bg-top:#BFE4FF;         /* พื้นหลังด้านบน: ฟ้าอ่อน */
+  --bg-bottom:#FFF4DC;      /* พื้นหลังด้านล่าง: ครีม */
+  --card:rgba(255,255,255,0.9);
+  --card-solid:#FFFFFF;
+  --soft:#F8FBFF;           /* พื้นกล่องตัวเลือก/ช่องกรอก */
+  --line:#E3EAF2;           /* เส้นขอบอ่อน */
+
+  /* --- รูปทรง/เงา (เงานุ่มฟุ้ง ไม่ใช่เงาทึบ) --- */
+  --radius:28px;
+  --radius-sm:20px;
+  --shadow:0 14px 34px rgba(40,90,140,0.16), 0 3px 8px rgba(40,90,140,0.08);
+  --shadow-sm:0 6px 16px rgba(40,90,140,0.12), 0 2px 4px rgba(40,90,140,0.06);
+  --shadow-lift:0 18px 40px rgba(40,90,140,0.22), 0 4px 10px rgba(40,90,140,0.10);
+  --btn-hi:inset 0 2px 0 rgba(255,255,255,0.45);   /* ไฮไลต์ด้านบนปุ่ม */
+  --btn-lo:inset 0 -4px 0 rgba(0,0,0,0.16);        /* ขอบล่างปุ่มให้ดูนูน */
+
+  /* --- ภาพหัวเว็บ: เปลี่ยนเป็นไฟล์ภาพ 3D ของคุณได้ เช่น url('header-3d.jpg') --- */
+  --hero-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400' preserveAspectRatio='xMidYMid slice'%3E%3Cdefs%3E%3Cfilter id='soft' x='-50%25' y='-50%25' width='200%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='6'/%3E%3C/filter%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%237CC8F7' stop-opacity='1'/%3E%3Cstop offset='0.6' stop-color='%23CDEBFF' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23FFF3D6' stop-opacity='1'/%3E%3C/linearGradient%3E%3CradialGradient id='sun' cx='0.5' cy='0.5' r='0.6' fx='0.4' fy='0.35'%3E%3Cstop offset='0' stop-color='%23FFF7C2' stop-opacity='1'/%3E%3Cstop offset='0.45' stop-color='%23FFD84D' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23FFB31A' stop-opacity='1'/%3E%3C/radialGradient%3E%3CradialGradient id='glow' cx='0.5' cy='0.5' r='0.6' fx='0.5' fy='0.5'%3E%3Cstop offset='0' stop-color='%23FFE680' stop-opacity='0.7'/%3E%3Cstop offset='1' stop-color='%23FFE680' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='cloud' cx='0.5' cy='0.5' r='0.6' fx='0.45' fy='0.25'%3E%3Cstop offset='0' stop-color='%23FFFFFF' stop-opacity='1'/%3E%3Cstop offset='0.7' stop-color='%23F4F9FF' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23D6E6F5' stop-opacity='1'/%3E%3C/radialGradient%3E%3ClinearGradient id='hillBack' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23A8E58F' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%2364C25F' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='hillFront' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%237AD46A' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%233E9E4C' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='wood' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23E9A867' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23B4702F' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='counter' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23F0B577' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23B97437' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='awnShade' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='0.18'/%3E%3C/linearGradient%3E%3ClinearGradient id='wall' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FFF6E6' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23FFE3BC' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='sign' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FFE680' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23FFC21A' stop-opacity='1'/%3E%3C/linearGradient%3E%3CradialGradient id='f_orange' cx='0.5' cy='0.5' r='0.6' fx='0.35' fy='0.3'%3E%3Cstop offset='0' stop-color='%23FFD08A' stop-opacity='1'/%3E%3Cstop offset='0.5' stop-color='%23FF9419' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23C95F00' stop-opacity='1'/%3E%3C/radialGradient%3E%3CradialGradient id='f_tomato' cx='0.5' cy='0.5' r='0.6' fx='0.35' fy='0.3'%3E%3Cstop offset='0' stop-color='%23FF9C8E' stop-opacity='1'/%3E%3Cstop offset='0.5' stop-color='%23F2443A' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23A51E16' stop-opacity='1'/%3E%3C/radialGradient%3E%3CradialGradient id='f_lime' cx='0.5' cy='0.5' r='0.6' fx='0.35' fy='0.3'%3E%3Cstop offset='0' stop-color='%23D6F59A' stop-opacity='1'/%3E%3Cstop offset='0.5' stop-color='%237ED348' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%233F8A1C' stop-opacity='1'/%3E%3C/radialGradient%3E%3CradialGradient id='f_grape' cx='0.5' cy='0.5' r='0.6' fx='0.35' fy='0.3'%3E%3Cstop offset='0' stop-color='%23D2B2F5' stop-opacity='1'/%3E%3Cstop offset='0.5' stop-color='%238E5CC8' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%234F2A85' stop-opacity='1'/%3E%3C/radialGradient%3E%3CradialGradient id='f_banana' cx='0.5' cy='0.5' r='0.6' fx='0.35' fy='0.3'%3E%3Cstop offset='0' stop-color='%23FFF4B0' stop-opacity='1'/%3E%3Cstop offset='0.5' stop-color='%23FFD23F' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23C99400' stop-opacity='1'/%3E%3C/radialGradient%3E%3ClinearGradient id='basket' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23D89A5B' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%238E5524' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='salt' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23FFFFFF' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23D5E1EC' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='cap' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23F2F6FA' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%238E9BA8' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='bottle' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23E39A3B' stop-opacity='1'/%3E%3Cstop offset='0.55' stop-color='%23B8641A' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%237A3C0B' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='redcap' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FF7A6B' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23C42A1E' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='400' fill='url(%23sky)'/%3E%3Ccircle cx='1060' cy='85' r='120' fill='url(%23glow)'/%3E%3Ccircle cx='1060' cy='85' r='46' fill='url(%23sun)'/%3E%3Ccircle cx='90' cy='80' r='38' fill='url(%23cloud)'/%3E%3Ccircle cx='132' cy='62' r='46' fill='url(%23cloud)'/%3E%3Ccircle cx='182' cy='80' r='36' fill='url(%23cloud)'/%3E%3Ccircle cx='136' cy='90' r='40' fill='url(%23cloud)'/%3E%3Ccircle cx='560' cy='60' r='28.5' fill='url(%23cloud)'/%3E%3Ccircle cx='591.5' cy='46.5' r='34.5' fill='url(%23cloud)'/%3E%3Ccircle cx='629' cy='60' r='27' fill='url(%23cloud)'/%3E%3Ccircle cx='594.5' cy='67.5' r='30' fill='url(%23cloud)'/%3E%3Ccircle cx='830' cy='120' r='22.8' fill='url(%23cloud)'/%3E%3Ccircle cx='855.2' cy='109.2' r='27.599999999999998' fill='url(%23cloud)'/%3E%3Ccircle cx='885.2' cy='120' r='21.599999999999998' fill='url(%23cloud)'/%3E%3Ccircle cx='857.6' cy='126' r='24' fill='url(%23cloud)'/%3E%3Cpath d='M0 260 C 180 200 360 230 520 250 S 860 200 1200 240 V400 H0z' fill='url(%23hillBack)'/%3E%3Crect x='344' y='180' width='412' height='140' fill='url(%23wall)'/%3E%3Crect x='336' y='160' width='16' height='200' rx='6' fill='url(%23wood)'/%3E%3Crect x='748' y='160' width='16' height='200' rx='6' fill='url(%23wood)'/%3E%3Crect x='330' y='120' width='40' height='52' fill='%23F2493B'/%3E%3Cpath d='M330 172 a20 20 0 0 0 40 0z' fill='%23F2493B'/%3E%3Crect x='370' y='120' width='40' height='52' fill='%23FFFDF8'/%3E%3Cpath d='M370 172 a20 20 0 0 0 40 0z' fill='%23FFFDF8'/%3E%3Crect x='410' y='120' width='40' height='52' fill='%23F2493B'/%3E%3Cpath d='M410 172 a20 20 0 0 0 40 0z' fill='%23F2493B'/%3E%3Crect x='450' y='120' width='40' height='52' fill='%23FFFDF8'/%3E%3Cpath d='M450 172 a20 20 0 0 0 40 0z' fill='%23FFFDF8'/%3E%3Crect x='490' y='120' width='40' height='52' fill='%23F2493B'/%3E%3Cpath d='M490 172 a20 20 0 0 0 40 0z' fill='%23F2493B'/%3E%3Crect x='530' y='120' width='40' height='52' fill='%23FFFDF8'/%3E%3Cpath d='M530 172 a20 20 0 0 0 40 0z' fill='%23FFFDF8'/%3E%3Crect x='570' y='120' width='40' height='52' fill='%23F2493B'/%3E%3Cpath d='M570 172 a20 20 0 0 0 40 0z' fill='%23F2493B'/%3E%3Crect x='610' y='120' width='40' height='52' fill='%23FFFDF8'/%3E%3Cpath d='M610 172 a20 20 0 0 0 40 0z' fill='%23FFFDF8'/%3E%3Crect x='650' y='120' width='40' height='52' fill='%23F2493B'/%3E%3Cpath d='M650 172 a20 20 0 0 0 40 0z' fill='%23F2493B'/%3E%3Crect x='690' y='120' width='40' height='52' fill='%23FFFDF8'/%3E%3Cpath d='M690 172 a20 20 0 0 0 40 0z' fill='%23FFFDF8'/%3E%3Crect x='730' y='120' width='40' height='52' fill='%23F2493B'/%3E%3Cpath d='M730 172 a20 20 0 0 0 40 0z' fill='%23F2493B'/%3E%3Crect x='330' y='120' width='440' height='52' fill='url(%23awnShade)'/%3E%3Crect x='320' y='110' width='460' height='14' rx='7' fill='%23C9472F'/%3E%3Crect x='470' y='68' width='160' height='40' rx='20' fill='url(%23sign)'/%3E%3Cellipse cx='550' cy='76' rx='60' ry='6' fill='%23fff' opacity='0.6'/%3E%3Ccircle cx='374' cy='302' r='14' fill='url(%23f_orange)'/%3E%3Ccircle cx='396' cy='302' r='14' fill='url(%23f_orange)'/%3E%3Ccircle cx='418' cy='302' r='14' fill='url(%23f_orange)'/%3E%3Ccircle cx='385' cy='284' r='14' fill='url(%23f_orange)'/%3E%3Ccircle cx='407' cy='284' r='14' fill='url(%23f_orange)'/%3E%3Ccircle cx='396' cy='268' r='14' fill='url(%23f_orange)'/%3E%3Cpath d='M360 308 h72 l-9 26 h-54z' fill='url(%23basket)'/%3E%3Ccircle cx='454' cy='302' r='14' fill='url(%23f_tomato)'/%3E%3Ccircle cx='476' cy='302' r='14' fill='url(%23f_tomato)'/%3E%3Ccircle cx='498' cy='302' r='14' fill='url(%23f_tomato)'/%3E%3Ccircle cx='465' cy='284' r='14' fill='url(%23f_tomato)'/%3E%3Ccircle cx='487' cy='284' r='14' fill='url(%23f_tomato)'/%3E%3Ccircle cx='476' cy='268' r='14' fill='url(%23f_tomato)'/%3E%3Cpath d='M440 308 h72 l-9 26 h-54z' fill='url(%23basket)'/%3E%3Ccircle cx='534' cy='302' r='14' fill='url(%23f_lime)'/%3E%3Ccircle cx='556' cy='302' r='14' fill='url(%23f_lime)'/%3E%3Ccircle cx='578' cy='302' r='14' fill='url(%23f_lime)'/%3E%3Ccircle cx='545' cy='284' r='14' fill='url(%23f_lime)'/%3E%3Ccircle cx='567' cy='284' r='14' fill='url(%23f_lime)'/%3E%3Ccircle cx='556' cy='268' r='14' fill='url(%23f_lime)'/%3E%3Cpath d='M520 308 h72 l-9 26 h-54z' fill='url(%23basket)'/%3E%3Ccircle cx='614' cy='302' r='14' fill='url(%23f_grape)'/%3E%3Ccircle cx='636' cy='302' r='14' fill='url(%23f_grape)'/%3E%3Ccircle cx='658' cy='302' r='14' fill='url(%23f_grape)'/%3E%3Ccircle cx='625' cy='284' r='14' fill='url(%23f_grape)'/%3E%3Ccircle cx='647' cy='284' r='14' fill='url(%23f_grape)'/%3E%3Ccircle cx='636' cy='268' r='14' fill='url(%23f_grape)'/%3E%3Cpath d='M600 308 h72 l-9 26 h-54z' fill='url(%23basket)'/%3E%3Ccircle cx='694' cy='302' r='14' fill='url(%23f_banana)'/%3E%3Ccircle cx='716' cy='302' r='14' fill='url(%23f_banana)'/%3E%3Ccircle cx='738' cy='302' r='14' fill='url(%23f_banana)'/%3E%3Ccircle cx='705' cy='284' r='14' fill='url(%23f_banana)'/%3E%3Ccircle cx='727' cy='284' r='14' fill='url(%23f_banana)'/%3E%3Ccircle cx='716' cy='268' r='14' fill='url(%23f_banana)'/%3E%3Cpath d='M680 308 h72 l-9 26 h-54z' fill='url(%23basket)'/%3E%3Crect x='324' y='334' width='452' height='60' rx='10' fill='url(%23counter)'/%3E%3Crect x='334' y='339' width='432' height='5' rx='2.5' fill='%23fff' opacity='0.35'/%3E%3Cpath d='M0 372 C 220 352 420 372 640 376 S 1000 350 1200 362 V400 H0z' fill='url(%23hillFront)'/%3E%3Cellipse cx='860' cy='362' rx='52' ry='10' fill='%231F5E2A' opacity='0.35' filter='url(%23soft)'/%3E%3Crect x='818' y='250' width='84' height='110' rx='30' fill='url(%23salt)'/%3E%3Crect x='824' y='224' width='72' height='36' rx='16' fill='url(%23cap)'/%3E%3Ccircle cx='844' cy='236' r='3' fill='%236B7784'/%3E%3Ccircle cx='860' cy='236' r='3' fill='%236B7784'/%3E%3Ccircle cx='876' cy='236' r='3' fill='%236B7784'/%3E%3Crect x='830' y='260' width='12' height='70' rx='6' fill='%23fff' opacity='0.8'/%3E%3Cellipse cx='846' cy='300' rx='5' ry='7' fill='%232B2118'/%3E%3Cellipse cx='874' cy='300' rx='5' ry='7' fill='%232B2118'/%3E%3Ccircle cx='848' cy='297' r='1.8' fill='%23fff'/%3E%3Ccircle cx='876' cy='297' r='1.8' fill='%23fff'/%3E%3Cellipse cx='836' cy='310' rx='7' ry='4' fill='%23FF8FA3' opacity='0.7'/%3E%3Cellipse cx='884' cy='310' rx='7' ry='4' fill='%23FF8FA3' opacity='0.7'/%3E%3Cpath d='M852 310 q8 9 16 0' fill='none' stroke='%232B2118' stroke-width='3' stroke-linecap='round'/%3E%3Cellipse cx='975' cy='362' rx='44' ry='9' fill='%231F5E2A' opacity='0.35' filter='url(%23soft)'/%3E%3Cpath d='M961 200 h28 v30 q24 14 24 44 v76 q0 12 -12 12 h-52 q-12 0 -12 -12 v-76 q0 -30 24 -44z' fill='url(%23bottle)'/%3E%3Crect x='958' y='182' width='34' height='22' rx='8' fill='url(%23redcap)'/%3E%3Crect x='945' y='290' width='60' height='44' rx='10' fill='%23FFF3D6'/%3E%3Crect x='945' y='252' width='9' height='90' rx='4.5' fill='%23fff' opacity='0.35'/%3E%3Cellipse cx='963.8' cy='270' rx='4' ry='5.6000000000000005' fill='%232B2118'/%3E%3Cellipse cx='986.2' cy='270' rx='4' ry='5.6000000000000005' fill='%232B2118'/%3E%3Ccircle cx='965.4' cy='267.6' r='1.4400000000000002' fill='%23fff'/%3E%3Ccircle cx='987.8' cy='267.6' r='1.4400000000000002' fill='%23fff'/%3E%3Cellipse cx='955.8' cy='278' rx='5.6000000000000005' ry='3.2' fill='%23FF8FA3' opacity='0.7'/%3E%3Cellipse cx='994.2' cy='278' rx='5.6000000000000005' ry='3.2' fill='%23FF8FA3' opacity='0.7'/%3E%3Cpath d='M968.6 278 q6.4 7.2 12.8 0' fill='none' stroke='%232B2118' stroke-width='2.4000000000000004' stroke-linecap='round'/%3E%3C/svg%3E");
+  --hero-h:300px;
+
+  /* --- ฟอนต์ --- */
+  --font:'Noto Sans Thai Looped','Noto Sans Thai',sans-serif;
+
+  /* --- สีที่โค้ด JS/อินโฟกราฟิกอ้างถึง (ตัว -d ใช้เป็นพื้นตัวอักษรขาว) --- */
+  --pink:#FFB8C6;   --pink-d:#C23A62;
+  --purple:#CDB8F5; --purple-d:#674C9C;
+  --teal:#93E2D5;   --teal-d:#137A69;
+  --blue:#9ED5FF;   --blue-d:#1C6FAE;
+  --red:#FF8A7D;    --red-d:#C8321F;
+  --yellow-d:#9A7200;
+}
+*{box-sizing:border-box;}
+html{font-size:18px; -webkit-text-size-adjust:100%; text-size-adjust:100%;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:var(--font);
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--bg-bottom);
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+  display:flex; flex-direction:column; /* ดันส่วนท้ายลงล่างสุดเสมอ */
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation; /* ตัดดีเลย์แตะสองครั้งเพื่อซูมบนมือถือ */
+}
+/* ท้องฟ้ายามกลางวัน: ไล่ฟ้าอ่อน → ครีม + เมฆนุ่ม ๆ */
+body::before{
+  content:"";
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 180px 60px at 12% 14%, rgba(255,255,255,0.9), transparent 70%),
+    radial-gradient(ellipse 120px 45px at 18% 11%, rgba(255,255,255,0.9), transparent 70%),
+    radial-gradient(ellipse 200px 64px at 86% 24%, rgba(255,255,255,0.85), transparent 70%),
+    radial-gradient(ellipse 130px 48px at 80% 21%, rgba(255,255,255,0.85), transparent 70%),
+    radial-gradient(circle 240px at 92% 4%, rgba(255,251,230,0.75), transparent 70%),
+    linear-gradient(180deg, var(--bg-top) 0%, #E4F4FF 45%, var(--bg-bottom) 100%);
+}
+h1,h2,h3,.tab-title,.question-box,.menu-card,button,.btn,.tab-btn,.score-num,.quality-badge,.media-card-title,.bin-title{
+  font-weight:700;
+}
+
+/* ก้อนเมฆของธีมเดิม: ซ่อนไว้ (ไม่ลบ element) */
+.cloud{display:none;}
+
+.wrap{position:relative; z-index:1; width:100%; max-width:980px; margin:0 auto; padding:24px 16px 40px;}
+
+/* ---------- Card ---------- */
+.glass{
+  background:var(--card);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.8);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:26px;
+  position:relative;
+  overflow:hidden;
+  margin-bottom:24px;
+}
+.glass > *{position:relative; z-index:2;}
+
+/* ---------- ภาพหัวเว็บเต็มความกว้าง (ส่วนหัว + หน้าเข้าสู่ระบบ) ---------- */
+.glass.header-bar,
+.glass.login-card{ padding:0 26px 24px; }
+.glass.header-bar::before,
+.glass.login-card::before{
+  content:"";
+  display:block;
+  height:var(--hero-h);
+  margin:0 -26px;
+  /* ไล่ขาวที่ขอบล่างภาพ ให้ชื่อเว็บซ้อนอ่านชัด */
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0) 50%, rgba(255,255,255,0.8) 82%, rgba(255,255,255,0.95) 100%),
+    var(--hero-image) center 35% / cover no-repeat;
+}
+.glass.login-card::before{ height:calc(var(--hero-h) - 30px); }
+/* ชื่อเว็บซ้อนทับขอบล่างของภาพ */
+.header-bar .header-top{ margin-top:-64px; }
+.login-card .big-emoji{ margin-top:-40px; }
+.header-bar h1,
+.login-card h1{
+  margin:4px 0 !important;
+  font-size:1.75rem;
+  line-height:1.35;
+  color:var(--green-text);
+  /* เงานุ่มรอบตัวอักษร */
+  text-shadow:0 0 2px #fff, 0 0 10px #fff, 0 0 18px rgba(255,255,255,0.95), 0 3px 6px rgba(20,80,40,0.18);
+}
+.header-bar .meta,
+.login-card .meta{ text-shadow:0 0 2px #fff, 0 0 8px #fff, 0 0 14px #fff; }
+.meta{font-size:1rem; font-weight:600; color:var(--ink-soft);}
+.header-top{
+  display:flex; justify-content:space-between; align-items:flex-end; gap:12px; flex-wrap:wrap;
+}
+.student-badge{
+  background:var(--card-solid);
+  color:var(--ink);
+  border-radius:999px;
+  padding:6px 16px;
+  font-weight:600;
+  box-shadow:var(--shadow-sm);
+}
+
+/* ---------- Buttons (นูนแบบ 3D) ---------- */
+button, .btn{
+  font-family:inherit;
+  font-size:1rem;
+  line-height:1.3;
+  color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,0.3);
+  background:linear-gradient(180deg, var(--orange) 0%, var(--orange-d) 100%);
+  border:none;
+  border-radius:999px;
+  padding:13px 26px;
+  min-height:50px;
+  cursor:pointer;
+  box-shadow:var(--btn-hi), var(--btn-lo), 0 6px 14px rgba(201,82,10,0.32);
+  transition:transform .12s ease, box-shadow .12s ease, filter .15s ease;
+}
+button:hover, .btn:hover{ transform:translateY(-2px); filter:brightness(1.06); }
+button:active, .btn:active{
+  transform:translateY(2px);
+  box-shadow:inset 0 3px 6px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.12);
+}
+button:focus-visible, .btn:focus-visible{ outline:3px solid var(--sky); outline-offset:3px; }
+button:disabled{ opacity:0.5; cursor:not-allowed; transform:none; filter:none; }
+/* ปุ่มหลัก = ส้มอบอุ่น */
+.btn-orange, .btn-purple, .btn-pink, .btn-teal, .btn-red{
+  background:linear-gradient(180deg, var(--orange) 0%, var(--orange-d) 100%);
+}
+/* ปุ่มรอง = เขียว */
+.btn-green{
+  background:linear-gradient(180deg, var(--green) 0%, var(--green-d) 100%);
+  box-shadow:var(--btn-hi), var(--btn-lo), 0 6px 14px rgba(23,128,61,0.3);
+}
+/* ปุ่มกลับ = ขาว */
+.btn-gray{
+  background:linear-gradient(180deg, #FFFFFF 0%, #EEF4FA 100%);
+  color:var(--ink); text-shadow:none;
+  box-shadow:inset 0 -3px 0 rgba(40,90,140,0.12), var(--shadow-sm);
+}
+
+.hidden{display:none !important;}
+
+/* ---------- Login ---------- */
+#loginScreen{
+  min-height:100vh;
+  display:flex; align-items:center; justify-content:center;
+  position:relative; z-index:1;
+  padding:20px 16px;
+}
+.login-card{ max-width:480px; width:100%; text-align:center; }
+.login-card input,
+.bp-field input{
+  font-family:inherit;
+  font-size:1.05rem;
+  color:var(--ink);
+  background:var(--soft);
+  border:2px solid var(--line);
+  border-radius:16px;
+  outline:none;
+  box-shadow:inset 0 2px 4px rgba(40,90,140,0.08);
+}
+.login-card input{ width:100%; padding:14px 16px; margin:14px 0; }
+.login-card input:focus,
+.bp-field input:focus{ border-color:var(--sky); box-shadow:0 0 0 4px var(--sky-soft); }
+.login-card input::placeholder,
+.bp-field input::placeholder{ color:#7D8A98; }
+#loginError{ color:var(--red-d) !important; }
+.big-emoji{font-size:3.2rem; line-height:1.2; filter:drop-shadow(0 6px 8px rgba(40,90,140,0.25));}
+
+/* ---------- Dashboard menu cards ---------- */
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:18px;
+}
+.menu-card{
+  cursor:pointer;
+  border-radius:24px;
+  padding:22px 16px;
+  text-align:center;
+  color:var(--ink);
+  font-size:1.1rem;
+  box-shadow:var(--btn-hi), inset 0 -5px 0 rgba(0,0,0,0.08), var(--shadow-sm);
+  transition:transform .15s ease, box-shadow .15s ease;
+  position:relative;
+}
+.menu-card:hover{ transform:translateY(-5px); box-shadow:var(--btn-hi), inset 0 -5px 0 rgba(0,0,0,0.08), var(--shadow-lift); }
+.menu-card:active{ transform:translateY(1px); }
+.menu-card .icon{
+  font-size:2.3rem; display:block; margin:0 auto 10px;
+  width:72px; height:72px; line-height:72px;
+  background:radial-gradient(circle at 35% 30%, #FFFFFF, #EAF2FA);
+  border-radius:50%;
+  box-shadow:0 6px 12px rgba(0,0,0,0.12), inset 0 -3px 0 rgba(0,0,0,0.05);
+}
+.menu-card.locked{ filter:grayscale(0.85); opacity:0.8; cursor:not-allowed; }
+.menu-card.locked:hover{ transform:none; }
+.menu-card .lock-badge{ position:absolute; top:10px; right:14px; font-size:1.3rem; }
+.mc-1{background:linear-gradient(160deg, #FFE7A6, #FFC94D);}
+.mc-2{background:linear-gradient(160deg, #C9F2D2, #8EDB9F);}
+.mc-3{background:linear-gradient(160deg, #D6EEFF, #9ED5FF);}
+.mc-4{background:linear-gradient(160deg, #FFD9B8, #FFB37A);}
+.mc-5{background:linear-gradient(160deg, #D9F7EF, #93E2D5);}
+.mc-6{background:linear-gradient(160deg, #E8DEFF, #CDB8F5);}
+
+/* ---------- Media Library ---------- */
+.media-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:20px;
+  margin-top:16px;
+}
+.media-card{
+  background:var(--card-solid);
+  border-radius:var(--radius-sm);
+  padding:16px;
+  box-shadow:var(--shadow-sm);
+  transition:transform .15s ease, box-shadow .15s ease;
+  display:flex; flex-direction:column; gap:10px;
+}
+.media-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
+.media-card svg{ width:100%; height:auto; display:block; }
+.media-card-title{ font-size:1.05rem; text-align:center; color:var(--green-text); }
+.media-card-caption{ font-size:1rem; color:var(--ink-soft); }
+.media-legend{ display:flex; flex-direction:column; gap:4px; font-size:0.95rem; margin-top:4px; }
+.media-legend span{ display:flex; align-items:center; gap:6px; }
+.legend-dot{ width:14px; height:14px; border-radius:50%; display:inline-block; flex-shrink:0; box-shadow:inset 0 -2px 0 rgba(0,0,0,0.15); }
+#mediapane-1 > p{ font-size:1rem !important; color:var(--sky) !important; }
+a{ color:var(--sky); }
+
+.video-card .video-frame{
+  position:relative; width:100%; padding-top:56.25%; border-radius:16px; overflow:hidden;
+  background:var(--sky-soft);
+}
+.video-card .video-frame iframe{
+  position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+}
+.video-placeholder{
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  border:2px dashed rgba(28,127,196,0.35); border-radius:16px; text-align:center; padding:12px; gap:6px;
+}
+.video-placeholder .vp-icon{ font-size:2.2rem; }
+.video-placeholder p{ font-size:0.95rem; margin:0; color:var(--ink-soft); }
+.warn-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+.warn-item{
+  background:var(--yellow-soft); border-radius:16px; box-shadow:var(--shadow-sm);
+  padding:12px; text-align:center; font-weight:600; font-size:0.95rem;
+}
+.warn-item .wi-icon{ font-size:2rem; display:block; margin-bottom:4px; }
+
+/* ---------- BP checker ---------- */
+.bp-inputs{ display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; }
+.bp-field{ display:flex; flex-direction:column; gap:4px; }
+.bp-field label{ font-weight:600; font-size:1rem; color:var(--ink); }
+.bp-field input{ padding:12px; width:130px; font-size:1.15rem; text-align:center; }
+#bpResult{
+  margin-top:16px; padding:16px 18px; border-radius:var(--radius-sm); font-weight:600; display:none;
+  border:none !important; color:var(--ink); box-shadow:var(--shadow-sm);
+  animation:pop .35s ease;
+}
+.bp-normal{ background:var(--green-soft); }
+.bp-elevated{ background:var(--yellow-soft); }
+.bp-high{ background:#FFE2C2; }
+.bp-veryhigh{ background:var(--red-soft); }
+.bp-low{ background:var(--sky-soft); }
+
+/* ---------- Section pages ---------- */
+.back-btn{ margin-bottom:16px; }
+.progress-bar{
+  height:16px; background:#E6EFF7;
+  border-radius:999px; overflow:hidden; margin:10px 0 20px;
+  box-shadow:inset 0 2px 4px rgba(40,90,140,0.15);
+}
+.progress-bar-fill{
+  height:100%; border-radius:999px;
+  background:linear-gradient(180deg, #4CC874 0%, var(--green) 100%);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,0.45);
+  transition:width .4s ease;
+}
+#testQNum{ color:var(--sky) !important; }
+
+.question-box{
+  font-size:1.25rem; line-height:1.55;
+  margin-bottom:18px; color:var(--green-text);
+}
+.opt-list{ display:flex; flex-direction:column; gap:14px; }
+.opt-item{
+  background:var(--card-solid);
+  border:2px solid var(--line);
+  border-radius:var(--radius-sm);
+  padding:14px 20px;
+  min-height:54px;
+  cursor:pointer;
+  font-size:1.05rem;
+  box-shadow:var(--shadow-sm);
+  transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease;
+}
+.opt-item:hover{ transform:translateY(-3px); box-shadow:var(--shadow-lift); border-color:#C9DDF0; }
+.opt-item.selected{ background:var(--yellow); border-color:#F2C230; font-weight:600; animation:pop .35s ease; }
+.opt-item.correct{ background:var(--green-soft); border-color:var(--green); color:var(--ink); font-weight:600; animation:pop .35s ease; }
+.opt-item.wrong{ background:var(--red-soft); border-color:var(--red-line); color:var(--ink); font-weight:600; animation:pop .35s ease; }
+@keyframes pop{
+  0%{ transform:scale(1); }
+  40%{ transform:scale(1.035); }
+  70%{ transform:scale(0.99); }
+  100%{ transform:scale(1); }
+}
+.q-nav{ display:flex; justify-content:space-between; margin-top:22px; gap:10px; flex-wrap:wrap; }
+
+/* ---------- Tabs ---------- */
+.tab-btns{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px; }
+.tab-btn{
+  /* !important: ทับสีไล่เฉดที่ JS ใส่เป็น inline style */
+  background:var(--card-solid) !important;
+  color:var(--ink);
+  border-radius:999px;
+  padding:9px 18px;
+  font-size:1rem;
+  cursor:pointer;
+  box-shadow:inset 0 -3px 0 rgba(40,90,140,0.08), var(--shadow-sm);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.tab-btn:hover{ transform:translateY(-2px); }
+.tab-btn.active{
+  background:linear-gradient(180deg, var(--green) 0%, var(--green-d) 100%) !important;
+  color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.25);
+  box-shadow:var(--btn-hi), var(--btn-lo), 0 6px 14px rgba(23,128,61,0.3);
+}
+.tab-pane{ display:none; }
+.tab-pane.active{ display:block; animation:fadeIn .3s ease; }
+.tab-pane .glass{ background:#F4FAFF !important; box-shadow:inset 0 2px 6px rgba(40,90,140,0.06) !important; }
+@keyframes fadeIn{ from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);} }
+.tab-icon{ font-size:3rem; text-align:center; margin-bottom:8px; filter:drop-shadow(0 6px 8px rgba(40,90,140,0.25)); }
+.tab-title{ text-align:center; font-size:1.3rem; line-height:1.45; margin-bottom:14px; color:var(--green-text); }
+.bullet-list{ display:flex; flex-direction:column; gap:12px; }
+.bullet-item{
+  display:flex; gap:12px; align-items:flex-start;
+  background:var(--card-solid);
+  border-radius:var(--radius-sm); padding:12px 18px;
+  font-size:1.05rem;
+  box-shadow:var(--shadow-sm);
+}
+.bullet-item .b-icon{ font-size:1.6rem; flex-shrink:0; line-height:1.2; }
+
+/* ---------- Game ---------- */
+.game-area{ display:flex; gap:20px; flex-wrap:wrap; }
+.game-area > div:first-child{ flex:1 1 260px; }
+.game-pool{ display:flex; flex-wrap:wrap; gap:10px; align-content:flex-start; }
+.food-chip{
+  background:var(--card-solid);
+  border-radius:999px; padding:10px 16px; cursor:grab; font-weight:600;
+  box-shadow:inset 0 -3px 0 rgba(40,90,140,0.08), var(--shadow-sm);
+  user-select:none;
+  transition:transform .15s;
+}
+.food-chip:hover{ transform:translateY(-3px); }
+.food-chip:active{ cursor:grabbing; }
+.food-chip.selected-chip{ background:var(--yellow); outline:none; animation:pop .35s ease; }
+.game-bins{ flex:1 1 260px; display:flex; flex-direction:column; gap:14px; }
+.bin{
+  min-height:120px; border-radius:var(--radius-sm); padding:12px; border:2px dashed rgba(46,36,24,0.25);
+  display:flex; flex-wrap:wrap; gap:8px; align-content:flex-start;
+  box-shadow:inset 0 3px 8px rgba(0,0,0,0.05);
+}
+.bin-low{ background:var(--green-soft); }
+.bin-high{ background:var(--red-soft); }
+.bin-title{ width:100%; margin-bottom:4px; }
+.bin.dragover{ border-style:solid; border-color:var(--sky); background:var(--sky-soft); }
+
+/* ---------- Score ---------- */
+.score-compare{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; text-align:center; margin:16px 0;}
+.score-card{
+  background:var(--card-solid); border-radius:var(--radius-sm);
+  padding:18px 26px; min-width:150px; font-weight:600; box-shadow:var(--shadow-sm);
+}
+.score-num{ font-size:2.4rem; color:var(--green-text); }
+.quality-badge{
+  display:inline-block; margin-top:10px; padding:8px 22px; border-radius:999px; color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,0.25);
+  box-shadow:var(--btn-hi), var(--shadow-sm);
+}
+
+/* ---------- Footer: เนินหญ้า ---------- */
+footer{
+  position:relative; z-index:1;
+  margin-top:auto;
+  text-align:center;
+  font-size:1rem;
+  font-weight:600;
+  color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,0.3);
+  padding:34px 16px 24px;
+  background:
+    radial-gradient(ellipse 60% 26px at 25% 0, var(--bg-bottom) 98%, transparent 100%),
+    radial-gradient(ellipse 50% 22px at 80% 0, var(--bg-bottom) 98%, transparent 100%),
+    linear-gradient(180deg, #3DAE5A 0%, var(--green-d) 100%);
+}
+
+/* ---------- 4 ขั้นในแต่ละทักษะ ---------- */
+.step{ margin-top:24px; padding-top:20px; border-top:2px dashed var(--line); }
+.tab-title + .step{ margin-top:8px; padding-top:0; border-top:none; }
+.step-head{ display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.15rem; color:var(--green-text); margin-bottom:12px; }
+.step-num{
+  width:34px; height:34px; border-radius:50%; flex-shrink:0;
+  display:inline-flex; align-items:center; justify-content:center;
+  color:#fff; font-size:1rem; text-shadow:0 1px 2px rgba(0,0,0,0.25);
+  background:linear-gradient(180deg, var(--orange) 0%, var(--orange-d) 100%);
+  box-shadow:var(--btn-hi), 0 3px 8px rgba(201,82,10,0.3);
+}
+.step-hint{ margin:-4px 0 14px; color:var(--ink-soft); }
+.step-subhead{ font-weight:700; margin:20px 0 10px; }
+.step-media{ max-width:680px; margin:0 auto; }
+.info-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px; margin-top:16px; }
+.info-img{ width:100%; height:auto; display:block; border-radius:14px; }
+.info-empty{
+  aspect-ratio:4/3; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
+  border:2px dashed rgba(28,127,196,0.35); border-radius:14px; background:var(--sky-soft);
+  color:var(--ink-soft); text-align:center; padding:12px;
+}
+.info-empty .vp-icon{ font-size:2.2rem; }
+.media-credit{ font-size:0.95rem; color:var(--ink-soft); }
+.act-note{ font-size:0.95rem; color:var(--ink-soft); margin:12px 0 0; }
+.act-feedback{ display:none; margin-top:12px; padding:12px 16px; border-radius:16px; font-weight:600; animation:pop .35s ease; }
+.act-feedback.ok{ display:block; background:var(--green-soft); }
+.act-feedback.bad{ display:block; background:var(--red-soft); }
+.act-feedback.info{ display:block; background:var(--sky-soft); }
+.act-input{
+  font-family:inherit; font-size:1.1rem; width:150px; padding:12px; text-align:center;
+  color:var(--ink); background:var(--soft); border:2px solid var(--line); border-radius:16px; outline:none;
+  box-shadow:inset 0 2px 4px rgba(40,90,140,0.08);
+}
+.act-input:focus{ border-color:var(--sky); box-shadow:0 0 0 4px var(--sky-soft); }
+
+/* แถบวัดโซเดียม */
+.meter{ display:block; width:100%; height:14px; border-radius:999px; background:#E6EFF7; overflow:hidden; box-shadow:inset 0 2px 3px rgba(40,90,140,0.15); }
+.meter-fill{ display:block; height:100%; border-radius:999px; transition:width .4s ease; box-shadow:inset 0 2px 0 rgba(255,255,255,0.45); }
+.lvl-ok{ background:linear-gradient(180deg, #4CC874, var(--green)); }
+.lvl-mid{ background:linear-gradient(180deg, #FFE27A, #F2B705); }
+.lvl-high{ background:linear-gradient(180deg, #FF8A7D, #E2463A); }
+
+/* กิจกรรม 1: การ์ดโซเดียม */
+.flip-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:12px; }
+.flip-card{
+  min-height:160px; padding:14px 10px; text-align:center; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--card-solid); border-radius:var(--radius-sm);
+  box-shadow:inset 0 -3px 0 rgba(40,90,140,0.08), var(--shadow-sm);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.flip-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-lift); }
+.flip-card:focus-visible{ outline:3px solid var(--sky); outline-offset:3px; }
+.flip-front, .flip-back{ display:flex; flex-direction:column; align-items:center; gap:4px; width:100%; }
+.flip-back{ display:none; }
+.flip-card.open{ background:var(--yellow-soft); animation:pop .35s ease; }
+.flip-card.open .flip-front{ display:none; }
+.flip-card.open .flip-back{ display:flex; }
+.fc-icon{ font-size:2.3rem; line-height:1.2; filter:drop-shadow(0 4px 6px rgba(40,90,140,0.25)); }
+.fc-tap{ font-size:0.95rem; color:var(--sky); font-weight:600; }
+.fc-mg{ font-size:1.45rem; font-weight:700; color:var(--red-d); }
+.flip-card small{ font-size:0.95rem; color:var(--ink-soft); }
+
+/* กิจกรรม 2: ฉลากโภชนาการ */
+.label-wrap{ display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start; }
+.nutri-label{
+  flex:1 1 260px; max-width:360px; background:#fff; color:#111;
+  border:2px solid #111; border-radius:10px; padding:12px 14px; box-shadow:var(--shadow-sm);
+}
+.nl-title{ font-weight:700; font-size:1.15rem; border-bottom:6px solid #111; padding-bottom:4px; margin-bottom:4px; }
+.nl-product{ color:var(--ink-soft); margin-bottom:6px; }
+.nl-row{ display:flex; justify-content:space-between; gap:10px; border-bottom:1px solid #BDB5AA; padding:4px 0; }
+.nl-sub{ font-weight:700; border-bottom:3px solid #111; padding:6px 0 2px; }
+.nl-hl{ background:var(--yellow); margin:0 -6px; padding:4px 6px; border-radius:6px; }
+.label-q{ flex:1 1 260px; }
+.label-q p{ margin-top:0; font-size:1.1rem; }
+.label-answer{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.source-cards{ display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:12px; }
+.source-card{
+  display:flex; gap:12px; align-items:center; text-decoration:none; color:var(--ink);
+  background:var(--card-solid); border-radius:16px; padding:12px 14px; box-shadow:var(--shadow-sm);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.source-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-lift); }
+.source-card > span:first-child{ font-size:1.8rem; }
+.source-card small{ display:block; color:var(--sky); font-size:0.95rem; }
+
+/* กิจกรรม 3: บทสนทนา */
+.dlg{ margin-bottom:22px; }
+.dlg-say{ display:flex; gap:10px; align-items:flex-start; margin-bottom:12px; }
+.dlg-who{ font-size:2.2rem; line-height:1.1; flex-shrink:0; filter:drop-shadow(0 4px 6px rgba(40,90,140,0.25)); }
+.dlg-bubble{ background:var(--sky-soft); border-radius:6px 20px 20px 20px; padding:10px 16px; box-shadow:var(--shadow-sm); }
+.dlg-bubble b{ display:block; color:var(--sky); font-size:0.95rem; }
+
+/* กิจกรรม 4: จริงหรือหลอก */
+.tf-count{ text-align:center; color:var(--sky); font-weight:600; margin-bottom:8px; }
+.tf-card{
+  background:var(--card-solid); border-radius:var(--radius-sm); padding:22px 20px;
+  font-size:1.1rem; font-weight:600; text-align:center; box-shadow:var(--shadow-sm); animation:pop .35s ease;
+}
+.tf-btns{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:16px; }
+
+/* กิจกรรม 5: บันทึกเค็ม */
+.diary-list{ display:flex; flex-direction:column; gap:8px; }
+.diary-row{ display:flex; align-items:center; gap:10px; background:var(--card-solid); border-radius:16px; padding:8px 12px; box-shadow:var(--shadow-sm); }
+.d-icon{ font-size:1.6rem; }
+.d-name{ flex:1; line-height:1.4; }
+.d-mg{ color:var(--ink-soft); font-size:0.95rem; }
+.d-count{ min-width:26px; text-align:center; font-weight:700; font-size:1.1rem; }
+.mini-btn{ width:44px; min-height:44px; padding:0; font-size:1.3rem; line-height:1; flex-shrink:0; }
+.diary-total{ margin-top:14px; background:var(--card-solid); border-radius:var(--radius-sm); padding:14px 16px; box-shadow:var(--shadow-sm); }
+.diary-total .meter{ height:20px; margin:10px 0; }
+.dt-num{ font-size:1.4rem; font-weight:700; }
+.dt-msg{ font-weight:600; }
+
+/* กิจกรรม 6: เลือกให้ใช่ */
+.choice-block{ margin-bottom:20px; }
+.choice-place{ font-weight:700; font-size:1.1rem; margin-bottom:8px; }
+.mg-tag{ float:right; margin-left:10px; font-weight:700; color:var(--red-d); }
+
+/* ---------- Mobile (LINE in-app browser) ---------- */
+@media (max-width:600px){
+  html{font-size:17px;}
+  :root{ --hero-h:150px; --radius:20px; --radius-sm:16px; }
+  .wrap{ padding:12px max(12px, env(safe-area-inset-right)) 24px max(12px, env(safe-area-inset-left)); }
+  .glass{ padding:16px 14px; margin-bottom:16px; }
+
+  /* ส่วนหัว: ภาพเตี้ยลง ชื่อผู้เรียน + ปุ่มออกอยู่แถวเดียวกัน */
+  .glass.header-bar, .glass.login-card{ padding:0 14px 16px; }
+  .glass.header-bar::before, .glass.login-card::before{ margin:0 -14px; background-position:0 0, 62% 35%; }
+  .header-bar .header-top{ margin-top:-18px; gap:10px; }
+  .header-bar h1, .login-card h1{ font-size:1.3rem; }
+  .header-top > div{ width:100%; }
+  .header-top > div:last-child{ flex-direction:row !important; justify-content:space-between; align-items:center !important; }
+  .student-badge{ min-width:0; line-height:1.35; }
+  .header-top .btn-red{ flex-shrink:0; padding:10px 16px; min-height:44px; }
+
+  /* ตรวจความดัน: ช่องกรอก 2 ช่องเต็มแถว ปุ่มเต็มความกว้าง */
+  .bp-inputs{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .bp-field input{ width:100%; }
+  .bp-inputs > button{ grid-column:1 / -1; width:100%; }
+
+  /* เมนู */
+  .menu-grid{ grid-template-columns:1fr 1fr; gap:12px; }
+  .menu-card{ padding:14px 8px; font-size:1rem; line-height:1.4; }
+  .menu-card .icon{ width:56px; height:56px; line-height:56px; font-size:1.8rem; margin-bottom:8px; }
+
+  /* แท็บ: ตาราง 2 คอลัมน์ แทนการเรียงยาวลงมา */
+  .tab-btns{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .tab-btn{
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    min-height:52px; padding:6px 8px; border-radius:14px; font-size:0.95rem; line-height:1.3;
+  }
+  /* เนื้อหาในแท็บ: เอากรอบซ้อนออก ให้เนื้อหากว้างขึ้น */
+  .tab-pane .glass{ padding:4px 0 0; background:transparent !important; border:none; box-shadow:none !important; overflow:visible; }
+  .tab-icon{ font-size:2.4rem; }
+  .tab-title{ font-size:1.2rem; }
+  .step{ margin-top:20px; padding-top:16px; }
+  .step-head{ font-size:1.05rem; }
+
+  /* แบบทดสอบ */
+  .question-box{ font-size:1.15rem; }
+  .opt-item{ padding:12px 14px; }
+  .q-nav > button{ width:100%; }
+
+  /* กิจกรรม */
+  .flip-grid{ grid-template-columns:1fr 1fr; gap:10px; }
+  .flip-card{ min-height:140px; }
+  .nutri-label{ max-width:none; }
+  .label-answer .act-input{ flex:1; min-width:0; }
+  .label-answer button{ width:100%; }
+  .tf-btns button{ flex:1; }
+  .diary-row{ gap:6px; padding:8px; }
+  .d-icon{ font-size:1.3rem; }
+  .mini-btn{ width:42px; min-height:42px; }
+  .mg-tag{ float:none; display:block; margin:4px 0 0; }
+
+  /* คะแนน: 3 ช่องในแถวเดียว */
+  .score-compare{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+  .score-card{ min-width:0; padding:12px 4px; }
+  .score-num{ font-size:1.6rem; }
+
+  .warn-grid{ grid-template-columns:1fr; }
+  .game-area{ gap:14px; }
+  footer{ padding:28px max(16px, env(safe-area-inset-left)) calc(20px + env(safe-area-inset-bottom)); }
+}
+@media (max-width:350px){
+  .menu-grid, .flip-grid{ gap:8px; }
+  .menu-card .icon{ width:48px; height:48px; line-height:48px; font-size:1.5rem; }
+  .tab-btn{ font-size:0.9rem; }
+}
+/* จอสัมผัส: ไม่ใช้เอฟเฟกต์ลอยตอนชี้ (บนมือถือจะค้างหลังแตะ) */
+@media (hover:none){
+  button:hover, .btn:hover, .menu-card:hover, .opt-item:hover, .media-card:hover,
+  .flip-card:hover, .source-card:hover, .food-chip:hover, .tab-btn:hover{ transform:none; filter:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  *{ transition:none !important; animation:none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+<div class="cloud cloud3"></div>
+<div class="cloud cloud4"></div>
+
+<!-- ========== LOGIN SCREEN ========== -->
+<div id="loginScreen">
+  <div class="glass shine login-card">
+    <div class="big-emoji">🫀🥗😊</div>
+    <p class="meta" style="margin:6px 0 0;">บทเรียนออนไลน์</p>
+    <h1 style="margin:6px 0;">ความรอบรู้สุขภาพด้านอาหาร</h1>
+    <p class="meta">เรื่อง โรคความดันโลหิตสูง</p>
+    <p class="meta" style="margin-bottom:14px;">สำหรับ: กลุ่มเสี่ยงโรคความดันโลหิตสูง</p>
+    <input type="text" id="studentName" placeholder="กรอกชื่อ - นามสกุลของคุณ" />
+    <button class="btn-green" style="width:100%;" onclick="handleLogin()">🚀 เริ่มเรียนเลย!</button>
+    <p id="loginError" style="color:#c0392b; font-weight:bold; display:none; margin-top:10px;">กรุณากรอกชื่อ-นามสกุลก่อนนะครับ</p>
+  </div>
+</div>
+
+<!-- ========== MAIN APP ========== -->
+<div class="wrap hidden" id="mainApp">
+
+  <div class="glass shine header-bar">
+    <div class="header-top">
+      <div style="text-align:left;">
+        <div class="meta">บทเรียนออนไลน์ • ความรอบรู้สุขภาพด้านอาหาร</div>
+        <h1 style="margin:2px 0;">🫀 โรคความดันโลหิตสูง</h1>
+        <div class="meta">กลุ่มเสี่ยงโรคความดันโลหิตสูง</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
+        <span class="student-badge">👤 <span id="studentBadgeName"></span></span>
+        <button class="btn-red" onclick="logout()">🚪 ออกจากระบบ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BP SELF SCREENING (topmost feature) ===== -->
+  <div class="glass shine">
+    <div class="tab-title" style="text-align:left; display:flex; align-items:center; gap:10px;">🩺 ตรวจสอบค่าความดันโลหิตของฉัน (Self-Screening)</div>
+    <div class="bp-inputs">
+      <div class="bp-field">
+        <label>ค่าตัวบน SYS</label>
+        <input type="number" id="sysInput" placeholder="120" min="0" max="300">
+      </div>
+      <div class="bp-field">
+        <label>ค่าตัวล่าง DIA</label>
+        <input type="number" id="diaInput" placeholder="80" min="0" max="200">
+      </div>
+      <button class="btn-purple" onclick="checkBP()">🔎 ประมวลผล</button>
+    </div>
+    <div id="bpResult"></div>
+  </div>
+
+  <!-- ===== DASHBOARD / MENU ===== -->
+  <div id="dashboardPage">
+    <div class="glass">
+      <div class="tab-title" style="text-align:left;">📋 เมนูบทเรียน</div>
+      <div class="menu-grid">
+        <div class="menu-card mc-1" onclick="goSection('pretest')">
+          <span class="icon">📝</span>แบบทดสอบก่อนเรียน
+        </div>
+        <div class="menu-card mc-2" id="menuContent" onclick="goSection('content')">
+          <span class="icon">📚</span>เนื้อหาความรู้
+          <span class="lock-badge" id="lockContent">🔒</span>
+        </div>
+        <div class="menu-card mc-3" id="menuPosttest" onclick="goSection('posttest')">
+          <span class="icon">📝</span>แบบทดสอบหลังเรียน
+          <span class="lock-badge" id="lockPosttest">🔒</span>
+        </div>
+        <div class="menu-card mc-4" id="menuGame" onclick="goSection('game')">
+          <span class="icon">🎮</span>เกมโต้ตอบ
+          <span class="lock-badge" id="lockGame">🔒</span>
+        </div>
+        <div class="menu-card mc-5" id="menuScore" onclick="goSection('score')">
+          <span class="icon">📊</span>ผลคะแนน &amp; พัฒนาการ
+          <span class="lock-badge" id="lockScore">🔒</span>
+        </div>
+        <div class="menu-card mc-6" id="menuMedia" onclick="goSection('media')">
+          <span class="icon">🖼️</span>คลังสื่อความรู้
+          <span class="lock-badge" id="lockMedia">🔒</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PRETEST / POSTTEST PAGE ===== -->
+  <div class="section-page hidden" id="testPage">
+    <button class="btn-gray back-btn" onclick="goDashboard()">⬅ กลับสู่เมนู</button>
+    <div class="glass shine">
+      <div class="tab-title" id="testTitle">📝 แบบทดสอบก่อนเรียน</div>
+      <div class="progress-bar"><div class="progress-bar-fill" id="testProgress" style="width:0%"></div></div>
+      <div id="testQNum" style="font-weight:bold; color:#8a5a1c; margin-bottom:6px;"></div>
+      <div class="question-box" id="testQuestion"></div>
+      <div class="opt-list" id="testOptions"></div>
+      <div class="q-nav">
+        <span></span>
+        <button class="btn-orange" id="testNextBtn" onclick="nextTestQuestion()" disabled>ถัดไป ➡</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TEST RESULT (interim) ===== -->
+  <div class="section-page hidden" id="testResultPage">
+    <div class="glass shine" style="text-align:center;">
+      <div class="big-emoji" id="testResultEmoji">🎉</div>
+      <h2 id="testResultTitle">ทำแบบทดสอบเสร็จแล้ว!</h2>
+      <p id="testResultText" style="font-size:1.2rem; font-weight:bold;"></p>
+      <button class="btn-green" onclick="goDashboard()">⬅ กลับสู่เมนู</button>
+    </div>
+  </div>
+
+  <!-- ===== CONTENT PAGE ===== -->
+  <div class="section-page hidden" id="contentPage">
+    <button class="btn-gray back-btn" onclick="goDashboard()">⬅ กลับสู่เมนู</button>
+    <div class="glass shine">
+      <div class="tab-title" style="text-align:left;">📚 เนื้อหาความรู้: ความรอบรู้สุขภาพด้านอาหาร</div>
+      <div class="tab-btns" id="tabButtons"></div>
+      <div id="tabPanes"></div>
+    </div>
+  </div>
+
+  <!-- ===== GAME PAGE ===== -->
+  <div class="section-page hidden" id="gamePage">
+    <button class="btn-gray back-btn" onclick="goDashboard()">⬅ กลับสู่เมนู</button>
+    <div class="glass shine">
+      <div class="tab-title" style="text-align:left;">🎮 เกม: จัดกลุ่มอาหารเค็ม-ไม่เค็ม</div>
+      <p>👉 ลากการ์ดอาหาร (หรือแตะเพื่อเลือก แล้วแตะตะกร้าที่ต้องการ) ไปใส่ในตะกร้าให้ถูกต้อง</p>
+      <div class="game-area">
+        <div>
+          <div class="bin-title">🍽️ อาหารทั้งหมด</div>
+          <div class="game-pool" id="foodPool"></div>
+        </div>
+        <div class="game-bins">
+          <div class="bin bin-low" id="binLow" ondragover="allowDrop(event)" ondrop="dropFood(event,'low')" onclick="clickBin('low')">
+            <div class="bin-title">🥦 โซเดียมต่ำ (ดีต่อสุขภาพ)</div>
+          </div>
+          <div class="bin bin-high" id="binHigh" ondragover="allowDrop(event)" ondrop="dropFood(event,'high')" onclick="clickBin('high')">
+            <div class="bin-title">🍟 โซเดียมสูง (ควรเลี่ยง)</div>
+          </div>
+        </div>
+      </div>
+      <div id="gameResult" style="margin-top:16px; font-weight:bold; text-align:center; font-size:1.1rem;"></div>
+      <div style="text-align:center; margin-top:10px;">
+        <button class="btn-purple" onclick="resetGame()">🔄 เล่นใหม่</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MEDIA LIBRARY PAGE ===== -->
+  <div class="section-page hidden" id="mediaPage">
+    <button class="btn-gray back-btn" onclick="goDashboard()">⬅ กลับสู่เมนู</button>
+    <div class="glass shine">
+      <div class="tab-title" style="text-align:left;">🖼️ คลังสื่อความรู้</div>
+      <div class="tab-btns">
+        <div class="tab-btn active" id="mediatab-0" style="background:linear-gradient(145deg,var(--purple),var(--purple-d));" onclick="showMediaTab(0)">🖼️ อินโฟกราฟิก</div>
+        <div class="tab-btn" id="mediatab-1" style="background:linear-gradient(145deg,var(--teal),var(--teal-d));" onclick="showMediaTab(1)">🎬 วีดีโอ</div>
+      </div>
+      <div class="tab-pane active" id="mediapane-0">
+        <div class="media-grid" id="infographicGrid"></div>
+      </div>
+      <div class="tab-pane" id="mediapane-1">
+        <p style="font-size:0.9rem; color:#6a5a3a;">📌 ยังไม่มีวีดีโอแนบ — ครูผู้สอนสามารถเพิ่มลิงก์ YouTube ได้ในตัวแปร <code>MEDIA_VIDEOS</code> ของโค้ด</p>
+        <div class="media-grid" id="videoGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCORE PAGE ===== -->
+  <div class="section-page hidden" id="scorePage">
+    <button class="btn-gray back-btn" onclick="goDashboard()">⬅ กลับสู่เมนู</button>
+    <div class="glass shine">
+      <div class="tab-title" style="text-align:left;">📊 ผลคะแนนและพัฒนาการของฉัน</div>
+      <div class="score-compare">
+        <div class="score-card">
+          <div>ก่อนเรียน</div>
+          <div class="score-num" id="scorePre">-/10</div>
+        </div>
+        <div class="score-card">
+          <div>หลังเรียน</div>
+          <div class="score-num" id="scorePost">-/10</div>
+        </div>
+        <div class="score-card">
+          <div>พัฒนาการ</div>
+          <div class="score-num" id="scoreDiff">-</div>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <span class="quality-badge" id="qualityBadge"></span>
+      </div>
+      <p id="scoreMsg" style="text-align:center; margin-top:16px; font-size:1.05rem;"></p>
+    </div>
+  </div>
+
+</div>
+
+<footer>🫀 บทเรียนออนไลน์ ความรอบรู้สุขภาพด้านอาหาร เรื่อง โรคความดันโลหิตสูง</footer>
+
+<script>
+/* ================= DATA ================= */
+const QUESTIONS = [
+  {q:"คนไทยได้รับโซเดียมส่วนใหญ่มาจากแหล่งใด?", opts:[
+    "น้ำดื่ม","ผลไม้สด","เครื่องปรุงรสและอาหารแปรรูป","ผักสด"], correct:2},
+  {q:"ปริมาณโซเดียมที่แนะนำต่อวันไม่ควรเกินเท่าใด?", opts:[
+    "500 มิลลิกรัม","2,000 มิลลิกรัม","3,500 มิลลิกรัม","5,000 มิลลิกรัม"], correct:1},
+  {q:"เกลือ 1 ช้อนชามีโซเดียมประมาณเท่าใด?", opts:[
+    "200 มิลลิกรัม","500 มิลลิกรัม","1,000 มิลลิกรัม","2,000 มิลลิกรัม"], correct:3},
+  {q:"การกินโซเดียมมากเกินไปทำให้ความดันโลหิตสูงขึ้นได้อย่างไร?", opts:[
+    "ร่างกายกักเก็บน้ำ ทำให้ปริมาตรเลือดเพิ่มขึ้น","ทำให้น้ำตาลในเลือดสูงขึ้น","ทำให้ร่างกายขาดวิตามิน","ทำให้ไขมันในเลือดลดลง"], correct:0},
+  {q:"อาหารชนิดใดต่อไปนี้มีโซเดียมสูงที่สุด?", opts:[
+    "ข้าวสวย","ไข่ต้ม","ส้มตำปูปลาร้า","แตงโม"], correct:2},
+  {q:"เครื่องปรุงใดที่ไม่มีรสเค็ม แต่มีโซเดียมเป็นส่วนประกอบ?", opts:[
+    "น้ำตาล","ผงชูรส","น้ำมะนาว","พริกป่น"], correct:1},
+  {q:"การอ่านฉลากโภชนาการเพื่อดูปริมาณโซเดียมที่ถูกต้องคือข้อใด?", opts:[
+    "ดูเฉพาะวันหมดอายุ","ดูเฉพาะพลังงาน (กิโลแคลอรี)","ดูเฉพาะราคาต่อซอง","ดูโซเดียมต่อหนึ่งหน่วยบริโภค และจำนวนหน่วยบริโภคต่อบรรจุภัณฑ์"], correct:3},
+  {q:"เมื่อรับประทานก๋วยเตี๋ยว วิธีใดช่วยลดการได้รับโซเดียมได้ดีที่สุด?", opts:[
+    "เติมน้ำปลาและซีอิ๊วก่อนชิม","ซดน้ำซุปให้หมดชาม","ชิมก่อนปรุง และไม่ซดน้ำซุปจนหมด","เพิ่มผงปรุงรสแทนน้ำปลา"], correct:2},
+  {q:"ข้อใดเป็นวิธีทดแทนรสเค็มในการประกอบอาหารที่เหมาะสม?", opts:[
+    "ใช้สมุนไพร เครื่องเทศ หรือมะนาวช่วยเพิ่มรสชาติ","ใช้ซุปก้อนแทนเกลือ","ใช้ซอสปรุงรสแทนน้ำปลา","ใช้ผงชูรสแทนเกลือ"], correct:0},
+  {q:"ข้อใดเป็นการจัดการตนเองเพื่อลดโซเดียมที่ดีสำหรับผู้เสี่ยงหรือผู้ป่วยความดันโลหิตสูง?", opts:[
+    "กินอาหารตามใจชอบ แล้วกินยาลดความดันเพิ่ม","ตรวจสอบและบันทึกปริมาณโซเดียมในอาหารที่กินแต่ละวัน","เลี่ยงอาหารเค็มเฉพาะวันที่ไปพบแพทย์","งดดื่มน้ำเพื่อลดอาการบวม"], correct:1}
+];
+
+const TABS = [
+  {title:"ทักษะความรู้ความเข้าใจ", sub:"Cognitive skill", icon:"🧠", color:"var(--pink)", colorD:"var(--pink-d)",
+   bullets:[
+     {icon:"🩺", text:"โรคความดันโลหิตสูง คือภาวะที่แรงดันเลือดในหลอดเลือดสูงกว่าปกติอย่างต่อเนื่อง (ตั้งแต่ 140/90 มม.ปรอทขึ้นไป)"},
+     {icon:"🧂", text:"โซเดียม (เกลือ) เป็นสาเหตุสำคัญที่ทำให้ความดันโลหิตสูงขึ้น ควรกินไม่เกิน 2,000 มก./วัน"},
+     {icon:"🍔", text:"ไขมันอิ่มตัวและอาหารแปรรูปเพิ่มความเสี่ยงต่อหลอดเลือดและหัวใจ"},
+     {icon:"💔", text:"หากปล่อยไว้ไม่ควบคุม อาจนำไปสู่โรคหัวใจ โรคไต และโรคหลอดเลือดสมอง"}
+   ]},
+  {title:"ทักษะการเข้าถึงข้อมูล", sub:"Access skill", icon:"🔍", color:"var(--purple)", colorD:"var(--purple-d)",
+   bullets:[
+     {icon:"🏥", text:"ค้นหาข้อมูลจากแหล่งที่เชื่อถือได้ เช่น กระทรวงสาธารณสุข โรงพยาบาล หรือแพทย์ผู้เชี่ยวชาญ"},
+     {icon:"🏷️", text:"อ่าน 'ฉลากโภชนาการ' บนบรรจุภัณฑ์อาหารเพื่อดูปริมาณโซเดียมก่อนซื้อ"},
+     {icon:"📱", text:"ใช้แอปพลิเคชันหรือเว็บไซต์สุขภาพติดตามค่าความดันโลหิตของตนเอง"},
+     {icon:"☎️", text:"รู้จักสายด่วนสุขภาพ เช่น 1669 (ฉุกเฉิน) และ 1422 (สายด่วนสุขภาพ)"}
+   ]},
+  {title:"ทักษะการสื่อสาร", sub:"Communication skill", icon:"🗣️", color:"var(--teal)", colorD:"var(--teal-d)",
+   bullets:[
+     {icon:"👨‍⚕️", text:"กล้าซักถามแพทย์หรือเภสัชกรเมื่อไม่เข้าใจเรื่องอาหารหรือยาที่ต้องกิน"},
+     {icon:"👨‍👩‍👧‍👦", text:"พูดคุยกับคนในครอบครัวเพื่อช่วยกันปรับพฤติกรรมการกินให้ลดเค็มร่วมกัน"},
+     {icon:"📋", text:"บอกอาการผิดปกติ เช่น ปวดหัว มึนงง ใจสั่น ให้แพทย์ทราบอย่างชัดเจน"},
+     {icon:"💬", text:"สื่อสารความต้องการอาหารลดเค็มเมื่อสั่งอาหารนอกบ้านได้อย่างมั่นใจ"}
+   ]},
+  {title:"ทักษะการรู้เท่าทันสื่อ", sub:"Media literacy skill", icon:"📺", color:"var(--orange)", colorD:"var(--orange-d)",
+   bullets:[
+     {icon:"⚠️", text:"ระวังโฆษณาผลิตภัณฑ์เสริมอาหารที่โอ้อวดสรรพคุณ 'รักษาความดันให้หายขาด'"},
+     {icon:"🔎", text:"ตรวจสอบแหล่งที่มาของข่าวสุขภาพก่อนเชื่อหรือแชร์ต่อ"},
+     {icon:"🧾", text:"เปรียบเทียบข้อมูลจากหลายแหล่งและดูว่ามีหลักฐานทางการแพทย์รองรับหรือไม่"},
+     {icon:"🚫", text:"ไม่หลงเชื่อสูตรลัดหรือสมุนไพรอ้างสรรพคุณเกินจริงโดยไม่ปรึกษาแพทย์"}
+   ]},
+  {title:"ทักษะการจัดการตนเอง", sub:"Self-management skill", icon:"📝", color:"var(--green)", colorD:"var(--green-d)",
+   bullets:[
+     {icon:"🥗", text:"วางแผนมื้ออาหารล่วงหน้าให้เน้นผัก ผลไม้ และลดเครื่องปรุงรสเค็ม"},
+     {icon:"📔", text:"จดบันทึกค่าความดันโลหิตและอาหารที่กินเป็นประจำทุกวัน"},
+     {icon:"🏃", text:"ออกกำลังกายอย่างน้อย 30 นาที/วัน และพักผ่อนให้เพียงพอ"},
+     {icon:"🧘", text:"จัดการความเครียดด้วยการพักผ่อน ทำสมาธิ หรือกิจกรรมที่ผ่อนคลาย"}
+   ]},
+  {title:"ทักษะการตัดสินใจ", sub:"Decision skill", icon:"✅", color:"var(--blue)", colorD:"var(--blue-d)",
+   bullets:[
+     {icon:"🤔", text:"เปรียบเทียบทางเลือกอาหารก่อนตัดสินใจซื้อ เลือกเมนูโซเดียมต่ำเมื่อกินนอกบ้าน"},
+     {icon:"🛒", text:"เลือกซื้อวัตถุดิบสดใหม่แทนอาหารสำเร็จรูปหรืออาหารแปรรูป"},
+     {icon:"❌", text:"กล้าปฏิเสธอาหารเสี่ยง เช่น ของทอด ของหมักดอง เมื่อมีทางเลือกที่ดีกว่า"},
+     {icon:"🎯", text:"ตัดสินใจเลือกพฤติกรรมสุขภาพที่ดีอย่างสม่ำเสมอเพื่อผลลัพธ์ระยะยาว"}
+   ]}
+];
+
+const FOODS = [
+  {name:"ผักสด", icon:"🥬", type:"low"},
+  {name:"ผลไม้สด", icon:"🍎", type:"low"},
+  {name:"ข้าวกล้อง", icon:"🍚", type:"low"},
+  {name:"ปลานึ่ง", icon:"🐟", type:"low"},
+  {name:"นมจืด", icon:"🥛", type:"low"},
+  {name:"บะหมี่กึ่งสำเร็จรูป", icon:"🍜", type:"high"},
+  {name:"ไส้กรอก", icon:"🌭", type:"high"},
+  {name:"มันฝรั่งทอด", icon:"🍟", type:"high"},
+  {name:"ผักดอง", icon:"🥒", type:"high"},
+  {name:"น้ำปลา/ซอสปรุงรส", icon:"🧂", type:"high"}
+];
+
+/* คลังสื่อความรู้: อินโฟกราฟิกวาดด้วย inline SVG (ไม่พึ่งไฟล์ภายนอก) */
+const MEDIA_INFOGRAPHICS = [
+  {
+    title:"🧂 ปริมาณโซเดียมที่แนะนำต่อวัน",
+    caption:"ไม่ควรกินโซเดียมเกิน 2,000 มิลลิกรัมต่อวัน (เทียบเท่าเกลือประมาณ 1 ช้อนชา) เพื่อป้องกันและควบคุมความดันโลหิตสูง",
+    svg:`<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="50" width="240" height="24" rx="12" fill="#eee2c8"/>
+      <rect x="10" y="50" width="94" height="24" rx="10" fill="var(--green)"/>
+      <rect x="108" y="50" width="68" height="24" rx="10" fill="var(--yellow)"/>
+      <rect x="180" y="50" width="70" height="24" rx="10" fill="var(--red)"/>
+      <line x1="108" y1="40" x2="108" y2="80" stroke="#5b3d1d" stroke-width="2"/>
+      <polygon points="108,44 103,36 113,36" fill="#5b3d1d"/>
+      <text x="108" y="24" text-anchor="middle" font-size="12" font-weight="bold" fill="#5b3d1d">2,000 มก./วัน</text>
+      <text x="57" y="92" text-anchor="middle" font-size="10" fill="#5b3d1d">ปกติ</text>
+      <text x="142" y="92" text-anchor="middle" font-size="10" fill="#5b3d1d">เริ่มเสี่ยง</text>
+      <text x="215" y="92" text-anchor="middle" font-size="10" fill="#5b3d1d">เกินแนะนำ</text>
+    </svg>`
+  },
+  {
+    title:"🍽️ จานอาหารสุขภาพ (DASH Plate)",
+    caption:"แบ่งจานอาหารเป็นผัก-ผลไม้ครึ่งจาน ธัญพืชไม่ขัดสี 1 ใน 4 และโปรตีนไขมันต่ำ 1 ใน 4 ช่วยควบคุมความดันโลหิตสูง",
+    svg:`<svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+      <g transform="rotate(-90 100 90)">
+        <circle cx="100" cy="90" r="70" fill="none" stroke="#eee2c8" stroke-width="40"/>
+        <circle cx="100" cy="90" r="70" fill="none" stroke="var(--green)" stroke-width="40" stroke-dasharray="219.9 439.8" stroke-dashoffset="0"/>
+        <circle cx="100" cy="90" r="70" fill="none" stroke="var(--orange)" stroke-width="40" stroke-dasharray="109.95 439.8" stroke-dashoffset="-219.9"/>
+        <circle cx="100" cy="90" r="70" fill="none" stroke="var(--pink)" stroke-width="40" stroke-dasharray="109.95 439.8" stroke-dashoffset="-329.85"/>
+      </g>
+      <text x="100" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#5b3d1d">จานสุขภาพ</text>
+      <text x="100" y="102" text-anchor="middle" font-size="12" fill="#5b3d1d">DASH</text>
+    </svg>`,
+    legend:[
+      {color:"var(--green)", text:"ผัก-ผลไม้ 50%"},
+      {color:"var(--orange)", text:"ธัญพืชไม่ขัดสี 25%"},
+      {color:"var(--pink)", text:"โปรตีนไขมันต่ำ 25%"}
+    ]
+  },
+  {
+    title:"⚠️ สัญญาณเตือนความดันโลหิตสูง",
+    caption:"หากมีอาการเหล่านี้บ่อยครั้ง ควรวัดความดันโลหิตและปรึกษาแพทย์ทันที",
+    html:`<div class="warn-grid">
+      <div class="warn-item"><span class="wi-icon">🤕</span>ปวดศีรษะ</div>
+      <div class="warn-item"><span class="wi-icon">💓</span>ใจสั่น หัวใจเต้นเร็ว</div>
+      <div class="warn-item"><span class="wi-icon">😵‍💫</span>มึนงง เวียนศีรษะ</div>
+      <div class="warn-item"><span class="wi-icon">😳</span>หน้าแดง ตาพร่ามัว</div>
+    </div>`
+  },
+  {
+    title:"📊 เปรียบเทียบโซเดียมในอาหาร (โดยประมาณ)",
+    caption:"ยิ่งแท่งยาว ยิ่งมีโซเดียมสูง ควรเลือกอาหารแท่งสั้นเพื่อลดความเสี่ยง (ค่าประมาณเพื่อการเรียนรู้เท่านั้น)",
+    svg:`<svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg">
+      <text x="5" y="20" font-size="11" font-weight="bold" fill="#5b3d1d">บะหมี่กึ่งสำเร็จรูป (1 ซอง)</text>
+      <rect x="5" y="24" width="220" height="14" rx="7" fill="var(--red-d)"/>
+      <text x="231" y="35" font-size="10" fill="#5b3d1d">~1760 มก.</text>
+
+      <text x="5" y="56" font-size="11" font-weight="bold" fill="#5b3d1d">น้ำปลา (1 ช้อนโต๊ะ)</text>
+      <rect x="5" y="60" width="182" height="14" rx="7" fill="var(--red)"/>
+      <text x="193" y="71" font-size="10" fill="#5b3d1d">~1460 มก.</text>
+
+      <text x="5" y="92" font-size="11" font-weight="bold" fill="#5b3d1d">ไส้กรอก (2 ชิ้น)</text>
+      <rect x="5" y="96" width="85" height="14" rx="7" fill="var(--orange-d)"/>
+      <text x="96" y="107" font-size="10" fill="#5b3d1d">~680 มก.</text>
+
+      <text x="5" y="128" font-size="11" font-weight="bold" fill="#5b3d1d">ผักดอง (1 ถ้วย)</text>
+      <rect x="5" y="132" width="75" height="14" rx="7" fill="var(--orange)"/>
+      <text x="86" y="143" font-size="10" fill="#5b3d1d">~600 มก.</text>
+
+      <text x="5" y="164" font-size="11" font-weight="bold" fill="#5b3d1d">ข้าวสวย (1 ถ้วย)</text>
+      <rect x="5" y="168" width="6" height="14" rx="3" fill="var(--green)"/>
+      <text x="17" y="179" font-size="10" fill="#5b3d1d">~5 มก. (ต่ำมาก)</text>
+    </svg>`
+  }
+];
+
+/* คลังสื่อความรู้: วีดีโอ — ยังไม่มีลิงก์จริง ใส่ URL แบบ YouTube embed ใน embedUrl ภายหลังได้
+   ตัวอย่าง: embedUrl: "https://www.youtube.com/embed/VIDEO_ID" */
+const MEDIA_VIDEOS = [
+  {title:"🎬 รู้จักโรคความดันโลหิตสูง", desc:"วีดีโอแนะนำเบื้องต้นเกี่ยวกับสาเหตุและการป้องกัน", embedUrl:""},
+  {title:"🎬 เลือกกินอย่างไรให้ลดเค็ม", desc:"เทคนิคการเลือกและปรุงอาหารลดโซเดียม", embedUrl:""},
+  {title:"🎬 ออกกำลังกายเพื่อลดความดัน", desc:"ตัวอย่างท่าออกกำลังกายง่าย ๆ ที่บ้าน", embedUrl:""}
+];
+
+/* ================= สื่อประจำ 6 ทักษะ (ครูใส่ลิงก์ได้ที่นี่) =================
+   ลำดับตรงกับ TABS ด้านบน (0 = ความรู้ความเข้าใจ ... 5 = การตัดสินใจ)
+   - video.url : วางลิงก์ YouTube แบบไหนก็ได้ เช่น https://www.youtube.com/watch?v=xxxx หรือ https://youtu.be/xxxx
+   - img       : ลิงก์รูปภาพ หรือลิงก์แชร์ Google Drive (ตั้งค่า "ทุกคนที่มีลิงก์") หรือชื่อไฟล์ในโฟลเดอร์เดียวกับเว็บ
+   - source    : เครดิตแหล่งที่มา (แสดงใต้สื่อ)
+   ช่องไหนเว้นว่างไว้ จะแสดงว่า "เร็วๆ นี้" */
+const SKILL_MEDIA = [
+  { // 0 ความรู้ความเข้าใจ
+    video:{title:"โซเดียมทำให้ความดันโลหิตสูงขึ้นได้อย่างไร", url:"", source:""},
+    infographics:[
+      {title:"เกลือ 1 ช้อนชา = โซเดียม 2,000 มก. = ทั้งวัน", img:"", source:""},
+      {title:"แหล่งโซเดียมของคนไทย", img:"", source:""}
+    ]
+  },
+  { // 1 การเข้าถึงข้อมูล
+    video:{title:"วิธีอ่านฉลากโภชนาการและฉลาก GDA หวาน มัน เค็ม", url:"", source:""},
+    infographics:[
+      {title:"อ่านฉลาก: หนึ่งหน่วยบริโภค / จำนวนหน่วยบริโภค / โซเดียม", img:"", source:""},
+      {title:"สัญลักษณ์ \"ทางเลือกสุขภาพ\"", img:"", source:""}
+    ]
+  },
+  { // 2 การสื่อสาร
+    video:{title:"สั่งอาหารอย่างไรให้ลดเค็ม", url:"", source:""},
+    infographics:[
+      {title:"ประโยคเด็ดสั่งอาหารลดเค็ม", img:"", source:""}
+    ]
+  },
+  { // 3 การรู้เท่าทันสื่อ
+    video:{title:"วิธีตรวจสอบข่าวปลอมด้านสุขภาพ", url:"", source:""},
+    infographics:[
+      {title:"เช็ก 4 ข้อก่อนเชื่อ", img:"", source:""},
+      {title:"คำโฆษณาอันตราย", img:"", source:""}
+    ]
+  },
+  { // 4 การจัดการตนเอง
+    video:{title:"ทำอาหารลดเค็มด้วยสมุนไพร", url:"", source:""},
+    infographics:[
+      {title:"สมุนไพรแทนเค็ม", img:"", source:""},
+      {title:"ตัวอย่างเมนู 1 วัน โซเดียมไม่เกิน 2,000 มก.", img:"", source:""}
+    ]
+  },
+  { // 5 การตัดสินใจ
+    video:{title:"เปรียบเทียบโซเดียมในอาหารยอดนิยม", url:"", source:""},
+    infographics:[
+      {title:"น้ำซุป 1 ชาม = โซเดียมเกินครึ่งวัน", img:"", source:""}
+    ]
+  }
+];
+
+/* คำถามเช็กความเข้าใจท้ายแต่ละทักษะ (ลำดับตรงกับ TABS) */
+const SKILL_CHECKS = [
+  {q:"เกลือ 1 ช้อนชา มีโซเดียมเทียบได้กับปริมาณที่ควรได้รับในกี่วัน?",
+   opts:["1/4 วัน","ครึ่งวัน","ทั้งวัน (1 วัน)","2 วัน"], correct:2,
+   why:"เกลือ 1 ช้อนชา มีโซเดียมประมาณ 2,000 มก. ซึ่งเท่ากับปริมาณที่ควรได้รับทั้งวัน"},
+  {q:"ฉลากระบุ โซเดียม 400 มก. ต่อหนึ่งหน่วยบริโภค และมี 3 หน่วยบริโภคต่อห่อ ถ้ากินหมดห่อจะได้โซเดียมเท่าไร?",
+   opts:["400 มก.","800 มก.","1,200 มก.","2,000 มก."], correct:2,
+   why:"400 × 3 = 1,200 มก. ต้องคูณด้วยจำนวนหน่วยบริโภคต่อห่อเสมอ"},
+  {q:"ประโยคใดเหมาะที่สุดเมื่อสั่งอาหารเพื่อลดเค็ม?",
+   opts:["ขอรสจัด ๆ เลยนะ","ไม่ใส่ผงชูรส และขอแยกน้ำจิ้มนะคะ","ไม่ต้องบอกอะไร กินตามที่ร้านทำ","ขอน้ำปลาเพิ่มอีกถ้วย"], correct:1,
+   why:"บอกความต้องการชัดเจนและสุภาพ ร้านทำตามได้ง่าย และช่วยลดโซเดียมได้จริง"},
+  {q:"ข้อความโฆษณาใดที่ควรสงสัยว่าเกินจริง?",
+   opts:["มีโซเดียมต่ำกว่าสูตรปกติ 25%","รักษาความดันหายขาด ไม่ต้องพบแพทย์","ควรรับประทานคู่กับการออกกำลังกาย","มีเลขสารบบอาหาร (เลข อย.)"], correct:1,
+   why:"คำว่า \"หายขาด\" และ \"ไม่ต้องพบแพทย์\" เป็นคำโฆษณาเกินจริงที่พบบ่อย"},
+  {q:"ควรใช้อะไรแทนน้ำปลา เพื่อให้อาหารมีรสชาติโดยไม่เพิ่มโซเดียม?",
+   opts:["ซุปก้อน","ผงปรุงรส","มะนาว พริก กระเทียม และสมุนไพร","ซอสปรุงรส"], correct:2,
+   why:"สมุนไพรและเครื่องเทศให้รสชาติโดยแทบไม่มีโซเดียม ส่วนซุปก้อน ผงปรุงรส และซอส มีโซเดียมสูง"},
+  {q:"ที่ร้านสะดวกซื้อ ควรเลือกแบบใดเพื่อให้ได้โซเดียมน้อยกว่า?",
+   opts:["บะหมี่กึ่งสำเร็จรูป + ไส้กรอก","ข้าวกล่องผัดผัก + ไข่ต้ม + ผลไม้","ขนมขบเคี้ยวรสบาร์บีคิว","โจ๊กคัพ + ปลากระป๋อง"], correct:1,
+   why:"อาหารแปรรูปและอาหารสำเร็จรูปมีโซเดียมสูง ผัก ไข่ต้ม และผลไม้มีโซเดียมต่ำกว่ามาก"}
+];
+
+/* ข้อมูลกิจกรรม "ลงมือทำ"
+   ⚠️ ปริมาณโซเดียมเป็นค่าประมาณเพื่อการเรียนรู้ ครูควรตรวจสอบกับแหล่งอ้างอิง (เช่น กรมอนามัย) ก่อนใช้สอนจริง */
+const SODIUM_CARDS = [
+  {name:"เกลือป่น", amount:"1 ช้อนชา", icon:"🧂", mg:2000},
+  {name:"น้ำปลา", amount:"1 ช้อนโต๊ะ", icon:"🐟", mg:1350},
+  {name:"ซีอิ๊วขาว", amount:"1 ช้อนโต๊ะ", icon:"🍶", mg:1200},
+  {name:"ซุปก้อน", amount:"1 ก้อน", icon:"🧊", mg:1760},
+  {name:"ปลาร้า", amount:"1 ช้อนโต๊ะ", icon:"🫙", mg:1100},
+  {name:"ผงปรุงรส", amount:"1 ช้อนชา", icon:"🥄", mg:950},
+  {name:"ผงชูรส", amount:"1 ช้อนชา", icon:"✨", mg:490},
+  {name:"ซอสหอยนางรม", amount:"1 ช้อนโต๊ะ", icon:"🦪", mg:500}
+];
+
+const LABEL_TASK = {product:"บะหมี่กึ่งสำเร็จรูป รสต้มยำ (ฉลากตัวอย่าง)", serving:"1/2 ซอง (30 กรัม)", servings:2, kcal:140, sodium:750};
+
+const INFO_SOURCES = [
+  {icon:"🏥", name:"กรมอนามัย", desc:"anamai.moph.go.th", url:"https://anamai.moph.go.th"},
+  {icon:"🩺", name:"กรมควบคุมโรค", desc:"ddc.moph.go.th", url:"https://ddc.moph.go.th"},
+  {icon:"💚", name:"สสส.", desc:"thaihealth.or.th", url:"https://www.thaihealth.or.th"},
+  {icon:"☎️", name:"สายด่วน 1422", desc:"กรมควบคุมโรค (โทรฟรี)", url:"tel:1422"}
+];
+
+const DIALOGUES = [
+  {icon:"👩‍🍳", who:"แม่ค้าก๋วยเตี๋ยว", say:"ต้มยำชามนี้ ใส่เครื่องปรุงให้เต็มที่เลยนะคะ?", opts:[
+    {t:"ได้เลย จัดเต็มเลยครับ", ok:false, fb:"เครื่องปรุงเต็มที่ = โซเดียมสูงมาก ลองขอลดเค็มดูนะ"},
+    {t:"ขอไม่ใส่ผงชูรส แล้วขอน้ำซุปน้อยหน่อยนะครับ", ok:true, fb:"เยี่ยม! บอกชัดเจน สุภาพ และลดโซเดียมได้จริง"},
+    {t:"(ไม่พูดอะไร แล้วค่อยไม่ซดน้ำซุป)", ok:false, fb:"ไม่ซดน้ำซุปก็ช่วยได้ แต่ถ้าบอกร้านตั้งแต่แรกจะลดเค็มได้มากกว่า"}
+  ]},
+  {icon:"👨‍⚕️", who:"แพทย์", say:"ความดันยังสูงอยู่นะครับ มีอะไรอยากถามไหม?", opts:[
+    {t:"ไม่มีค่ะ", ok:false, fb:"ถ้าสงสัยควรถาม การไม่ถามอาจทำให้ดูแลตัวเองไม่ถูกวิธี"},
+    {t:"ควรกินโซเดียมได้วันละเท่าไร และต้องเลี่ยงอาหารอะไรบ้างคะ?", ok:true, fb:"ดีมาก! ถามเจาะจง ได้ข้อมูลไปใช้ได้จริง"},
+    {t:"ขอยาแรง ๆ จะได้กินเค็มได้เหมือนเดิมค่ะ", ok:false, fb:"ยาไม่ได้ทดแทนการลดเค็ม ต้องทำควบคู่กันไป"}
+  ]},
+  {icon:"👵", who:"คุณแม่", say:"แกงจืดหม้อนี้ แม่เติมน้ำปลาอีกหน่อยนะ จะได้อร่อย", opts:[
+    {t:"เติมเลยแม่ อร่อยดี", ok:false, fb:"ทั้งบ้านจะได้โซเดียมเพิ่ม ลองชวนแม่ลดเค็มด้วยกันดีกว่า"},
+    {t:"ลองชิมก่อนไหมแม่ ถ้ายังจืด ใส่พริกไทยกับผักหอมแทนก็อร่อยนะ", ok:true, fb:"เยี่ยม! ชวนด้วยท่าทีดี และเสนอทางเลือกที่ทำได้จริง"},
+    {t:"แม่ทำเค็มตลอด ไม่กินแล้ว", ok:false, fb:"การตำหนิอาจทำให้เสียความรู้สึก ชวนกันลดเค็มด้วยท่าทีดีจะได้ผลกว่า"}
+  ]}
+];
+
+const TF_ITEMS = [
+  {t:"📢 \"ชาสมุนไพรสูตรลับ รักษาความดันสูงหายขาดใน 7 วัน ไม่ต้องกินยาอีกเลย!\"", real:false,
+   why:"มีคำว่า \"หายขาด\" \"เห็นผลใน 7 วัน\" \"ไม่ต้องกินยา\" ซึ่งเป็นคำโฆษณาเกินจริง"},
+  {t:"🏥 กรมอนามัยแนะนำ: \"ควรกินโซเดียมไม่เกิน 2,000 มิลลิกรัมต่อวัน\"", real:true,
+   why:"มาจากหน่วยงานสาธารณสุข และตรงกับคำแนะนำขององค์การอนามัยโลก"},
+  {t:"📱 โพสต์แชร์ต่อ: \"หมอไม่อยากให้คุณรู้! เกลือชมพูกินเท่าไรก็ไม่ทำให้ความดันขึ้น\"", real:false,
+   why:"เกลือทุกชนิดมีโซเดียม และไม่มีแหล่งอ้างอิงที่เชื่อถือได้ ประโยค \"หมอไม่อยากให้รู้\" เป็นสัญญาณของข่าวปลอม"},
+  {t:"🛒 สินค้าที่มีสัญลักษณ์ \"ทางเลือกสุขภาพ\" ผ่านเกณฑ์ปริมาณน้ำตาล ไขมัน และโซเดียมที่กำหนด", real:true,
+   why:"สัญลักษณ์ทางเลือกสุขภาพเป็นตราที่หน่วยงานรัฐรับรอง ใช้ช่วยเลือกซื้อได้"},
+  {t:"💊 \"ดื่มน้ำมะนาวทุกเช้า แล้วหยุดกินยาลดความดันได้เลย\"", real:false,
+   why:"ห้ามหยุดยาเอง ต้องปรึกษาแพทย์ก่อนเสมอ"}
+];
+
+const DIARY_FOODS = [
+  {name:"ก๋วยเตี๋ยวน้ำ (ซดน้ำหมด)", icon:"🍜", mg:1600},
+  {name:"บะหมี่กึ่งสำเร็จรูป 1 ซอง", icon:"🍜", mg:1500},
+  {name:"ส้มตำปูปลาร้า 1 จาน", icon:"🥗", mg:1700},
+  {name:"ข้าวผัดกะเพราหมู", icon:"🍛", mg:1100},
+  {name:"โจ๊กหมู 1 ชาม", icon:"🥣", mg:1000},
+  {name:"ไข่เจียว 1 ฟอง", icon:"🍳", mg:350},
+  {name:"ไส้กรอก 1 ชิ้น", icon:"🌭", mg:350},
+  {name:"ไข่ต้ม 1 ฟอง", icon:"🥚", mg:70},
+  {name:"นมจืด 1 กล่อง", icon:"🥛", mg:110},
+  {name:"ผลไม้สด 1 จาน", icon:"🍉", mg:5}
+];
+
+const CHOICES = [
+  {place:"🍜 ร้านก๋วยเตี๋ยว", opts:[
+    {t:"ซดน้ำซุปจนหมดชาม", mg:1600},
+    {t:"กินเส้นกับผัก เหลือน้ำซุปไว้ครึ่งชาม", mg:900}]},
+  {place:"🏪 ร้านสะดวกซื้อ", opts:[
+    {t:"ข้าวกล่องผัดผัก + ไข่ต้ม + นมจืด", mg:750},
+    {t:"ข้าวกล่องผัดกะเพรา + ไส้กรอก", mg:1450}]},
+  {place:"🥗 ร้านส้มตำ", opts:[
+    {t:"ส้มตำปูปลาร้า", mg:1700},
+    {t:"ส้มตำไทย สั่ง \"ไม่ใส่ปลาร้า เค็มน้อย\"", mg:900}]}
+];
+
+/* ================= BACKEND (Google Sheets) =================
+   1) สร้าง Google Sheet ใหม่ > ส่วนขยาย > Apps Script > วางโค้ด Code.gs ที่ได้รับแยกต่างหาก
+   2) Deploy > New deployment > Web app > Execute as: Me, Who has access: Anyone
+   3) คัดลอก URL ที่ได้ (ลงท้ายด้วย /exec) มาใส่แทนค่าว่างด้านล่างนี้ */
+const BACKEND_URL = "https://script.google.com/macros/s/AKfycbxHZ08NAyD3P04_AFZxhuR6gLpZvyrGZpARc471otcmJnYT2DTXFoWPK82XfrriQBPDPw/exec";
+
+function sendToBackend(payload){
+  if(!BACKEND_URL) return;
+  try{
+    fetch(BACKEND_URL, {
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload)
+    });
+  }catch(err){
+    console.warn('ส่งข้อมูลไปหลังบ้านไม่สำเร็จ', err);
+  }
+}
+
+/* ================= STATE ================= */
+let testMode = null; // 'pre' or 'post'
+let testOrder = [];  // per-question shuffled option arrays
+let currentQIndex = 0;
+let userAnswers = [];
+let selectedOptIdx = null;
+
+let draggedFood = null;
+let selectedChip = null;
+let gamePlaced = {};
+
+/* ================= INIT ================= */
+window.onload = function(){
+  const savedName = localStorage.getItem('hbp_name');
+  if(savedName){
+    document.getElementById('loginScreen').classList.add('hidden');
+    document.getElementById('mainApp').classList.remove('hidden');
+    document.getElementById('studentBadgeName').textContent = savedName;
+    refreshLocks();
+  }
+  buildTabs();
+  buildFoodPool();
+  buildMedia();
+};
+
+/* ================= LOGIN ================= */
+function handleLogin(){
+  const name = document.getElementById('studentName').value.trim();
+  if(!name){
+    document.getElementById('loginError').style.display='block';
+    return;
+  }
+  localStorage.setItem('hbp_name', name);
+  document.getElementById('studentBadgeName').textContent = name;
+  document.getElementById('loginScreen').classList.add('hidden');
+  document.getElementById('mainApp').classList.remove('hidden');
+  refreshLocks();
+}
+
+function logout(){
+  localStorage.removeItem('hbp_name');
+  localStorage.removeItem('hbp_preScore');
+  localStorage.removeItem('hbp_postScore');
+  localStorage.removeItem('hbp_preDone');
+  localStorage.removeItem('hbp_postDone');
+  document.getElementById('studentName').value='';
+  document.getElementById('mainApp').classList.add('hidden');
+  document.getElementById('loginScreen').classList.remove('hidden');
+  resetGame();
+}
+
+/* ================= NAVIGATION ================= */
+function goDashboard(){
+  document.querySelectorAll('.section-page').forEach(el=>el.classList.add('hidden'));
+  document.getElementById('dashboardPage').classList.remove('hidden');
+  refreshLocks();
+}
+
+function refreshLocks(){
+  const preDone = localStorage.getItem('hbp_preDone') === 'true';
+  ['Content','Posttest','Game','Score','Media'].forEach(key=>{
+    const card = document.getElementById('menu'+key);
+    const lock = document.getElementById('lock'+key);
+    if(preDone){
+      card.classList.remove('locked');
+      lock.style.display='none';
+    } else {
+      card.classList.add('locked');
+      lock.style.display='inline';
+    }
+  });
+}
+
+function goSection(section){
+  const preDone = localStorage.getItem('hbp_preDone') === 'true';
+  if(section !== 'pretest' && !preDone){
+    alert('🔒 กรุณาทำแบบทดสอบก่อนเรียนให้เสร็จก่อนนะครับ');
+    return;
+  }
+  document.querySelectorAll('.section-page').forEach(el=>el.classList.add('hidden'));
+  document.getElementById('dashboardPage').classList.add('hidden');
+
+  if(section==='pretest'){ startTest('pre'); }
+  else if(section==='posttest'){ startTest('post'); }
+  else if(section==='content'){ document.getElementById('contentPage').classList.remove('hidden'); }
+  else if(section==='game'){ document.getElementById('gamePage').classList.remove('hidden'); }
+  else if(section==='score'){ showScore(); document.getElementById('scorePage').classList.remove('hidden'); }
+  else if(section==='media'){ document.getElementById('mediaPage').classList.remove('hidden'); }
+}
+
+/* ================= BP CHECKER ================= */
+function checkBP(){
+  const sys = parseInt(document.getElementById('sysInput').value);
+  const dia = parseInt(document.getElementById('diaInput').value);
+  const box = document.getElementById('bpResult');
+  if(isNaN(sys) || isNaN(dia) || sys<=0 || dia<=0){
+    box.style.display='block';
+    box.className='';
+    box.style.background='rgba(255,107,107,0.3)';
+    box.innerHTML = '⚠️ กรุณากรอกค่าความดันทั้งตัวบนและตัวล่างให้ถูกต้อง';
+    return;
+  }
+  let cls, title, levelPlain, advice;
+  if(sys < 90 || dia < 60){
+    cls='bp-low'; title='💧 ความดันต่ำกว่าปกติ'; levelPlain='ต่ำกว่าปกติ';
+    advice='ควรพักผ่อน ดื่มน้ำให้เพียงพอ หากมีอาการหน้ามืด วิงเวียน ควรปรึกษาแพทย์';
+  } else if(sys < 120 && dia < 80){
+    cls='bp-normal'; title='🟢 ปกติ (Normal)'; levelPlain='ปกติ';
+    advice='ยอดเยี่ยม! รักษาพฤติกรรมการกินอาหารลดเค็มและออกกำลังกายอย่างสม่ำเสมอต่อไป';
+  } else if(sys < 140 && dia < 90){
+    cls='bp-elevated'; title='🟡 เริ่มเสี่ยง (Elevated)'; levelPlain='เริ่มเสี่ยง';
+    advice='เริ่มลดอาหารเค็ม ออกกำลังกายสม่ำเสมอ และตรวจวัดความดันเป็นประจำ';
+  } else if(sys < 160 && dia < 100){
+    cls='bp-high'; title='🟠 สูง (High)'; levelPlain='สูง';
+    advice='ควรปรับพฤติกรรมการกินอย่างจริงจังและปรึกษาแพทย์เพื่อรับคำแนะนำเพิ่มเติม';
+  } else {
+    cls='bp-veryhigh'; title='🔴 สูงมาก (Very High)'; levelPlain='สูงมาก';
+    advice='ควรพบแพทย์โดยเร็วที่สุด งดอาหารเค็มโดยเด็ดขาด และติดตามอาการอย่างใกล้ชิด';
+  }
+  box.style.display='block';
+  box.style.background='';
+  box.className = cls;
+  box.innerHTML = `<div style="font-size:1.15rem;">${title}</div><div style="margin-top:6px; font-weight:normal;">ค่าที่กรอก: ${sys}/${dia} มม.ปรอท</div><div style="margin-top:8px;">💡 คำแนะนำ: ${advice}</div>`;
+
+  sendToBackend({
+    type:'bp',
+    name: localStorage.getItem('hbp_name') || '',
+    sys, dia,
+    level: levelPlain
+  });
+}
+
+/* ================= TEST (PRE/POST) ================= */
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function startTest(mode){
+  testMode = mode;
+  currentQIndex = 0;
+  userAnswers = [];
+  testOrder = QUESTIONS.map(q=>{
+    const opts = q.opts.map((text,idx)=>({text, correct: idx===q.correct}));
+    const finalOpts = (mode==='post') ? shuffleArray(opts) : opts;
+    return {q:q.q, opts:finalOpts};
+  });
+  document.getElementById('testTitle').textContent = mode==='pre' ? '📝 แบบทดสอบก่อนเรียน' : '📝 แบบทดสอบหลังเรียน';
+  document.getElementById('testPage').classList.remove('hidden');
+  document.getElementById('testResultPage').classList.add('hidden');
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const total = testOrder.length;
+  const item = testOrder[currentQIndex];
+  document.getElementById('testQNum').textContent = `คำถามที่ ${currentQIndex+1} จาก ${total}`;
+  document.getElementById('testQuestion').textContent = item.q;
+  document.getElementById('testProgress').style.width = ((currentQIndex)/total*100)+'%';
+  const optList = document.getElementById('testOptions');
+  optList.innerHTML='';
+  selectedOptIdx = null;
+  item.opts.forEach((opt,idx)=>{
+    const div = document.createElement('div');
+    div.className='opt-item';
+    div.textContent = opt.text;
+    div.onclick = ()=>selectOption(idx);
+    optList.appendChild(div);
+  });
+  document.getElementById('testNextBtn').disabled = true;
+  document.getElementById('testNextBtn').textContent = (currentQIndex === total-1) ? '✅ ส่งคำตอบ' : 'ถัดไป ➡';
+}
+
+function selectOption(idx){
+  selectedOptIdx = idx;
+  document.querySelectorAll('#testOptions .opt-item').forEach((el,i)=>{
+    el.classList.toggle('selected', i===idx);
+  });
+  document.getElementById('testNextBtn').disabled = false;
+}
+
+function nextTestQuestion(){
+  const item = testOrder[currentQIndex];
+  userAnswers.push(item.opts[selectedOptIdx].correct);
+  if(currentQIndex < testOrder.length-1){
+    currentQIndex++;
+    renderQuestion();
+  } else {
+    finishTest();
+  }
+}
+
+function finishTest(){
+  document.getElementById('testProgress').style.width='100%';
+  const score = userAnswers.filter(a=>a).length;
+  document.getElementById('testPage').classList.add('hidden');
+  document.getElementById('testResultPage').classList.remove('hidden');
+  const studentName = localStorage.getItem('hbp_name') || '';
+  if(testMode==='pre'){
+    localStorage.setItem('hbp_preScore', score);
+    localStorage.setItem('hbp_preDone','true');
+    document.getElementById('testResultEmoji').textContent='🎉';
+    document.getElementById('testResultTitle').textContent='ทำแบบทดสอบก่อนเรียนเสร็จแล้ว!';
+    document.getElementById('testResultText').textContent = `คุณได้คะแนน ${score}/10 — ตอนนี้คุณสามารถเข้าเรียนเนื้อหาส่วนอื่น ๆ ได้แล้ว!`;
+    sendToBackend({type:'pretest', name: studentName, score});
+  } else {
+    localStorage.setItem('hbp_postScore', score);
+    localStorage.setItem('hbp_postDone','true');
+    document.getElementById('testResultEmoji').textContent='🏆';
+    document.getElementById('testResultTitle').textContent='ทำแบบทดสอบหลังเรียนเสร็จแล้ว!';
+    document.getElementById('testResultText').textContent = `คุณได้คะแนน ${score}/10 — ไปดูผลเปรียบเทียบพัฒนาการได้ที่เมนู "ผลคะแนน"`;
+    sendToBackend({type:'posttest', name: studentName, score});
+  }
+  refreshLocks();
+}
+
+/* ================= CONTENT TABS ================= */
+function buildTabs(){
+  const btnWrap = document.getElementById('tabButtons');
+  const paneWrap = document.getElementById('tabPanes');
+  TABS.forEach((t,idx)=>{
+    const btn = document.createElement('div');
+    btn.className='tab-btn'+(idx===0?' active':'');
+    btn.style.background = `linear-gradient(145deg, ${t.color}, ${t.colorD})`;
+    btn.textContent = `${t.icon} ${t.title}`;
+    btn.onclick = ()=>showTab(idx);
+    btn.id = 'tabbtn-'+idx;
+    btnWrap.appendChild(btn);
+
+    const media = SKILL_MEDIA[idx] || {};
+    const act = ACTIVITIES[idx];
+    const pane = document.createElement('div');
+    pane.className='tab-pane'+(idx===0?' active':'');
+    pane.id = 'tabpane-'+idx;
+    pane.innerHTML = `
+      <div class="glass" style="background:linear-gradient(160deg, ${t.color}33, ${t.colorD}22); box-shadow:none;">
+        <div class="tab-icon">${t.icon}</div>
+        <div class="tab-title">${t.title}<br><span style="font-size:0.9rem; font-weight:normal; opacity:0.8;">${t.sub}</span></div>
+        <div class="step">
+          <div class="step-head"><span class="step-num">1</span>🎬 ดูคลิป</div>
+          ${renderVideoSlot(media.video)}
+        </div>
+        <div class="step">
+          <div class="step-head"><span class="step-num">2</span>📖 อ่านสาระสำคัญ</div>
+          <div class="bullet-list">
+            ${t.bullets.map(b=>`<div class="bullet-item"><span class="b-icon">${b.icon}</span><span>${b.text}</span></div>`).join('')}
+          </div>
+          <div class="info-grid">${(media.infographics || []).map(renderInfographicSlot).join('')}</div>
+        </div>
+        <div class="step">
+          <div class="step-head"><span class="step-num">3</span>🎮 ลงมือทำ: ${act.title}</div>
+          <p class="step-hint">${act.hint}</p>
+          <div id="act-${idx}"></div>
+        </div>
+        <div class="step">
+          <div class="step-head"><span class="step-num">4</span>✅ เช็กความเข้าใจ</div>
+          <div id="check-${idx}"></div>
+        </div>
+      </div>`;
+    paneWrap.appendChild(pane);
+    act.render(document.getElementById('act-'+idx));
+    renderCheck(idx);
+  });
+}
+
+function showTab(idx){
+  TABS.forEach((_,i)=>{
+    document.getElementById('tabbtn-'+i).classList.toggle('active', i===idx);
+    document.getElementById('tabpane-'+i).classList.toggle('active', i===idx);
+  });
+}
+
+/* ================= SKILL MEDIA SLOTS ================= */
+function fmt(n){ return Number(n).toLocaleString('en-US'); }
+
+// รับลิงก์ YouTube ได้ทุกรูปแบบ (watch?v=, youtu.be/, shorts/, embed/) แล้วแปลงเป็นลิงก์ฝังวิดีโอ
+function youtubeEmbedUrl(url){
+  if(!url) return '';
+  const m = url.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/)([\w-]{11})/);
+  return m ? `https://www.youtube.com/embed/${m[1]}` : url;
+}
+
+// แปลงลิงก์แชร์ Google Drive ให้แสดงเป็นรูปได้ ลิงก์อื่นใช้ตามเดิม
+function imageUrl(url){
+  if(!url) return '';
+  if(url.includes('drive.google.com')){
+    const m = url.match(/\/d\/([\w-]+)/) || url.match(/[?&]id=([\w-]+)/);
+    if(m) return `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1600`;
+  }
+  return url;
+}
+
+function renderVideoSlot(v){
+  if(!v) return '';
+  const src = youtubeEmbedUrl(v.url);
+  const frameInner = src
+    ? `<iframe src="${src}" title="${v.title}" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`
+    : `<div class="video-placeholder"><span class="vp-icon">🎬</span><p>เร็วๆ นี้<br>รอครูผู้สอนเพิ่มลิงก์วิดีโอ</p></div>`;
+  return `<div class="media-card video-card step-media">
+    <div class="media-card-title">${v.title}</div>
+    <div class="video-frame">${frameInner}</div>
+    ${v.source ? `<div class="media-credit">ที่มา: ${v.source}</div>` : ''}
+  </div>`;
+}
+
+function renderInfographicSlot(info){
+  const src = imageUrl(info.img);
+  const body = src
+    ? `<a href="${src}" target="_blank" rel="noopener"><img class="info-img" src="${src}" alt="${info.title}" loading="lazy"></a>`
+    : `<div class="info-empty"><span class="vp-icon">🖼️</span>เร็วๆ นี้<br>รอครูผู้สอนเพิ่มอินโฟกราฟิก</div>`;
+  return `<div class="media-card">
+    <div class="media-card-title">${info.title}</div>
+    ${body}
+    ${info.source ? `<div class="media-credit">ที่มา: ${info.source}</div>` : ''}
+  </div>`;
+}
+
+function setFeedback(el, kind, html){
+  el.className = 'act-feedback ' + kind;
+  el.innerHTML = html;
+}
+
+// ระดับสีของแถบโซเดียม: เทียบเป็น % แล้วตัดที่ okMax / midMax
+function meterLevel(pct, okMax, midMax){
+  return pct <= okMax ? 'lvl-ok' : (pct <= midMax ? 'lvl-mid' : 'lvl-high');
+}
+
+/* ================= STEP 4: CHECK QUESTION ================= */
+function renderCheck(idx){
+  const c = SKILL_CHECKS[idx];
+  const el = document.getElementById('check-'+idx);
+  el.innerHTML = `<div class="question-box">${c.q}</div>
+    <div class="opt-list">${c.opts.map((o,i)=>`<div class="opt-item" data-i="${i}">${o}</div>`).join('')}</div>
+    <div class="act-feedback"></div>`;
+  const fb = el.querySelector('.act-feedback');
+  let done = false;
+  el.querySelectorAll('.opt-item').forEach(item=>{
+    item.onclick = ()=>{
+      if(done) return;
+      done = true;
+      const i = +item.dataset.i;
+      el.querySelectorAll('.opt-item')[c.correct].classList.add('correct');
+      if(i !== c.correct) item.classList.add('wrong');
+      setFeedback(fb, i===c.correct ? 'ok' : 'bad', `${i===c.correct ? '✅ ถูกต้อง!' : '❌ ยังไม่ถูก'} ${c.why}`);
+    };
+  });
+}
+
+/* ================= STEP 3: ACTIVITIES ================= */
+const ACTIVITIES = [
+  {title:"โซเดียมซ่อนอยู่ที่ไหน?", hint:"👉 แตะการ์ดเครื่องปรุงแต่ละใบ เพื่อดูว่ามีโซเดียมกี่มิลลิกรัม", render:renderSodiumCards},
+  {title:"นักสืบฉลาก", hint:"👉 อ่านฉลากแล้วคำนวณ: โซเดียมต่อหนึ่งหน่วยบริโภค × จำนวนหน่วยบริโภคต่อซอง", render:renderLabelTask},
+  {title:"บทสนทนาเลือกตอบ", hint:"👉 เลือกประโยคที่เหมาะสมที่สุดในแต่ละสถานการณ์", render:renderDialogues},
+  {title:"จริงหรือหลอก?", hint:"👉 อ่านโฆษณาหรือโพสต์ทีละข้อ แล้วตัดสินว่าเชื่อได้หรือหลอก", render:renderTrueFake},
+  {title:"สมุดบันทึกเค็มวันนี้", hint:"👉 กด + ตามเมนูที่กินวันนี้ ระบบจะรวมโซเดียมให้ เทียบกับ 2,000 มก.", render:renderDiary},
+  {title:"เลือกให้ใช่", hint:"👉 ในแต่ละร้าน เลือกทางที่คิดว่าโซเดียมน้อยกว่า", render:renderChoices}
+];
+
+function renderSodiumCards(el){
+  el.innerHTML = `<div class="flip-grid">${SODIUM_CARDS.map(c=>{
+    const pct = Math.round(c.mg/20);
+    return `<div class="flip-card" role="button" tabindex="0">
+      <span class="flip-front"><span class="fc-icon">${c.icon}</span><b>${c.name}</b><small>${c.amount}</small><span class="fc-tap">แตะเพื่อดู 👆</span></span>
+      <span class="flip-back"><b>${c.name} ${c.amount}</b><span class="fc-mg">≈ ${fmt(c.mg)} มก.</span>
+        <span class="meter"><span class="meter-fill ${meterLevel(pct,25,50)}" style="width:${Math.min(100,pct)}%"></span></span>
+        <small>= ${pct}% ของทั้งวัน</small></span>
+    </div>`;
+  }).join('')}</div>
+  <p class="act-note">* ตัวเลขเป็นค่าประมาณ เทียบกับปริมาณที่ควรได้รับไม่เกิน 2,000 มก./วัน</p>`;
+  el.querySelectorAll('.flip-card').forEach(card=>{
+    card.onclick = ()=>card.classList.toggle('open');
+    card.onkeydown = e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); card.classList.toggle('open'); } };
+  });
+}
+
+function renderLabelTask(el){
+  const L = LABEL_TASK;
+  const answer = L.sodium * L.servings;
+  el.innerHTML = `<div class="label-wrap">
+    <div class="nutri-label">
+      <div class="nl-title">ข้อมูลโภชนาการ</div>
+      <div class="nl-product">${L.product}</div>
+      <div class="nl-row"><span>หนึ่งหน่วยบริโภค</span><b>${L.serving}</b></div>
+      <div class="nl-row"><span>จำนวนหน่วยบริโภคต่อซอง</span><b>${L.servings}</b></div>
+      <div class="nl-sub">คุณค่าทางโภชนาการต่อหนึ่งหน่วยบริโภค</div>
+      <div class="nl-row"><span>พลังงานทั้งหมด</span><b>${L.kcal} กิโลแคลอรี</b></div>
+      <div class="nl-row nl-hl"><span>โซเดียม</span><b>${fmt(L.sodium)} มก.</b></div>
+    </div>
+    <div class="label-q">
+      <p>🕵️ ถ้ากิน<b>หมดซอง</b> จะได้โซเดียมกี่มิลลิกรัม?</p>
+      <div class="label-answer">
+        <input type="number" inputmode="numeric" class="act-input" placeholder="พิมพ์ตัวเลข" aria-label="คำตอบ (มิลลิกรัม)">
+        <span>มก.</span>
+        <button type="button" class="btn-green">ตรวจคำตอบ</button>
+      </div>
+      <div class="act-feedback"></div>
+    </div>
+  </div>
+  <div class="step-subhead">📌 แหล่งข้อมูลที่เชื่อถือได้</div>
+  <div class="source-cards">${INFO_SOURCES.map(s=>`<a class="source-card" href="${s.url}" target="_blank" rel="noopener"><span>${s.icon}</span><span><b>${s.name}</b><small>${s.desc}</small></span></a>`).join('')}</div>`;
+  const input = el.querySelector('.act-input');
+  const fb = el.querySelector('.act-feedback');
+  const check = ()=>{
+    const v = Number(input.value);
+    if(input.value === ''){
+      setFeedback(fb, 'info', '✏️ พิมพ์ตัวเลขคำตอบก่อนนะ');
+    } else if(v === answer){
+      setFeedback(fb, 'ok', `✅ ถูกต้อง! ${fmt(L.sodium)} × ${L.servings} = ${fmt(answer)} มก. หรือประมาณ ${Math.round(answer/20)}% ของปริมาณที่ควรได้ทั้งวัน จากบะหมี่ซองเดียว`);
+    } else if(v === L.sodium){
+      setFeedback(fb, 'bad', `🤏 เกือบถูก! ${fmt(L.sodium)} มก. เป็นโซเดียมของ "หนึ่งหน่วยบริโภค" (ครึ่งซอง) เท่านั้น ลองคูณด้วยจำนวนหน่วยบริโภคต่อซองดูนะ`);
+    } else {
+      setFeedback(fb, 'bad', '❌ ยังไม่ถูก ลองดูช่อง "โซเดียม" แล้วคูณด้วย "จำนวนหน่วยบริโภคต่อซอง"');
+    }
+  };
+  el.querySelector('.label-answer button').onclick = check;
+  input.onkeydown = e=>{ if(e.key==='Enter') check(); };
+}
+
+function renderDialogues(el){
+  el.innerHTML = DIALOGUES.map((d,di)=>`<div class="dlg" data-d="${di}">
+    <div class="dlg-say"><span class="dlg-who">${d.icon}</span><div class="dlg-bubble"><b>${d.who}</b>${d.say}</div></div>
+    <div class="opt-list">${d.opts.map((o,oi)=>`<div class="opt-item" data-o="${oi}">🗨️ ${o.t}</div>`).join('')}</div>
+    <div class="act-feedback"></div>
+  </div>`).join('');
+  el.querySelectorAll('.dlg').forEach(block=>{
+    const d = DIALOGUES[block.dataset.d];
+    const fb = block.querySelector('.act-feedback');
+    let done = false;
+    block.querySelectorAll('.opt-item').forEach(item=>{
+      item.onclick = ()=>{
+        if(done) return;
+        const o = d.opts[+item.dataset.o];
+        block.querySelectorAll('.opt-item').forEach(it=>it.classList.remove('wrong'));
+        item.classList.add(o.ok ? 'correct' : 'wrong');
+        setFeedback(fb, o.ok ? 'ok' : 'bad', `${o.ok ? '✅' : '💭 ลองใหม่อีกครั้งนะ'} ${o.fb}`);
+        if(o.ok) done = true;
+      };
+    });
+  });
+}
+
+function renderTrueFake(el){
+  let i = 0, score = 0;
+  const show = ()=>{
+    if(i >= TF_ITEMS.length){
+      el.innerHTML = `<div class="tf-card">🏆 คุณตอบถูก ${score}/${TF_ITEMS.length} ข้อ<br>${score===TF_ITEMS.length ? '🎉 รู้เท่าทันสื่อสุด ๆ!' : 'ทบทวนเหตุผลแล้วลองใหม่ได้นะ'}</div>
+        <div class="tf-btns"><button type="button" class="btn-green">🔄 เล่นอีกครั้ง</button></div>`;
+      el.querySelector('.tf-btns button').onclick = ()=>{ i = 0; score = 0; show(); };
+      return;
+    }
+    const it = TF_ITEMS[i];
+    el.innerHTML = `<div class="tf-count">ข้อที่ ${i+1} จาก ${TF_ITEMS.length}</div>
+      <div class="tf-card">${it.t}</div>
+      <div class="tf-btns"><button type="button" class="btn-green" data-ans="1">✅ เชื่อได้</button><button type="button" data-ans="0">❌ หลอก</button></div>
+      <div class="act-feedback"></div>`;
+    const fb = el.querySelector('.act-feedback');
+    el.querySelectorAll('[data-ans]').forEach(b=>{
+      b.onclick = ()=>{
+        const ok = (b.dataset.ans === '1') === it.real;
+        if(ok) score++;
+        setFeedback(fb, ok ? 'ok' : 'bad', `${ok ? '✅ ถูกต้อง!' : '❌ ยังไม่ถูก'} ${it.real ? 'ข้อนี้เชื่อได้:' : 'ข้อนี้หลอก:'} ${it.why}`);
+        const btns = el.querySelector('.tf-btns');
+        btns.innerHTML = `<button type="button" class="btn-green">${i === TF_ITEMS.length-1 ? '🏁 ดูผลรวม' : 'ข้อต่อไป ➡'}</button>`;
+        btns.querySelector('button').onclick = ()=>{ i++; show(); };
+      };
+    });
+  };
+  show();
+}
+
+function renderDiary(el){
+  const counts = DIARY_FOODS.map(()=>0);
+  el.innerHTML = `<div class="diary-list">${DIARY_FOODS.map((f,i)=>`<div class="diary-row">
+      <span class="d-icon">${f.icon}</span>
+      <span class="d-name">${f.name}<br><span class="d-mg">≈ ${fmt(f.mg)} มก.</span></span>
+      <button type="button" class="btn-gray mini-btn" data-i="${i}" data-step="-1" aria-label="ลด ${f.name}">−</button>
+      <span class="d-count" data-i="${i}">0</span>
+      <button type="button" class="btn-green mini-btn" data-i="${i}" data-step="1" aria-label="เพิ่ม ${f.name}">+</button>
+    </div>`).join('')}</div>
+    <div class="diary-total">
+      <div>รวมโซเดียมวันนี้: <span class="dt-num">0</span> มก. <span class="d-mg">(ไม่ควรเกิน 2,000 มก.)</span></div>
+      <span class="meter"><span class="meter-fill lvl-ok" style="width:0%"></span></span>
+      <div class="dt-msg">เลือกเมนูที่กินวันนี้ได้เลย</div>
+    </div>
+    <p class="act-note">* ตัวเลขเป็นค่าประมาณ ขึ้นกับสูตรและปริมาณเครื่องปรุงของแต่ละร้าน</p>`;
+  const update = ()=>{
+    const total = DIARY_FOODS.reduce((sum,f,i)=>sum + f.mg*counts[i], 0);
+    const pct = total/20;
+    el.querySelector('.dt-num').textContent = fmt(total);
+    const fill = el.querySelector('.meter-fill');
+    fill.style.width = Math.min(100,pct) + '%';
+    fill.className = 'meter-fill ' + meterLevel(pct,70,100);
+    el.querySelector('.dt-msg').textContent =
+      total === 0 ? 'เลือกเมนูที่กินวันนี้ได้เลย'
+      : pct <= 70 ? '🟢 ดีมาก! โซเดียมยังอยู่ในระดับปลอดภัย'
+      : pct <= 100 ? '🟡 ใกล้เต็มโควตาแล้ว มื้อถัดไปเลือกเมนูเค็มน้อยนะ'
+      : `🔴 เกินไป ${fmt(total-2000)} มก. ลองไม่ซดน้ำซุป หรือเลือกเมนูโซเดียมต่ำแทน`;
+  };
+  el.querySelectorAll('.mini-btn').forEach(b=>{
+    b.onclick = ()=>{
+      const i = +b.dataset.i;
+      counts[i] = Math.max(0, counts[i] + Number(b.dataset.step));
+      el.querySelector(`.d-count[data-i="${i}"]`).textContent = counts[i];
+      update();
+    };
+  });
+}
+
+function renderChoices(el){
+  el.innerHTML = CHOICES.map((c,ci)=>`<div class="choice-block" data-c="${ci}">
+    <div class="choice-place">${c.place}</div>
+    <div class="opt-list">${c.opts.map((o,oi)=>`<div class="opt-item" data-o="${oi}">${o.t}<span class="mg-tag"></span></div>`).join('')}</div>
+    <div class="act-feedback"></div>
+  </div>`).join('');
+  el.querySelectorAll('.choice-block').forEach(block=>{
+    const c = CHOICES[block.dataset.c];
+    const best = c.opts[0].mg <= c.opts[1].mg ? 0 : 1;
+    const fb = block.querySelector('.act-feedback');
+    let done = false;
+    block.querySelectorAll('.opt-item').forEach(item=>{
+      item.onclick = ()=>{
+        if(done) return;
+        done = true;
+        const oi = +item.dataset.o;
+        block.querySelectorAll('.opt-item').forEach((it,k)=>{
+          it.querySelector('.mg-tag').textContent = `≈ ${fmt(c.opts[k].mg)} มก.`;
+          if(k === best) it.classList.add('correct');
+        });
+        if(oi !== best) item.classList.add('wrong');
+        const diff = Math.abs(c.opts[0].mg - c.opts[1].mg);
+        setFeedback(fb, oi===best ? 'ok' : 'bad',
+          `${oi===best ? '✅ เลือกได้ดี!' : '❌ อีกทางเลือกโซเดียมน้อยกว่า'} สองทางเลือกนี้ต่างกันประมาณ ${fmt(diff)} มก.`);
+      };
+    });
+  });
+}
+
+/* ================= GAME ================= */
+function buildFoodPool(){
+  resetGame();
+}
+
+function resetGame(){
+  gamePlaced = {};
+  selectedChip = null;
+  const pool = document.getElementById('foodPool');
+  const binLow = document.getElementById('binLow');
+  const binHigh = document.getElementById('binHigh');
+  pool.innerHTML='';
+  binLow.querySelectorAll('.food-chip').forEach(el=>el.remove());
+  binHigh.querySelectorAll('.food-chip').forEach(el=>el.remove());
+  document.getElementById('gameResult').textContent='';
+
+  const shuffled = shuffleArray(FOODS);
+  shuffled.forEach((f,i)=>{
+    const chip = document.createElement('div');
+    chip.className='food-chip';
+    chip.textContent = `${f.icon} ${f.name}`;
+    chip.draggable = true;
+    chip.dataset.idx = i;
+    chip.dataset.type = f.type;
+    chip.id = 'food-'+i;
+    chip.ondragstart = (e)=>{ draggedFood = chip; e.dataTransfer.setData('text', chip.id); };
+    chip.onclick = ()=> selectChip(chip);
+    pool.appendChild(chip);
+  });
+}
+
+function selectChip(chip){
+  if(selectedChip) selectedChip.classList.remove('selected-chip');
+  if(selectedChip === chip){ selectedChip=null; return; }
+  selectedChip = chip;
+  chip.classList.add('selected-chip');
+}
+
+function allowDrop(e){ e.preventDefault(); }
+
+function dropFood(e, binType){
+  e.preventDefault();
+  const id = e.dataTransfer.getData('text');
+  const chip = document.getElementById(id);
+  if(chip) placeFood(chip, binType);
+}
+
+function clickBin(binType){
+  if(selectedChip){
+    placeFood(selectedChip, binType);
+    selectedChip = null;
+  }
+}
+
+function placeFood(chip, binType){
+  chip.classList.remove('selected-chip');
+  const bin = document.getElementById(binType==='low' ? 'binLow' : 'binHigh');
+  bin.appendChild(chip);
+  chip.draggable=false;
+  chip.onclick=null;
+  gamePlaced[chip.id] = binType;
+  if(chip.dataset.type === binType){
+    chip.style.outline='3px solid var(--green-d)';
+  } else {
+    chip.style.outline='3px solid var(--red-d)';
+  }
+  checkGameDone();
+}
+
+function checkGameDone(){
+  const total = FOODS.length;
+  const placedCount = Object.keys(gamePlaced).length;
+  if(placedCount === total){
+    let correct = 0;
+    document.querySelectorAll('.food-chip').forEach(chip=>{
+      const placedType = gamePlaced[chip.id];
+      if(placedType === chip.dataset.type) correct++;
+    });
+    document.getElementById('gameResult').innerHTML = `🎯 คุณจัดกลุ่มถูกต้อง ${correct}/${total} รายการ! ${correct===total ? '🎉 เก่งมาก!' : 'ลองดูรายการที่ผิดแล้วลองใหม่ได้นะ'}`;
+  }
+}
+
+/* ================= MEDIA LIBRARY ================= */
+function buildMedia(){
+  const grid = document.getElementById('infographicGrid');
+  grid.innerHTML = MEDIA_INFOGRAPHICS.map(item=>{
+    const legendHtml = item.legend ? `<div class="media-legend">${item.legend.map(l=>`<span><span class="legend-dot" style="background:${l.color}"></span>${l.text}</span>`).join('')}</div>` : '';
+    return `<div class="media-card">
+      <div class="media-card-title">${item.title}</div>
+      ${item.svg || item.html || ''}
+      ${legendHtml}
+      <div class="media-card-caption">${item.caption}</div>
+    </div>`;
+  }).join('');
+
+  const videoGrid = document.getElementById('videoGrid');
+  videoGrid.innerHTML = MEDIA_VIDEOS.map(v=>{
+    const frameInner = v.embedUrl
+      ? `<iframe src="${v.embedUrl}" allowfullscreen loading="lazy"></iframe>`
+      : `<div class="video-placeholder"><span class="vp-icon">🎬</span><p>ยังไม่มีวีดีโอแนบ<br>รอครูผู้สอนเพิ่มลิงก์</p></div>`;
+    return `<div class="media-card video-card">
+      <div class="media-card-title">${v.title}</div>
+      <div class="video-frame">${frameInner}</div>
+      <div class="media-card-caption">${v.desc}</div>
+    </div>`;
+  }).join('');
+}
+
+function showMediaTab(idx){
+  [0,1].forEach(i=>{
+    document.getElementById('mediatab-'+i).classList.toggle('active', i===idx);
+    document.getElementById('mediapane-'+i).classList.toggle('active', i===idx);
+  });
+}
+
+/* ================= SCORE PAGE ================= */
+function showScore(){
+  const pre = localStorage.getItem('hbp_preScore');
+  const post = localStorage.getItem('hbp_postScore');
+  document.getElementById('scorePre').textContent = (pre!==null ? pre : '-') + '/10';
+  document.getElementById('scorePost').textContent = (post!==null ? post : '-') + '/10';
+
+  const badge = document.getElementById('qualityBadge');
+  const msg = document.getElementById('scoreMsg');
+  const diffEl = document.getElementById('scoreDiff');
+
+  if(post===null){
+    diffEl.textContent='-';
+    badge.style.display='none';
+    msg.textContent='กรุณาทำแบบทดสอบหลังเรียนก่อน เพื่อดูผลพัฒนาการของคุณ';
+    return;
+  }
+  badge.style.display='inline-block';
+  const diff = Number(post) - Number(pre||0);
+  diffEl.textContent = (diff>=0?'+':'') + diff;
+
+  const p = Number(post);
+  let level, color;
+  if(p>=9){ level='ดีมาก 🌟'; color='var(--green-d)'; }
+  else if(p>=7){ level='ดี 👍'; color='var(--teal-d)'; }
+  else if(p>=5){ level='ปานกลาง 🙂'; color='var(--orange-d)'; }
+  else { level='ควรปรับปรุง 💪'; color='var(--red-d)'; }
+  badge.textContent = 'ระดับคุณภาพ: ' + level;
+  badge.style.background = color;
+
+  if(diff>0){
+    msg.textContent = `👏 ยินดีด้วย! คะแนนของคุณพัฒนาขึ้น ${diff} คะแนน แสดงว่าคุณมีความรอบรู้ด้านสุขภาพเพิ่มขึ้นมาก`;
+  } else if(diff===0){
+    msg.textContent = `คะแนนคงเดิม ลองทบทวนเนื้อหาอีกครั้งเพื่อเพิ่มความเข้าใจนะครับ`;
+  } else {
+    msg.textContent = `คะแนนลดลง ${Math.abs(diff)} คะแนน ลองกลับไปทบทวนเนื้อหาความรู้อีกครั้งนะครับ`;
+  }
+}
+</script>
+</body>
+</html>
