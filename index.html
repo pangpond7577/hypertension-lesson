@@ -565,18 +565,25 @@ footer{
 }
 .tf-btns{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:16px; }
 
-/* กิจกรรม 5: บันทึกเค็ม */
-.diary-list{ display:flex; flex-direction:column; gap:8px; }
-.diary-row{ display:flex; align-items:center; gap:10px; background:var(--card-solid); border-radius:16px; padding:8px 12px; box-shadow:var(--shadow-sm); }
-.d-icon{ font-size:1.6rem; }
-.d-name{ flex:1; line-height:1.4; }
-.d-mg{ color:var(--ink-soft); font-size:0.95rem; }
-.d-count{ min-width:26px; text-align:center; font-weight:700; font-size:1.1rem; }
-.mini-btn{ width:44px; min-height:44px; padding:0; font-size:1.3rem; line-height:1; flex-shrink:0; }
-.diary-total{ margin-top:14px; background:var(--card-solid); border-radius:var(--radius-sm); padding:14px 16px; box-shadow:var(--shadow-sm); }
-.diary-total .meter{ height:20px; margin:10px 0; }
-.dt-num{ font-size:1.4rem; font-weight:700; }
-.dt-msg{ font-weight:600; }
+/* กิจกรรม 5: Checkเค็ม (LINE OA) */
+.line-card{
+  display:flex; gap:16px; align-items:center; flex-wrap:wrap;
+  background:var(--card-solid); border-radius:var(--radius-sm); padding:18px 20px; box-shadow:var(--shadow-sm);
+}
+.line-card-icon{ font-size:2.6rem; line-height:1; filter:drop-shadow(0 4px 6px rgba(40,90,140,0.25)); }
+.line-card-body{ flex:1 1 220px; }
+.line-card-body b{ display:block; font-size:1.1rem; color:var(--green-text); }
+.line-steps{ margin:6px 0 0; padding-left:1.3em; }
+.btn-line{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  min-height:50px; padding:12px 26px; border-radius:999px;
+  font-weight:700; color:#fff; text-decoration:none; text-shadow:0 1px 2px rgba(0,0,0,0.25);
+  background:linear-gradient(180deg, #2BD15F 0%, #06A73B 100%);
+  box-shadow:var(--btn-hi), var(--btn-lo), 0 6px 14px rgba(6,167,59,0.3);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn-line:hover{ transform:translateY(-2px); }
+.btn-line:active{ transform:translateY(2px); box-shadow:inset 0 3px 6px rgba(0,0,0,0.2); }
 
 /* กิจกรรม 6: เลือกให้ใช่ */
 .choice-block{ margin-bottom:20px; }
@@ -635,9 +642,7 @@ footer{
   .label-answer .act-input{ flex:1; min-width:0; }
   .label-answer button{ width:100%; }
   .tf-btns button{ flex:1; }
-  .diary-row{ gap:6px; padding:8px; }
-  .d-icon{ font-size:1.3rem; }
-  .mini-btn{ width:42px; min-height:42px; }
+  .btn-line{ width:100%; }
   .mg-tag{ float:none; display:block; margin:4px 0 0; }
 
   /* คะแนน: 3 ช่องในแถวเดียว */
@@ -1158,19 +1163,6 @@ const TF_ITEMS = [
    why:"ห้ามหยุดยาเอง ต้องปรึกษาแพทย์ก่อนเสมอ"}
 ];
 
-const DIARY_FOODS = [
-  {name:"ก๋วยเตี๋ยวน้ำ (ซดน้ำหมด)", icon:"🍜", mg:1600},
-  {name:"บะหมี่กึ่งสำเร็จรูป 1 ซอง", icon:"🍜", mg:1500},
-  {name:"ส้มตำปูปลาร้า 1 จาน", icon:"🥗", mg:1700},
-  {name:"ข้าวผัดกะเพราหมู", icon:"🍛", mg:1100},
-  {name:"โจ๊กหมู 1 ชาม", icon:"🥣", mg:1000},
-  {name:"ไข่เจียว 1 ฟอง", icon:"🍳", mg:350},
-  {name:"ไส้กรอก 1 ชิ้น", icon:"🌭", mg:350},
-  {name:"ไข่ต้ม 1 ฟอง", icon:"🥚", mg:70},
-  {name:"นมจืด 1 กล่อง", icon:"🥛", mg:110},
-  {name:"ผลไม้สด 1 จาน", icon:"🍉", mg:5}
-];
-
 const CHOICES = [
   {place:"🍜 ร้านก๋วยเตี๋ยว", opts:[
     {t:"ซดน้ำซุปจนหมดชาม", mg:1600},
@@ -1562,7 +1554,7 @@ const ACTIVITIES = [
   {title:"นักสืบฉลาก", hint:"👉 อ่านฉลากแล้วคำนวณ: โซเดียมต่อหนึ่งหน่วยบริโภค × จำนวนหน่วยบริโภคต่อซอง", render:renderLabelTask},
   {title:"บทสนทนาเลือกตอบ", hint:"👉 เลือกประโยคที่เหมาะสมที่สุดในแต่ละสถานการณ์", render:renderDialogues},
   {title:"จริงหรือหลอก?", hint:"👉 อ่านโฆษณาหรือโพสต์ทีละข้อ แล้วตัดสินว่าเชื่อได้หรือหลอก", render:renderTrueFake},
-  {title:"สมุดบันทึกเค็มวันนี้", hint:"👉 กด + ตามเมนูที่กินวันนี้ ระบบจะรวมโซเดียมให้ เทียบกับ 2,000 มก.", render:renderDiary},
+  {title:"Checkเค็ม ใน LINE OA", hint:"👉 ถ่ายรูปอาหารที่กินวันนี้ แล้วส่งให้ Checkเค็ม ทาง LINE", render:renderCheckKhem},
   {title:"เลือกให้ใช่", hint:"👉 ในแต่ละร้าน เลือกทางที่คิดว่าโซเดียมน้อยกว่า", render:renderChoices}
 ];
 
@@ -1678,42 +1670,21 @@ function renderTrueFake(el){
   show();
 }
 
-function renderDiary(el){
-  const counts = DIARY_FOODS.map(()=>0);
-  el.innerHTML = `<div class="diary-list">${DIARY_FOODS.map((f,i)=>`<div class="diary-row">
-      <span class="d-icon">${f.icon}</span>
-      <span class="d-name">${f.name}<br><span class="d-mg">≈ ${fmt(f.mg)} มก.</span></span>
-      <button type="button" class="btn-gray mini-btn" data-i="${i}" data-step="-1" aria-label="ลด ${f.name}">−</button>
-      <span class="d-count" data-i="${i}">0</span>
-      <button type="button" class="btn-green mini-btn" data-i="${i}" data-step="1" aria-label="เพิ่ม ${f.name}">+</button>
-    </div>`).join('')}</div>
-    <div class="diary-total">
-      <div>รวมโซเดียมวันนี้: <span class="dt-num">0</span> มก. <span class="d-mg">(ไม่ควรเกิน 2,000 มก.)</span></div>
-      <span class="meter"><span class="meter-fill lvl-ok" style="width:0%"></span></span>
-      <div class="dt-msg">เลือกเมนูที่กินวันนี้ได้เลย</div>
+const CHECK_KHEM_URL = "https://lin.ee/ZrjXDmU";
+
+function renderCheckKhem(el){
+  el.innerHTML = `<div class="line-card">
+    <span class="line-card-icon">📸</span>
+    <div class="line-card-body">
+      <b>Checkเค็ม: ส่งรูปอาหาร เช็กความเค็ม</b>
+      <ol class="line-steps">
+        <li>กดปุ่มด้านล่างเพื่อเพิ่มเพื่อน LINE OA</li>
+        <li>ถ่ายรูปอาหารที่กินในแต่ละมื้อ</li>
+        <li>ส่งรูปในแชต Checkเค็ม</li>
+      </ol>
     </div>
-    <p class="act-note">* ตัวเลขเป็นค่าประมาณ ขึ้นกับสูตรและปริมาณเครื่องปรุงของแต่ละร้าน</p>`;
-  const update = ()=>{
-    const total = DIARY_FOODS.reduce((sum,f,i)=>sum + f.mg*counts[i], 0);
-    const pct = total/20;
-    el.querySelector('.dt-num').textContent = fmt(total);
-    const fill = el.querySelector('.meter-fill');
-    fill.style.width = Math.min(100,pct) + '%';
-    fill.className = 'meter-fill ' + meterLevel(pct,70,100);
-    el.querySelector('.dt-msg').textContent =
-      total === 0 ? 'เลือกเมนูที่กินวันนี้ได้เลย'
-      : pct <= 70 ? '🟢 ดีมาก! โซเดียมยังอยู่ในระดับปลอดภัย'
-      : pct <= 100 ? '🟡 ใกล้เต็มโควตาแล้ว มื้อถัดไปเลือกเมนูเค็มน้อยนะ'
-      : `🔴 เกินไป ${fmt(total-2000)} มก. ลองไม่ซดน้ำซุป หรือเลือกเมนูโซเดียมต่ำแทน`;
-  };
-  el.querySelectorAll('.mini-btn').forEach(b=>{
-    b.onclick = ()=>{
-      const i = +b.dataset.i;
-      counts[i] = Math.max(0, counts[i] + Number(b.dataset.step));
-      el.querySelector(`.d-count[data-i="${i}"]`).textContent = counts[i];
-      update();
-    };
-  });
+    <a class="btn-line" href="${CHECK_KHEM_URL}" target="_blank" rel="noopener">💬 เปิด Checkเค็ม ใน LINE</a>
+  </div>`;
 }
 
 function renderChoices(el){
