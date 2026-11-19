@@ -590,6 +590,110 @@ footer{
 .choice-place{ font-weight:700; font-size:1.1rem; margin-bottom:8px; }
 .mg-tag{ float:right; margin-left:10px; font-weight:700; color:var(--red-d); }
 
+/* ---------- แผน 8 สัปดาห์ ---------- */
+.plan-banner{
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap; cursor:pointer;
+  background:linear-gradient(135deg, #E3F7E8 0%, #FFF5CC 100%) !important;
+}
+.plan-banner .pb-icon{ font-size:2.6rem; line-height:1; filter:drop-shadow(0 4px 6px rgba(40,90,140,0.25)); }
+.plan-banner .pb-text{ flex:1 1 200px; color:var(--ink-soft); }
+.plan-banner .pb-text b{ display:block; font-size:1.2rem; color:var(--green-text); }
+.week-card{ background:var(--card-solid); border-radius:var(--radius-sm); padding:16px 18px; box-shadow:var(--shadow-sm); margin-bottom:16px; }
+.week-head{ display:flex; gap:14px; align-items:center; margin-bottom:12px; }
+.week-num{
+  flex-shrink:0; min-width:78px; text-align:center; padding:6px 8px; border-radius:16px;
+  color:#fff; font-size:0.95rem; line-height:1.25; text-shadow:0 1px 2px rgba(0,0,0,0.25);
+  background:linear-gradient(180deg, var(--green) 0%, var(--green-d) 100%); box-shadow:var(--btn-hi);
+}
+.week-num b{ display:block; font-size:1.5rem; }
+.week-title{ font-weight:700; font-size:1.1rem; color:var(--green-text); line-height:1.4; }
+.week-meta{ color:var(--ink-soft); font-size:0.95rem; }
+.week-items{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:10px; }
+.week-item{
+  display:flex; align-items:center; gap:10px; width:100%; text-align:left;
+  min-height:54px; padding:10px 14px; border-radius:16px; font-weight:600;
+  color:var(--ink); text-shadow:none; background:var(--soft); border:2px solid var(--line); box-shadow:none;
+}
+.week-item:hover{ background:var(--yellow-soft); filter:none; box-shadow:var(--shadow-sm); }
+.week-item:active{ box-shadow:none; }
+.week-item.done{ background:var(--green-soft); border-color:#9ED9AE; }
+.wi-icon{ font-size:1.4rem; }
+.wi-label{ flex:1; line-height:1.4; }
+.wi-status{ font-size:1.1rem; color:var(--ink-soft); }
+
+/* เครื่องมือ: เช็กลิสต์ / ประเมินความเสี่ยง / ฟอร์ม */
+.check-list{ display:flex; flex-direction:column; gap:10px; }
+.check-item{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap; cursor:pointer;
+  background:var(--card-solid); border:2px solid var(--line); border-radius:16px; padding:12px 14px;
+  transition:background-color .15s ease, border-color .15s ease;
+}
+.check-item input[type=checkbox]{ width:26px; height:26px; accent-color:var(--green); flex-shrink:0; cursor:pointer; }
+.check-item .ci-text{ flex:1 1 180px; line-height:1.45; }
+.check-item.checked{ background:var(--green-soft); border-color:#9ED9AE; }
+.ci-auto{ font-size:0.95rem; color:var(--ink-soft); font-weight:400; }
+.tool-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+.mini-action{ min-height:42px; padding:8px 16px; font-size:0.95rem; }
+.goal-summary{ background:var(--yellow-soft); border-radius:var(--radius-sm); padding:14px 16px; margin-bottom:16px; box-shadow:var(--shadow-sm); line-height:1.6; }
+.form-row{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+.form-row > label{ font-weight:600; }
+.form-row .act-input{ width:100%; max-width:260px; text-align:left; }
+.act-select{
+  font-family:inherit; font-size:1rem; width:100%; padding:12px; color:var(--ink);
+  background:var(--soft); border:2px solid var(--line); border-radius:14px;
+}
+.act-textarea{
+  font-family:inherit; font-size:1rem; width:100%; min-height:96px; padding:12px; resize:vertical; color:var(--ink);
+  background:var(--soft); border:2px solid var(--line); border-radius:14px;
+}
+.act-select:focus, .act-textarea:focus{ outline:none; border-color:var(--sky); box-shadow:0 0 0 4px var(--sky-soft); }
+.tool-total{ margin-top:16px; background:var(--card-solid); border-radius:var(--radius-sm); padding:14px 16px; box-shadow:var(--shadow-sm); }
+.tool-total .meter{ height:20px; margin:10px 0; }
+.tt-num{ font-size:1.4rem; font-weight:700; }
+.d-mg{ color:var(--ink-soft); font-size:0.95rem; }
+.dt-msg, .risk-msg{ font-weight:600; }
+
+/* ค้นให้เจอ / แบบทดสอบท้ายบท / จัดเมนู */
+.find-card{ background:var(--card-solid); border-radius:var(--radius-sm); padding:14px 16px; box-shadow:var(--shadow-sm); margin-bottom:12px; }
+.find-q{ font-weight:700; margin-bottom:10px; line-height:1.5; }
+.find-btns{ display:flex; gap:8px; flex-wrap:wrap; }
+.find-reveal{ display:none; margin-top:10px; padding:10px 14px; border-radius:14px; background:var(--sky-soft); line-height:1.55; }
+.find-reveal + .find-reveal{ background:var(--green-soft); }
+.find-reveal.show{ display:block; animation:pop .35s ease; }
+.find-reveal .mini-action{ margin-top:6px; }
+.quiz-q{ margin-bottom:22px; }
+.meal-row{ background:var(--card-solid); border-radius:16px; padding:12px 14px; box-shadow:var(--shadow-sm); margin-bottom:10px; }
+.meal-name{ font-weight:700; margin-bottom:6px; }
+.meal-tip{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:8px; color:var(--ink-soft); }
+.meal-tip:empty{ display:none; }
+.summary-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:10px; margin-bottom:16px; }
+.summary-card{ background:var(--card-solid); border-radius:16px; padding:12px; text-align:center; box-shadow:var(--shadow-sm); }
+.summary-card small{ display:block; color:var(--ink-soft); font-size:0.95rem; line-height:1.4; }
+.summary-card b{ font-size:1.3rem; color:var(--green-text); }
+
+/* เปรียบเทียบฉลาก 3 ยี่ห้อ */
+.compare-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(190px,1fr)); gap:12px; }
+.compare-card{
+  cursor:pointer; background:#fff; color:#111; border:2px solid #111; border-radius:10px; padding:10px 12px;
+  transition:transform .15s ease;
+}
+.compare-card:hover{ transform:translateY(-3px); }
+.compare-card:focus-visible{ outline:3px solid var(--sky); outline-offset:3px; }
+.compare-card.correct{ background:var(--green-soft); border-color:var(--green); }
+.compare-card.wrong{ background:var(--red-soft); border-color:var(--red-line); }
+.cc-name{ font-weight:700; border-bottom:4px solid #111; padding-bottom:2px; margin-bottom:4px; }
+.cc-total{ margin-top:6px; font-weight:700; color:var(--red-d); }
+.cc-total:empty{ display:none; }
+
+/* คลังสื่อ: ค้นหา + ป้ายทักษะ */
+.media-search{ width:100%; text-align:left; margin-bottom:14px; }
+.lib-item{ display:contents; }
+.media-tag{
+  align-self:center; display:inline-block; padding:2px 12px; border-radius:999px;
+  font-size:0.95rem; color:var(--sky); background:var(--sky-soft);
+}
+.media-empty{ display:none; color:var(--ink-soft); text-align:center; padding:16px; }
+
 /* ---------- Mobile (LINE in-app browser) ---------- */
 @media (max-width:600px){
   html{font-size:17px;}
@@ -643,6 +747,10 @@ footer{
   .label-answer button{ width:100%; }
   .tf-btns button{ flex:1; }
   .btn-line{ width:100%; }
+  .plan-banner > button{ width:100%; }
+  .week-card{ padding:14px 12px; }
+  .week-num{ min-width:64px; }
+  .tool-actions > .btn-green{ width:100%; }
   .mg-tag{ float:none; display:block; margin:4px 0 0; }
 
   /* คะแนน: 3 ช่องในแถวเดียว */
@@ -726,6 +834,14 @@ footer{
 
   <!-- ===== DASHBOARD / MENU ===== -->
   <div id="dashboardPage">
+    <div class="glass plan-banner" role="button" tabindex="0" onclick="goSection('plan')" onkeydown="if(event.key==='Enter')goSection('plan')">
+      <span class="pb-icon">🗓️</span>
+      <div class="pb-text">
+        <b>แผนการเรียนรู้ 8 สัปดาห์</b>
+        ดูว่าแต่ละสัปดาห์ต้องทำอะไรบ้างในเว็บแอป
+      </div>
+      <button type="button" class="btn-green">เปิดแผน ➡</button>
+    </div>
     <div class="glass">
       <div class="tab-title" style="text-align:left;">📋 เมนูบทเรียน</div>
       <div class="menu-grid">
@@ -824,17 +940,39 @@ footer{
     <button class="btn-gray back-btn" onclick="goDashboard()">⬅ กลับสู่เมนู</button>
     <div class="glass shine">
       <div class="tab-title" style="text-align:left;">🖼️ คลังสื่อความรู้</div>
+      <input type="search" id="mediaSearch" class="act-input media-search" placeholder="🔎 ค้นหาสื่อ เช่น ฉลาก โซเดียม น้ำปลา" aria-label="ค้นหาสื่อ" oninput="filterMedia(this.value)">
       <div class="tab-btns">
         <div class="tab-btn active" id="mediatab-0" style="background:linear-gradient(145deg,var(--purple),var(--purple-d));" onclick="showMediaTab(0)">🖼️ อินโฟกราฟิก</div>
         <div class="tab-btn" id="mediatab-1" style="background:linear-gradient(145deg,var(--teal),var(--teal-d));" onclick="showMediaTab(1)">🎬 วีดีโอ</div>
       </div>
       <div class="tab-pane active" id="mediapane-0">
         <div class="media-grid" id="infographicGrid"></div>
+        <p class="media-empty" id="infographicEmpty">ไม่พบอินโฟกราฟิกที่ตรงกับคำค้น</p>
       </div>
       <div class="tab-pane" id="mediapane-1">
-        <p style="font-size:0.9rem; color:#6a5a3a;">📌 ยังไม่มีวีดีโอแนบ — ครูผู้สอนสามารถเพิ่มลิงก์ YouTube ได้ในตัวแปร <code>MEDIA_VIDEOS</code> ของโค้ด</p>
         <div class="media-grid" id="videoGrid"></div>
+        <p class="media-empty" id="videoEmpty">ไม่พบวีดีโอที่ตรงกับคำค้น</p>
       </div>
+    </div>
+  </div>
+
+  <!-- ===== 8-WEEK PLAN PAGE ===== -->
+  <div class="section-page hidden" id="planPage">
+    <button class="btn-gray back-btn" onclick="goDashboard()">⬅ กลับสู่เมนู</button>
+    <div class="glass">
+      <div class="tab-title" style="text-align:left;">🗓️ แผนการเรียนรู้ 8 สัปดาห์</div>
+      <p class="step-hint">แตะรายการในแต่ละสัปดาห์เพื่อเริ่มทำ รายการที่ทำแล้วจะมีเครื่องหมาย ✅</p>
+      <div id="planWeeks"></div>
+    </div>
+  </div>
+
+  <!-- ===== TOOL PAGE (เครื่องมือในแผน 8 สัปดาห์) ===== -->
+  <div class="section-page hidden" id="toolPage">
+    <button class="btn-gray back-btn" onclick="goSection('plan')">⬅ กลับสู่แผน 8 สัปดาห์</button>
+    <div class="glass">
+      <div class="tab-title" style="text-align:left;" id="toolTitle"></div>
+      <p class="step-hint" id="toolHint"></p>
+      <div id="toolBody"></div>
     </div>
   </div>
 
@@ -1147,6 +1285,16 @@ const DIALOGUES = [
     {t:"เติมเลยแม่ อร่อยดี", ok:false, fb:"ทั้งบ้านจะได้โซเดียมเพิ่ม ลองชวนแม่ลดเค็มด้วยกันดีกว่า"},
     {t:"ลองชิมก่อนไหมแม่ ถ้ายังจืด ใส่พริกไทยกับผักหอมแทนก็อร่อยนะ", ok:true, fb:"เยี่ยม! ชวนด้วยท่าทีดี และเสนอทางเลือกที่ทำได้จริง"},
     {t:"แม่ทำเค็มตลอด ไม่กินแล้ว", ok:false, fb:"การตำหนิอาจทำให้เสียความรู้สึก ชวนกันลดเค็มด้วยท่าทีดีจะได้ผลกว่า"}
+  ]},
+  {icon:"🎉", who:"เพื่อนในงานเลี้ยง", say:"มา ๆ ซีฟู้ดจิ้มน้ำจิ้มร้านนี้เด็ดมาก ราดเยอะ ๆ เลย!", opts:[
+    {t:"จัดเต็มเลย ราดให้ชุ่ม", ok:false, fb:"น้ำจิ้มซีฟู้ดมีโซเดียมสูง ราดเยอะอาจได้โซเดียมเกินครึ่งวันในมื้อเดียว"},
+    {t:"ขอบใจนะ ขอตักน้ำจิ้มแยกไว้นิดเดียว แล้วกินกับผักเยอะ ๆ", ok:true, fb:"เยี่ยม! ปฏิเสธอย่างสุภาพ ยังสนุกกับงานได้ และคุมโซเดียมได้"},
+    {t:"ไม่กินอะไรเลยทั้งงาน", ok:false, fb:"ไม่จำเป็นต้องงดทั้งหมด เลือกเมนูและลดปริมาณน้ำจิ้มก็พอ"}
+  ]},
+  {icon:"🧑‍🍳", who:"พ่อครัวร้านอาหารตามสั่ง", say:"ผัดกะเพราหมูสับนะครับ รับไข่ดาวด้วยไหม?", opts:[
+    {t:"เอาไข่ดาว แล้วขอน้ำปลาพริกถ้วยใหญ่ด้วย", ok:false, fb:"น้ำปลาพริกเพิ่มโซเดียมมาก ลองขอปรุงน้อยแทน"},
+    {t:"เอาไข่ดาวครับ ขอปรุงน้อย ไม่ใส่ผงชูรส และไม่เอาน้ำปลาพริก", ok:true, fb:"ดีมาก! บอกครบทั้งการปรุงและเครื่องจิ้ม ร้านทำตามได้ง่าย"},
+    {t:"(ไม่พูดอะไร)", ok:false, fb:"ถ้าไม่บอก ร้านมักปรุงตามปกติซึ่งค่อนข้างเค็ม"}
   ]}
 ];
 
@@ -1160,7 +1308,13 @@ const TF_ITEMS = [
   {t:"🛒 สินค้าที่มีสัญลักษณ์ \"ทางเลือกสุขภาพ\" ผ่านเกณฑ์ปริมาณน้ำตาล ไขมัน และโซเดียมที่กำหนด", real:true,
    why:"สัญลักษณ์ทางเลือกสุขภาพเป็นตราที่หน่วยงานรัฐรับรอง ใช้ช่วยเลือกซื้อได้"},
   {t:"💊 \"ดื่มน้ำมะนาวทุกเช้า แล้วหยุดกินยาลดความดันได้เลย\"", real:false,
-   why:"ห้ามหยุดยาเอง ต้องปรึกษาแพทย์ก่อนเสมอ"}
+   why:"ห้ามหยุดยาเอง ต้องปรึกษาแพทย์ก่อนเสมอ"},
+  {t:"💧 \"ดื่มน้ำเยอะ ๆ ช่วยล้างโซเดียมออก กินเค็มแค่ไหนก็ไม่เป็นไร\"", real:false,
+   why:"การดื่มน้ำไม่ได้ลบล้างผลของการกินเค็มเป็นประจำ ต้องลดเค็มที่อาหาร"},
+  {t:"🧂 ฉลากซอสเขียนว่า \"โซเดียมน้อยกว่าสูตรปกติ 40%\" และมีตัวเลขโซเดียมให้เทียบได้", real:true,
+   why:"เป็นการเปรียบเทียบที่ตรวจสอบได้จากฉลาก แต่ยังต้องใช้ในปริมาณน้อยเหมือนเดิม"},
+  {t:"📱 คลิปรีวิว: \"แคปซูลสมุนไพรนี้ดูดซับเกลือในร่างกาย กินเค็มได้ตามใจ\"", real:false,
+   why:"ไม่มีหลักฐานทางการแพทย์รองรับ และชวนให้กินเค็มต่อ ซึ่งเป็นสัญญาณของโฆษณาหลอก"}
 ];
 
 const CHOICES = [
@@ -1173,6 +1327,125 @@ const CHOICES = [
   {place:"🥗 ร้านส้มตำ", opts:[
     {t:"ส้มตำปูปลาร้า", mg:1700},
     {t:"ส้มตำไทย สั่ง \"ไม่ใส่ปลาร้า เค็มน้อย\"", mg:900}]}
+];
+
+/* ================= แผน 8 สัปดาห์: ข้อมูลเครื่องมือ =================
+   ⚠️ ปริมาณโซเดียมในเมนูเป็นค่าประมาณเพื่อการเรียนรู้ ควรตรวจสอบกับแหล่งอ้างอิงก่อนใช้สอนจริง */
+
+// ลิงก์แบบสอบถามสัปดาห์ที่ 8 (เช่น Google Form) — เว้นว่างไว้ = ขึ้นว่า "เร็วๆ นี้"
+const FORM_LINKS = {
+  tam: "",       // แบบสอบถามการยอมรับเทคโนโลยี (TAM) 12 ข้อ
+  feedback: ""   // แบบสอบถามข้อเสนอแนะ/ปัญหา/อุปสรรค ปลายเปิด 4 ข้อ
+};
+
+const START_CHECKLIST = [
+  {k:"login", t:"เข้าสู่ระบบเว็บแอปพลิเคชัน mHealth", auto:()=>!!localStorage.getItem('hbp_name')},
+  {k:"pretest", t:"ทำแบบทดสอบก่อนเรียน", auto:()=>localStorage.getItem('hbp_preDone')==='true'},
+  {k:"line", t:"เพิ่มเพื่อน LINE OA Checkเค็ม", line:true},
+  {k:"photo", t:"ส่งรูปอาหารรูปแรกให้ Checkเค็ม"}
+];
+
+const RISK_ITEMS = [
+  "เติมน้ำปลา ซีอิ๊ว หรือเกลือ ก่อนชิมอาหาร",
+  "ซดน้ำซุปหรือน้ำแกงจนหมดชาม",
+  "กินบะหมี่กึ่งสำเร็จรูป โจ๊กคัพ หรืออาหารสำเร็จรูป มากกว่า 2 ครั้งต่อสัปดาห์",
+  "กินอาหารแปรรูป เช่น ไส้กรอก หมูยอ ลูกชิ้น เป็นประจำ",
+  "กินอาหารหมักดอง เช่น ปลาร้า ผักดอง ปลาเค็ม เป็นประจำ",
+  "กินขนมขบเคี้ยวรสเค็ม เช่น มันฝรั่งทอด สาหร่ายปรุงรส",
+  "จิ้มน้ำจิ้มหรือน้ำปลาพริกเพิ่มแทบทุกมื้อ",
+  "ใช้ผงปรุงรส ซุปก้อน หรือผงชูรส เวลาทำอาหาร",
+  "กินอาหารนอกบ้านหรือร้านอาหารตามสั่ง มากกว่าวันละ 1 มื้อ",
+  "ไม่ค่อยอ่านฉลากโภชนาการก่อนซื้ออาหาร"
+];
+
+const FIND_QUESTIONS = [
+  {q:"คนไทยควรกินโซเดียมไม่เกินวันละกี่มิลลิกรัม?", where:"ทักษะความรู้ความเข้าใจ", skill:0,
+   a:"ไม่เกิน 2,000 มิลลิกรัมต่อวัน (เท่ากับเกลือประมาณ 1 ช้อนชา)"},
+  {q:"น้ำปลา 1 ช้อนโต๊ะ มีโซเดียมประมาณเท่าไร?", where:"ทักษะความรู้ความเข้าใจ → การ์ด \"โซเดียมซ่อนอยู่ที่ไหน?\"", skill:0,
+   a:"ประมาณ 1,350 มิลลิกรัม หรือเกินครึ่งหนึ่งของที่ควรได้ทั้งวัน"},
+  {q:"บนฉลาก ต้องดูอะไรบ้าง เพื่อคำนวณโซเดียมทั้งซอง?", where:"ทักษะการเข้าถึงข้อมูล → นักสืบฉลาก", skill:1,
+   a:"โซเดียมต่อหนึ่งหน่วยบริโภค × จำนวนหน่วยบริโภคต่อซอง"},
+  {q:"สัญลักษณ์ \"ทางเลือกสุขภาพ\" บอกอะไรเรา?", where:"ทักษะการเข้าถึงข้อมูล → อินโฟกราฟิก", skill:1,
+   a:"ผลิตภัณฑ์ผ่านเกณฑ์ปริมาณน้ำตาล ไขมัน และโซเดียมที่เหมาะสม เมื่อเทียบในกลุ่มเดียวกัน"},
+  {q:"ถ้าต้องการปรึกษาข้อมูลสุขภาพทางโทรศัพท์ โทรสายด่วนหมายเลขใด?", where:"ทักษะการเข้าถึงข้อมูล → แหล่งข้อมูลที่เชื่อถือได้", skill:1,
+   a:"สายด่วน 1422 ของกรมควบคุมโรค"},
+  {q:"คำโฆษณาแบบใดที่ควรสงสัยว่าเกินจริง?", where:"ทักษะการรู้เท่าทันสื่อ → จริงหรือหลอก?", skill:3,
+   a:"อ้างว่า \"หายขาด\" \"เห็นผลใน 7 วัน\" หรือ \"ไม่ต้องกินยา\""},
+  {q:"สั่งอาหารตามสั่งอย่างไรให้เค็มน้อย? บอกมา 2 วิธี", where:"ทักษะการสื่อสาร → อินโฟกราฟิก \"ร้านตามสั่ง สั่งอย่างไรให้เค็มน้อย\"", skill:2,
+   a:"เช่น ขอปรุงน้อย, ไม่ใส่ผงชูรส, ขอตักแห้ง ๆ, ไม่เอาน้ำจิ้ม/น้ำปลาพริก"}
+];
+
+const QUIZ_WEEK2 = [
+  {q:"ฉลากระบุ โซเดียม 300 มก. ต่อหนึ่งหน่วยบริโภค และมี 4 หน่วยบริโภคต่อห่อ ถ้ากินหมดห่อจะได้โซเดียมเท่าไร?",
+   opts:["300 มก.","600 มก.","1,200 มก.","2,000 มก."], correct:2},
+  {q:"แหล่งข้อมูลใดน่าเชื่อถือที่สุด เรื่องการกินอาหารลดเค็ม?",
+   opts:["โพสต์ที่แชร์ต่อกันในไลน์กลุ่ม","เว็บไซต์กรมอนามัย กระทรวงสาธารณสุข","รีวิวสินค้าจากผู้ขาย","คลิปขายอาหารเสริม"], correct:1},
+  {q:"สัญลักษณ์ \"ทางเลือกสุขภาพ\" บนฉลากหมายถึงอะไร?",
+   opts:["อาหารที่รักษาโรคได้","ผ่านเกณฑ์น้ำตาล ไขมัน โซเดียมที่เหมาะสม เมื่อเทียบในกลุ่มเดียวกัน","อาหารออร์แกนิก","อาหารราคาประหยัด"], correct:1},
+  {q:"ข้อใดเป็นสัญญาณของโฆษณาเกินจริง?",
+   opts:["มีเลขสารบบอาหาร (เลข อย.)","บอกส่วนประกอบครบถ้วน","อ้างว่ารักษาหายขาดใน 7 วัน ไม่ต้องกินยา","แนะนำให้ปรึกษาแพทย์"], correct:2},
+  {q:"เปรียบเทียบบะหมี่ 2 ยี่ห้อ ควรดูอะไรเพื่อเลือกยี่ห้อที่โซเดียมต่ำกว่า?",
+   opts:["สีของซอง","ราคา","โซเดียมทั้งซอง (ต่อหน่วยบริโภค × จำนวนหน่วยบริโภค)","พลังงาน (กิโลแคลอรี) อย่างเดียว"], correct:2},
+  {q:"ก่อนแชร์ข่าวสุขภาพต่อ ควรทำอย่างไร?",
+   opts:["แชร์ทันทีถ้าดูมีประโยชน์","ตรวจแหล่งที่มา และเทียบกับหน่วยงานที่น่าเชื่อถือ","เชื่อถ้ามีคนแชร์เยอะ","เชื่อถ้ามีรูปแพทย์ประกอบ"], correct:1},
+  {q:"ประโยคใดเหมาะที่สุดเมื่อสั่งอาหารเพื่อลดเค็ม?",
+   opts:["ขอรสจัด ๆ","ขอปรุงน้อย ไม่ใส่ผงชูรส","ขอน้ำปลาพริกเพิ่ม","ไม่ต้องบอกอะไร"], correct:1},
+  {q:"การส่งรูปอาหารให้ Checkเค็ม ใน LINE OA มีประโยชน์อย่างไร?",
+   opts:["ช่วยประเมินปริมาณโซเดียมในอาหารที่กิน","ใช้แทนการพบแพทย์","ใช้สั่งอาหารเดลิเวอรี","ไม่มีประโยชน์"], correct:0}
+];
+
+const LABEL_COMPARE = [
+  {name:"บะหมี่ ยี่ห้อ ก", serving:"1/2 ซอง", servings:2, sodium:700},
+  {name:"บะหมี่ ยี่ห้อ ข", serving:"1 ซอง", servings:1, sodium:1100},
+  {name:"บะหมี่ ยี่ห้อ ค", serving:"1/3 ซอง", servings:3, sodium:450}
+];
+
+// เมนู 1 วัน: swap = id ของเมนูทดแทนที่โซเดียมต่ำกว่า (อยู่ในมื้อเดียวกัน)
+const MENU_MEALS = [
+  {meal:"🌅 มื้อเช้า", opts:[
+    {id:"b1", t:"โจ๊กหมูใส่ไข่", mg:1000, swap:"b2"},
+    {id:"b2", t:"ข้าวต้มปลา ไม่เติมน้ำปลา", mg:600},
+    {id:"b3", t:"ข้าวเหนียวหมูทอด", mg:900, swap:"b4"},
+    {id:"b4", t:"ข้าวเหนียวไก่ย่าง ไม่จิ้มแจ่ว", mg:600},
+    {id:"b5", t:"ข้าวไข่เจียว", mg:650, swap:"b6"},
+    {id:"b6", t:"ข้าวไข่ต้ม + ผักลวก", mg:250},
+    {id:"b7", t:"ขนมปังโฮลวีต + ไข่ต้ม + นมจืด", mg:350}
+  ]},
+  {meal:"☀️ มื้อกลางวัน", opts:[
+    {id:"l1", t:"ก๋วยเตี๋ยวน้ำ ซดน้ำซุปหมด", mg:1600, swap:"l2"},
+    {id:"l2", t:"ก๋วยเตี๋ยวน้ำ เหลือน้ำซุปครึ่งชาม", mg:900},
+    {id:"l3", t:"ข้าวผัดกะเพราหมู + ไข่ดาว", mg:1300, swap:"l4"},
+    {id:"l4", t:"ข้าวผัดกะเพราหมู สั่ง \"ปรุงน้อย\"", mg:800},
+    {id:"l5", t:"ส้มตำปูปลาร้า + ข้าวเหนียว", mg:1700, swap:"l6"},
+    {id:"l6", t:"ส้มตำไทย เค็มน้อย + ข้าวเหนียว", mg:900},
+    {id:"l7", t:"ข้าวกล้อง + แกงจืดเต้าหู้ + ผัดผัก", mg:800}
+  ]},
+  {meal:"🌙 มื้อเย็น", opts:[
+    {id:"d1", t:"บะหมี่กึ่งสำเร็จรูป 1 ซอง", mg:1500, swap:"d2"},
+    {id:"d2", t:"บะหมี่กึ่งสำเร็จรูป ใส่เครื่องปรุงครึ่งซอง + ผัก", mg:800},
+    {id:"d3", t:"ต้มยำกุ้ง + ข้าว", mg:1400, swap:"d4"},
+    {id:"d4", t:"ต้มยำกุ้ง ซดน้ำแกงครึ่งถ้วย + ข้าว", mg:800},
+    {id:"d5", t:"แกงเขียวหวาน + ข้าว", mg:1100, swap:"d6"},
+    {id:"d6", t:"ปลานึ่งมะนาว + ข้าว", mg:700},
+    {id:"d7", t:"ไก่ย่าง + ผักสด + ข้าว", mg:550}
+  ]},
+  {meal:"🍪 ของว่าง", opts:[
+    {id:"s0", t:"ไม่มีของว่าง", mg:0},
+    {id:"s1", t:"ไส้กรอก 2 ไม้", mg:700, swap:"s2"},
+    {id:"s2", t:"ไข่ต้ม 1 ฟอง", mg:70},
+    {id:"s3", t:"มันฝรั่งทอด 1 ห่อเล็ก", mg:250, swap:"s4"},
+    {id:"s4", t:"ผลไม้สด 1 จาน", mg:5},
+    {id:"s5", t:"นมจืด 1 กล่อง", mg:110}
+  ]}
+];
+
+const GOAL_STRATEGIES = [
+  "ไม่ซดน้ำซุปหรือน้ำแกงจนหมด",
+  "ชิมก่อนปรุงทุกครั้ง",
+  "บอกร้านว่า \"ปรุงน้อย / ไม่ใส่ผงชูรส\"",
+  "ลดอาหารแปรรูปและอาหารสำเร็จรูป",
+  "อ่านฉลากก่อนซื้อ",
+  "ใช้สมุนไพร มะนาว พริก แทนเครื่องปรุง"
 ];
 
 /* ================= BACKEND (Google Sheets) =================
@@ -1240,6 +1513,7 @@ function logout(){
   localStorage.removeItem('hbp_postScore');
   localStorage.removeItem('hbp_preDone');
   localStorage.removeItem('hbp_postDone');
+  ['hbp_checklist','hbp_risk','hbp_quiz2','hbp_goal','hbp_reflect'].forEach(k=>localStorage.removeItem(k));
   document.getElementById('studentName').value='';
   document.getElementById('mainApp').classList.add('hidden');
   document.getElementById('loginScreen').classList.remove('hidden');
@@ -1270,7 +1544,8 @@ function refreshLocks(){
 
 function goSection(section){
   const preDone = localStorage.getItem('hbp_preDone') === 'true';
-  if(section !== 'pretest' && !preDone){
+  // แผน 8 สัปดาห์เปิดได้ก่อนทำแบบทดสอบ เพราะสัปดาห์ที่ 1 เริ่มจากแบบทดสอบก่อนเรียน
+  if(section !== 'pretest' && section !== 'plan' && !preDone){
     alert('🔒 กรุณาทำแบบทดสอบก่อนเรียนให้เสร็จก่อนนะครับ');
     return;
   }
@@ -1283,6 +1558,20 @@ function goSection(section){
   else if(section==='game'){ document.getElementById('gamePage').classList.remove('hidden'); }
   else if(section==='score'){ showScore(); document.getElementById('scorePage').classList.remove('hidden'); }
   else if(section==='media'){ document.getElementById('mediaPage').classList.remove('hidden'); }
+  else if(section==='plan'){ renderPlan(); document.getElementById('planPage').classList.remove('hidden'); scrollToPage('planPage'); }
+}
+
+function scrollToPage(id){
+  const el = document.getElementById(id);
+  window.scrollTo({top: Math.max(0, el.getBoundingClientRect().top + window.scrollY - 12)});
+}
+
+// เปิดเนื้อหาความรู้ที่แท็บทักษะที่กำหนด (0–5 ตามลำดับ TABS)
+function openSkill(idx){
+  if(localStorage.getItem('hbp_preDone') !== 'true'){ goSection('content'); return; }
+  goSection('content');
+  showTab(idx);
+  scrollToPage('contentPage');
 }
 
 /* ================= BP CHECKER ================= */
@@ -1446,7 +1735,7 @@ function buildTabs(){
           <div class="bullet-list">
             ${t.bullets.map(b=>`<div class="bullet-item"><span class="b-icon">${b.icon}</span><span>${b.text}</span></div>`).join('')}
           </div>
-          <div class="info-grid">${(media.infographics || []).map(renderInfographicSlot).join('')}</div>
+          <div class="info-grid">${(media.infographics || []).map(info=>renderInfographicSlot(info)).join('')}</div>
         </div>
         <div class="step">
           <div class="step-head"><span class="step-num">3</span>🎮 ลงมือทำ: ${act.title}</div>
@@ -1491,7 +1780,8 @@ function imageUrl(url){
   return url;
 }
 
-function renderVideoSlot(v){
+// tag = ชื่อทักษะที่แสดงเป็นป้ายเล็ก (ใช้ในคลังสื่อ)
+function renderVideoSlot(v, tag){
   if(!v) return '';
   const src = youtubeEmbedUrl(v.url);
   const frameInner = src
@@ -1499,19 +1789,21 @@ function renderVideoSlot(v){
     : `<div class="video-placeholder"><span class="vp-icon">🎬</span><p>เร็วๆ นี้<br>รอครูผู้สอนเพิ่มลิงก์วิดีโอ</p></div>`;
   return `<div class="media-card video-card step-media">
     <div class="media-card-title">${v.title}</div>
+    ${tag ? `<span class="media-tag">${tag}</span>` : ''}
     <div class="video-frame">${frameInner}</div>
     ${v.source ? `<div class="media-credit">ที่มา: ${v.source}</div>` : ''}
   </div>`;
 }
 
 // img ใส่ได้ทั้งลิงก์เดียว หรือหลายรูปเป็น array เช่น ["a.jpg","b.jpg"]
-function renderInfographicSlot(info){
+function renderInfographicSlot(info, tag){
   const srcs = [].concat(info.img || []).map(imageUrl).filter(Boolean);
   const body = srcs.length
     ? `<div class="info-gallery">${srcs.map((src,i)=>`<a href="${src}" target="_blank" rel="noopener"><img class="info-img" src="${src}" alt="${info.title}${srcs.length>1 ? ` (ภาพที่ ${i+1})` : ''}" loading="lazy"></a>`).join('')}</div>`
     : `<div class="info-empty"><span class="vp-icon">🖼️</span>เร็วๆ นี้<br>รอครูผู้สอนเพิ่มอินโฟกราฟิก</div>`;
   return `<div class="media-card">
     <div class="media-card-title">${info.title}</div>
+    ${tag ? `<span class="media-tag">${tag}</span>` : ''}
     ${body}
     ${info.source ? `<div class="media-credit">ที่มา: ${info.source}</div>` : ''}
   </div>`;
@@ -1551,7 +1843,7 @@ function renderCheck(idx){
 /* ================= STEP 3: ACTIVITIES ================= */
 const ACTIVITIES = [
   {title:"โซเดียมซ่อนอยู่ที่ไหน?", hint:"👉 แตะการ์ดเครื่องปรุงแต่ละใบ เพื่อดูว่ามีโซเดียมกี่มิลลิกรัม", render:renderSodiumCards},
-  {title:"นักสืบฉลาก", hint:"👉 อ่านฉลากแล้วคำนวณ: โซเดียมต่อหนึ่งหน่วยบริโภค × จำนวนหน่วยบริโภคต่อซอง", render:renderLabelTask},
+  {title:"นักสืบฉลาก", hint:"👉 อ่านฉลากแล้วคำนวณ: โซเดียมต่อหนึ่งหน่วยบริโภค × จำนวนหน่วยบริโภคต่อซอง จากนั้นเปรียบเทียบ 3 ยี่ห้อ", render:renderLabelTask},
   {title:"บทสนทนาเลือกตอบ", hint:"👉 เลือกประโยคที่เหมาะสมที่สุดในแต่ละสถานการณ์", render:renderDialogues},
   {title:"จริงหรือหลอก?", hint:"👉 อ่านโฆษณาหรือโพสต์ทีละข้อ แล้วตัดสินว่าเชื่อได้หรือหลอก", render:renderTrueFake},
   {title:"Checkเค็ม ใน LINE OA", hint:"👉 ถ่ายรูปอาหารที่กินวันนี้ แล้วส่งให้ Checkเค็ม ทาง LINE", render:renderCheckKhem},
@@ -1598,6 +1890,8 @@ function renderLabelTask(el){
       <div class="act-feedback"></div>
     </div>
   </div>
+  <div class="step-subhead">⚖️ อ่านให้เป็น เลือกให้ถูก: ยี่ห้อไหนโซเดียมทั้งซองน้อยที่สุด?</div>
+  <div class="label-compare"></div>
   <div class="step-subhead">📌 แหล่งข้อมูลที่เชื่อถือได้</div>
   <div class="source-cards">${INFO_SOURCES.map(s=>`<a class="source-card" href="${s.url}" target="_blank" rel="noopener"><span>${s.icon}</span><span><b>${s.name}</b><small>${s.desc}</small></span></a>`).join('')}</div>`;
   const input = el.querySelector('.act-input');
@@ -1616,6 +1910,41 @@ function renderLabelTask(el){
   };
   el.querySelector('.label-answer button').onclick = check;
   input.onkeydown = e=>{ if(e.key==='Enter') check(); };
+  renderLabelCompare(el.querySelector('.label-compare'));
+}
+
+// เปรียบเทียบฉลาก: ยี่ห้อที่โซเดียมต่อหน่วยบริโภคน้อย อาจไม่ได้น้อยที่สุดเมื่อกินทั้งซอง
+function renderLabelCompare(box){
+  const totals = LABEL_COMPARE.map(p=>p.sodium * p.servings);
+  const best = totals.indexOf(Math.min(...totals));
+  box.innerHTML = `<div class="compare-grid">${LABEL_COMPARE.map((p,i)=>`<div class="compare-card" role="button" tabindex="0" data-i="${i}">
+      <div class="cc-name">${p.name}</div>
+      <div class="nl-row"><span>หนึ่งหน่วยบริโภค</span><b>${p.serving}</b></div>
+      <div class="nl-row"><span>จำนวนหน่วยบริโภคต่อซอง</span><b>${p.servings}</b></div>
+      <div class="nl-row nl-hl"><span>โซเดียม</span><b>${fmt(p.sodium)} มก.</b></div>
+      <div class="cc-total"></div>
+    </div>`).join('')}</div>
+    <div class="act-feedback"></div>
+    <p class="act-note">* ฉลากตัวอย่างเพื่อการเรียนรู้</p>`;
+  const fb = box.querySelector('.act-feedback');
+  let done = false;
+  box.querySelectorAll('.compare-card').forEach(card=>{
+    const pick = ()=>{
+      if(done) return;
+      done = true;
+      const i = +card.dataset.i;
+      box.querySelectorAll('.compare-card').forEach((c,k)=>{
+        c.querySelector('.cc-total').textContent = `ทั้งซอง = ${fmt(LABEL_COMPARE[k].sodium)} × ${LABEL_COMPARE[k].servings} = ${fmt(totals[k])} มก.`;
+        if(k === best) c.classList.add('correct');
+      });
+      if(i !== best) card.classList.add('wrong');
+      setFeedback(fb, i===best ? 'ok' : 'bad', i===best
+        ? `✅ ถูกต้อง! ${LABEL_COMPARE[best].name} มีโซเดียมทั้งซองน้อยที่สุด (${fmt(totals[best])} มก.) แม้ตัวเลขต่อหน่วยบริโภคจะดูมากกว่ายี่ห้ออื่น`
+        : `❌ ${LABEL_COMPARE[i].name} ดูโซเดียมน้อยเมื่อดูต่อหน่วยบริโภค แต่ทั้งซองได้ ${fmt(totals[i])} มก. ต้องคูณจำนวนหน่วยบริโภคต่อซองทุกครั้ง`);
+    };
+    card.onclick = pick;
+    card.onkeydown = e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); pick(); } };
+  });
 }
 
 function renderDialogues(el){
@@ -1716,6 +2045,380 @@ function renderChoices(el){
   });
 }
 
+/* ================= แผน 8 สัปดาห์ ================= */
+function loadJSON(key){ try{ return JSON.parse(localStorage.getItem(key)); }catch(e){ return null; } }
+function saveJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
+function studentName(){ return localStorage.getItem('hbp_name') || ''; }
+function openLink(url){ window.open(url, '_blank', 'noopener'); }
+function openForm(key){
+  if(FORM_LINKS[key]) openLink(FORM_LINKS[key]);
+  else alert('📋 แบบสอบถามนี้จะเปิดให้ทำในการพบหน้าครั้งที่ 4 (สัปดาห์ที่ 8)');
+}
+
+function checklistDone(){
+  const saved = loadJSON('hbp_checklist') || {};
+  return START_CHECKLIST.every(c=>c.auto ? c.auto() : saved[c.k]);
+}
+
+// done = ฟังก์ชันตรวจว่าทำรายการนั้นแล้ว (แสดง ✅ ในแผน)
+const PLAN_WEEKS = [
+  {week:"1", title:"รู้ทันความดัน รู้ทันการกิน", skill:"ความรู้ความเข้าใจ", mode:"พบหน้าครั้งที่ 1", items:[
+    {icon:"📝", label:"แบบทดสอบก่อนเรียน", go:()=>goSection('pretest'), done:()=>localStorage.getItem('hbp_preDone')==='true'},
+    {icon:"✅", label:"เช็กลิสต์เริ่มต้นใช้งาน", go:()=>openTool('checklist'), done:checklistDone},
+    {icon:"🧂", label:"ประเมินความเสี่ยงของฉัน", go:()=>openTool('risk'), done:()=>!!loadJSON('hbp_risk')},
+    {icon:"🧠", label:"ทักษะความรู้ความเข้าใจ", go:()=>openSkill(0)}
+  ]},
+  {week:"2", title:"ค้นเป็น เห็นข้อมูล เลือกดูให้มั่นใจ", skill:"การเข้าถึงข้อมูล · การสื่อสาร · การรู้เท่าทันสื่อ", mode:"พบหน้าครั้งที่ 2", items:[
+    {icon:"🔍", label:"ทักษะการเข้าถึงข้อมูล (อ่านฉลาก)", go:()=>openSkill(1)},
+    {icon:"🔎", label:"กิจกรรม \"ค้นให้เจอ\"", go:()=>openTool('findit')},
+    {icon:"🖼️", label:"คลังสื่อความรู้ (ค้นหาได้)", go:()=>goSection('media')},
+    {icon:"📺", label:"ทักษะการรู้เท่าทันสื่อ", go:()=>openSkill(3)},
+    {icon:"🗣️", label:"ทักษะการสื่อสาร", go:()=>openSkill(2)},
+    {icon:"📸", label:"ส่งรูปอาหารให้ Checkเค็ม", go:()=>openLink(CHECK_KHEM_URL)},
+    {icon:"📝", label:"แบบทดสอบท้ายบทเรียน", go:()=>openTool('quiz2'), done:()=>!!loadJSON('hbp_quiz2')}
+  ]},
+  {week:"3", title:"ฝึกต่อด้วยตนเอง", skill:"ทบทวนทักษะสัปดาห์ที่ 1–2", mode:"เรียนรู้ด้วยตนเองผ่านเว็บแอป", items:[
+    {icon:"📸", label:"ส่งรูปอาหารให้ Checkเค็ม ทุกมื้อ", go:()=>openLink(CHECK_KHEM_URL)},
+    {icon:"🎮", label:"เกมจัดกลุ่มอาหารเค็ม-ไม่เค็ม", go:()=>goSection('game')},
+    {icon:"🧭", label:"ทบทวนตามปัญหาที่พบ", go:()=>openTool('review')}
+  ]},
+  {week:"4", title:"เลือกให้เป็น เน้นเป้าหมาย กินได้ในชีวิตจริง", skill:"การตัดสินใจ", mode:"พบหน้าครั้งที่ 3", items:[
+    {icon:"✅", label:"ทักษะการตัดสินใจ", go:()=>openSkill(5)},
+    {icon:"🍱", label:"จัดเมนู 1 วัน ลดโซเดียม", go:()=>openTool('menu')},
+    {icon:"🎭", label:"สถานการณ์จำลอง (งานเลี้ยง ร้านตามสั่ง)", go:()=>openSkill(2)},
+    {icon:"🎯", label:"ตั้งเป้าหมายของฉัน", go:()=>openTool('goal'), done:()=>!!loadJSON('hbp_goal')}
+  ]},
+  {week:"5–7", title:"จดทุกมื้อ รู้ทุกคำ ปรับพฤติกรรมตนเอง", skill:"การจัดการตนเอง", mode:"ติดตามด้วยตนเอง สัปดาห์ละประมาณ 1 ชั่วโมง", items:[
+    {icon:"📸", label:"บันทึกอาหารทุกมื้อผ่าน Checkเค็ม", go:()=>openLink(CHECK_KHEM_URL)},
+    {icon:"🎯", label:"ดูเป้าหมายของฉัน", go:()=>openTool('goal')},
+    {icon:"📝", label:"ทักษะการจัดการตนเอง", go:()=>openSkill(4)},
+    {icon:"🧭", label:"ทบทวนตามปัญหาที่พบ", go:()=>openTool('review')}
+  ]},
+  {week:"8", title:"ทบทวน ชวนทำต่อ กินดีชีวีมีสุข", skill:"บูรณาการทั้ง 6 ทักษะ", mode:"พบหน้าครั้งที่ 4", items:[
+    {icon:"📝", label:"แบบทดสอบหลังเรียน", go:()=>goSection('posttest'), done:()=>localStorage.getItem('hbp_postDone')==='true'},
+    {icon:"📊", label:"ผลคะแนน & พัฒนาการ", go:()=>goSection('score')},
+    {icon:"💭", label:"ฉันเปลี่ยนไปอย่างไร", go:()=>openTool('reflect'), done:()=>!!loadJSON('hbp_reflect')},
+    {icon:"📋", label:"แบบสอบถามการยอมรับเทคโนโลยี", go:()=>openForm('tam')},
+    {icon:"💬", label:"แบบสอบถามข้อเสนอแนะ", go:()=>openForm('feedback')}
+  ]}
+];
+
+function renderPlan(){
+  const el = document.getElementById('planWeeks');
+  el.innerHTML = PLAN_WEEKS.map((w,wi)=>`<div class="week-card">
+    <div class="week-head">
+      <span class="week-num">สัปดาห์ที่<b>${w.week}</b></span>
+      <div><div class="week-title">${w.title}</div><div class="week-meta">${w.skill} · ${w.mode}</div></div>
+    </div>
+    <div class="week-items">${w.items.map((it,ii)=>{
+      const done = it.done && it.done();
+      return `<button type="button" class="week-item${done ? ' done' : ''}" data-w="${wi}" data-i="${ii}">
+        <span class="wi-icon">${it.icon}</span><span class="wi-label">${it.label}</span><span class="wi-status">${done ? '✅' : '›'}</span>
+      </button>`;
+    }).join('')}</div>
+  </div>`).join('');
+  el.querySelectorAll('.week-item').forEach(b=>{
+    b.onclick = ()=>PLAN_WEEKS[b.dataset.w].items[b.dataset.i].go();
+  });
+}
+
+const TOOLS = {
+  checklist:{title:"✅ เช็กลิสต์เริ่มต้นใช้งาน", hint:"ทำให้ครบทุกข้อ แล้วกดบันทึก ข้อที่ระบบตรวจให้จะติ๊กเอง", render:renderChecklist},
+  risk:{title:"🧂 ประเมินความเสี่ยงของฉัน", hint:"ติ๊กข้อที่ตรงกับการกินของคุณในช่วง 1 เดือนที่ผ่านมา", render:renderRisk},
+  findit:{title:"🔎 ค้นให้เจอ", hint:"ช่วยกันหาคำตอบจากเว็บแอป ติดตรงไหนกด \"คำใบ้\" แล้วค่อยกด \"เฉลย\"", render:renderFindIt},
+  quiz2:{title:"📝 แบบทดสอบท้ายบทเรียน สัปดาห์ที่ 2", hint:"ตอบให้ครบทุกข้อ แล้วกดส่งคำตอบ", render:renderQuiz2},
+  review:{title:"🧭 ทบทวนตามปัญหาที่พบ", hint:"เลือกเรื่องที่ยังทำได้ยาก ระบบจะพาไปยังเนื้อหาที่เกี่ยวข้อง", render:renderReview},
+  menu:{title:"🍱 จัดเมนู 1 วัน ลดโซเดียม", hint:"เลือกเมนูที่มักกินในแต่ละมื้อ ระบบจะรวมโซเดียมและแนะนำเมนูทดแทน", render:renderMenuPlanner},
+  goal:{title:"🎯 เป้าหมายของฉัน", hint:"ใช้ค่าโซเดียมเฉลี่ยของคุณจาก Checkเค็ม เป็นจุดเริ่มต้น แล้วตั้งเป้าหมายใน 1–2 สัปดาห์", render:renderGoal},
+  reflect:{title:"💭 ฉันเปลี่ยนไปอย่างไร", hint:"ดูผลของตัวเองตลอดโปรแกรม แล้วเขียนสะท้อนสั้น ๆ", render:renderReflect}
+};
+
+function openTool(key){
+  const tool = TOOLS[key];
+  document.querySelectorAll('.section-page').forEach(el=>el.classList.add('hidden'));
+  document.getElementById('dashboardPage').classList.add('hidden');
+  document.getElementById('toolTitle').textContent = tool.title;
+  document.getElementById('toolHint').textContent = tool.hint;
+  tool.render(document.getElementById('toolBody'));
+  document.getElementById('toolPage').classList.remove('hidden');
+  scrollToPage('toolPage');
+}
+
+function renderChecklist(el){
+  const saved = loadJSON('hbp_checklist') || {};
+  el.innerHTML = `<div class="check-list">${START_CHECKLIST.map(c=>{
+    const auto = !!c.auto, checked = auto ? c.auto() : !!saved[c.k];
+    return `<label class="check-item${checked ? ' checked' : ''}">
+      <input type="checkbox" data-k="${c.k}" ${checked ? 'checked' : ''} ${auto ? 'disabled' : ''}>
+      <span class="ci-text">${c.t}${auto ? '<br><span class="ci-auto">ระบบตรวจให้อัตโนมัติ</span>' : ''}</span>
+      ${c.line ? '<button type="button" class="btn-line mini-action" data-line="1">💬 เปิด LINE</button>' : ''}
+    </label>`;
+  }).join('')}</div>
+  <div class="tool-actions"><button type="button" class="btn-green" data-save="1">💾 บันทึก</button></div>
+  <div class="act-feedback"></div>`;
+  el.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+    cb.onchange = ()=>cb.closest('.check-item').classList.toggle('checked', cb.checked);
+  });
+  el.querySelector('[data-line]').onclick = e=>{ e.preventDefault(); openLink(CHECK_KHEM_URL); };
+  el.querySelector('[data-save]').onclick = ()=>{
+    const state = {};
+    el.querySelectorAll('input[type=checkbox]:not([disabled])').forEach(cb=>{ state[cb.dataset.k] = cb.checked; });
+    saveJSON('hbp_checklist', state);
+    const done = START_CHECKLIST.filter(c=>c.auto ? c.auto() : state[c.k]).length;
+    sendToBackend({type:'checklist', name:studentName(), done:`${done}/${START_CHECKLIST.length}`});
+    setFeedback(el.querySelector('.act-feedback'), done===START_CHECKLIST.length ? 'ok' : 'info',
+      done===START_CHECKLIST.length ? '🎉 ครบทุกข้อแล้ว พร้อมเรียนรู้ตลอด 8 สัปดาห์!' : `บันทึกแล้ว ทำไปแล้ว ${done}/${START_CHECKLIST.length} ข้อ`);
+  };
+}
+
+function riskLevel(score){
+  if(score <= 2) return {name:"ความเสี่ยงต่ำ", cls:"lvl-ok", advice:"ดีมาก! รักษาพฤติกรรมนี้ไว้ และอ่านฉลากก่อนซื้อเสมอ"};
+  if(score <= 5) return {name:"ความเสี่ยงปานกลาง", cls:"lvl-mid", advice:"เริ่มลดทีละข้อ เช่น ไม่ซดน้ำซุปจนหมด และชิมก่อนปรุง"};
+  return {name:"ความเสี่ยงสูง", cls:"lvl-high", advice:"ควรเริ่มปรับพฤติกรรมตั้งแต่สัปดาห์นี้ และส่งรูปอาหารให้ Checkเค็ม ช่วยติดตาม"};
+}
+
+function renderRisk(el){
+  const prev = loadJSON('hbp_risk');
+  el.innerHTML = `${prev ? `<div class="goal-summary">ผลล่าสุด: <b>${prev.latest.score}/${RISK_ITEMS.length} ข้อ</b> (${prev.latest.level})${prev.first.score !== prev.latest.score ? ` · ครั้งแรก ${prev.first.score}/${RISK_ITEMS.length} ข้อ` : ''}</div>` : ''}
+    <div class="check-list">${RISK_ITEMS.map((t,i)=>`<label class="check-item"><input type="checkbox" data-i="${i}"><span class="ci-text">${t}</span></label>`).join('')}</div>
+    <div class="tool-actions"><button type="button" class="btn-green" data-save="1">📊 ดูผลการประเมิน</button></div>
+    <div class="tool-total hidden">
+      <div>ตรงกับคุณ <span class="tt-num"></span> จาก ${RISK_ITEMS.length} ข้อ</div>
+      <span class="meter"><span class="meter-fill"></span></span>
+      <div class="risk-msg"></div>
+    </div>`;
+  el.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+    cb.onchange = ()=>cb.closest('.check-item').classList.toggle('checked', cb.checked);
+  });
+  el.querySelector('[data-save]').onclick = ()=>{
+    const score = el.querySelectorAll('input[type=checkbox]:checked').length;
+    const lv = riskLevel(score);
+    const box = el.querySelector('.tool-total');
+    box.classList.remove('hidden');
+    box.querySelector('.tt-num').textContent = score;
+    const fill = box.querySelector('.meter-fill');
+    fill.className = 'meter-fill ' + lv.cls;
+    fill.style.width = (score / RISK_ITEMS.length * 100) + '%';
+    box.querySelector('.risk-msg').innerHTML = `<b>${lv.name}</b> — ${lv.advice}`;
+    const entry = {score, level:lv.name, date:new Date().toISOString().slice(0,10)};
+    const rec = loadJSON('hbp_risk') || {first:entry};
+    rec.latest = entry;
+    saveJSON('hbp_risk', rec);
+    sendToBackend({type:'risk', name:studentName(), score, level:lv.name});
+  };
+}
+
+function renderFindIt(el){
+  el.innerHTML = FIND_QUESTIONS.map((f,i)=>`<div class="find-card">
+    <div class="find-q">${i+1}. ${f.q}</div>
+    <div class="find-btns">
+      <button type="button" class="btn-gray mini-action" data-hint="${i}">💡 คำใบ้</button>
+      <button type="button" class="btn-green mini-action" data-ans="${i}">✅ เฉลย</button>
+    </div>
+    <div class="find-reveal" id="find-hint-${i}">หาได้ที่: <b>${f.where}</b> <button type="button" class="btn-gray mini-action" data-go="${i}">ไปดู ➡</button></div>
+    <div class="find-reveal" id="find-ans-${i}">${f.a}</div>
+  </div>`).join('');
+  el.querySelectorAll('[data-hint]').forEach(b=>b.onclick = ()=>document.getElementById('find-hint-'+b.dataset.hint).classList.add('show'));
+  el.querySelectorAll('[data-ans]').forEach(b=>b.onclick = ()=>document.getElementById('find-ans-'+b.dataset.ans).classList.add('show'));
+  el.querySelectorAll('[data-go]').forEach(b=>b.onclick = ()=>openSkill(FIND_QUESTIONS[b.dataset.go].skill));
+}
+
+function renderQuiz2(el){
+  const prev = loadJSON('hbp_quiz2');
+  const answers = QUIZ_WEEK2.map(()=>null);
+  el.innerHTML = `${prev ? `<div class="goal-summary">คะแนนครั้งล่าสุด: <b>${prev.score}/${prev.total}</b> ทำใหม่ได้ ระบบจะเก็บคะแนนล่าสุด</div>` : ''}
+    ${QUIZ_WEEK2.map((q,qi)=>`<div class="quiz-q" data-q="${qi}">
+      <div class="question-box">${qi+1}. ${q.q}</div>
+      <div class="opt-list">${q.opts.map((o,oi)=>`<div class="opt-item" data-o="${oi}">${o}</div>`).join('')}</div>
+    </div>`).join('')}
+    <div class="tool-actions"><button type="button" class="btn-green" data-submit="1">✅ ส่งคำตอบ</button></div>
+    <div class="act-feedback"></div>`;
+  let submitted = false;
+  el.querySelectorAll('.quiz-q').forEach(block=>{
+    const qi = +block.dataset.q;
+    block.querySelectorAll('.opt-item').forEach(item=>{
+      item.onclick = ()=>{
+        if(submitted) return;
+        answers[qi] = +item.dataset.o;
+        block.querySelectorAll('.opt-item').forEach(it=>it.classList.toggle('selected', it===item));
+      };
+    });
+  });
+  const fb = el.querySelector('.act-feedback');
+  const btn = el.querySelector('[data-submit]');
+  btn.onclick = ()=>{
+    if(submitted){ renderQuiz2(el); scrollToPage('toolPage'); return; }
+    const left = answers.filter(a=>a===null).length;
+    if(left){ setFeedback(fb, 'info', `ยังเหลืออีก ${left} ข้อที่ยังไม่ได้ตอบ`); return; }
+    submitted = true;
+    let score = 0;
+    el.querySelectorAll('.quiz-q').forEach(block=>{
+      const qi = +block.dataset.q, items = block.querySelectorAll('.opt-item');
+      items[QUIZ_WEEK2[qi].correct].classList.add('correct');
+      if(answers[qi] === QUIZ_WEEK2[qi].correct) score++;
+      else items[answers[qi]].classList.add('wrong');
+    });
+    saveJSON('hbp_quiz2', {score, total:QUIZ_WEEK2.length});
+    sendToBackend({type:'quiz2', name:studentName(), score, total:QUIZ_WEEK2.length});
+    setFeedback(fb, score >= QUIZ_WEEK2.length*0.7 ? 'ok' : 'bad', `คุณได้ ${score}/${QUIZ_WEEK2.length} คะแนน ข้อสีเขียวคือคำตอบที่ถูก`);
+    btn.textContent = '🔄 ทำใหม่';
+  };
+}
+
+function renderReview(el){
+  const topics = [
+    {icon:"🏷️", t:"อ่านฉลากไม่ค่อยเป็น", go:()=>openSkill(1)},
+    {icon:"🍳", t:"ทำอาหารเองอย่างไรให้เค็มน้อย", go:()=>openSkill(4)},
+    {icon:"🛵", t:"กินนอกบ้าน สั่งอาหารอย่างไรดี", go:()=>openSkill(2)},
+    {icon:"🍱", t:"เลือกเมนูให้โซเดียมน้อยลง", go:()=>openTool('menu')},
+    {icon:"📺", t:"ไม่แน่ใจว่าข้อมูลหรือโฆษณาไหนเชื่อได้", go:()=>openSkill(3)},
+    {icon:"🧠", t:"ยังไม่แน่ใจว่าโซเดียมมาจากไหน", go:()=>openSkill(0)}
+  ];
+  el.innerHTML = `<div class="week-items">${topics.map((t,i)=>`<button type="button" class="week-item" data-i="${i}"><span class="wi-icon">${t.icon}</span><span class="wi-label">${t.t}</span><span class="wi-status">›</span></button>`).join('')}</div>`;
+  el.querySelectorAll('.week-item').forEach(b=>b.onclick = ()=>topics[b.dataset.i].go());
+}
+
+function renderMenuPlanner(el){
+  el.innerHTML = MENU_MEALS.map((m,mi)=>`<div class="meal-row">
+      <div class="meal-name">${m.meal}</div>
+      <select class="act-select" data-m="${mi}" aria-label="${m.meal}">
+        <option value="">— เลือกเมนู —</option>
+        ${m.opts.map(o=>`<option value="${o.id}">${o.t} (≈ ${fmt(o.mg)} มก.)</option>`).join('')}
+      </select>
+      <div class="meal-tip"></div>
+    </div>`).join('') + `<div class="tool-total">
+      <div>รวมโซเดียมทั้งวัน: <span class="tt-num">0</span> มก. <span class="d-mg">(ไม่ควรเกิน 2,000 มก.)</span></div>
+      <span class="meter"><span class="meter-fill lvl-ok" style="width:0%"></span></span>
+      <div class="dt-msg">เลือกเมนูในแต่ละมื้อได้เลย</div>
+    </div>
+    <p class="act-note">* ตัวเลขเป็นค่าประมาณ ขึ้นกับสูตรและปริมาณเครื่องปรุงของแต่ละร้าน</p>`;
+  const selects = el.querySelectorAll('select');
+  const find = (mi,id)=>MENU_MEALS[mi].opts.find(o=>o.id===id);
+  const update = ()=>{
+    let total = 0;
+    selects.forEach(sel=>{
+      const mi = +sel.dataset.m, dish = find(mi, sel.value);
+      const tip = sel.parentElement.querySelector('.meal-tip');
+      tip.innerHTML = '';
+      if(!dish) return;
+      total += dish.mg;
+      if(dish.swap){
+        const alt = find(mi, dish.swap);
+        tip.innerHTML = `💡 ลองเปลี่ยนเป็น "${alt.t}" ลดได้ประมาณ ${fmt(dish.mg - alt.mg)} มก. <button type="button" class="btn-green mini-action">เปลี่ยนเลย</button>`;
+        tip.querySelector('button').onclick = ()=>{ sel.value = alt.id; update(); };
+      }
+    });
+    const pct = total/20;
+    el.querySelector('.tt-num').textContent = fmt(total);
+    const fill = el.querySelector('.meter-fill');
+    fill.style.width = Math.min(100,pct) + '%';
+    fill.className = 'meter-fill ' + meterLevel(pct,70,100);
+    el.querySelector('.dt-msg').textContent =
+      total === 0 ? 'เลือกเมนูในแต่ละมื้อได้เลย'
+      : pct <= 70 ? '🟢 ดีมาก! เมนูทั้งวันอยู่ในระดับปลอดภัย'
+      : pct <= 100 ? '🟡 ใกล้เต็มโควตาแล้ว ลองเปลี่ยนเมนูตามคำแนะนำดูนะ'
+      : `🔴 เกินไป ${fmt(total-2000)} มก. ลองกด "เปลี่ยนเลย" ในมื้อที่มีคำแนะนำ`;
+  };
+  selects.forEach(sel=>sel.onchange = update);
+}
+
+function goalSummaryHtml(g){
+  const cut = Math.round((1 - g.target/g.baseline) * 100);
+  return `<div class="goal-summary">🎯 เป้าหมายของฉัน: ลดโซเดียมจาก <b>${fmt(g.baseline)}</b> เหลือ <b>${fmt(g.target)} มก./วัน</b> (ลดลง ${cut}%) ภายใน ${g.weeks} สัปดาห์
+    ${g.strategies.length ? `<br>วิธีที่จะทำ: ${g.strategies.join(' · ')}` : ''}</div>`;
+}
+
+function renderGoal(el){
+  const g = loadJSON('hbp_goal');
+  el.innerHTML = `${g ? goalSummaryHtml(g) : ''}
+    <div class="form-row">
+      <label for="goalBase">1. โซเดียมเฉลี่ยของฉันตอนนี้ (มก./วัน)</label>
+      <input type="number" id="goalBase" class="act-input" inputmode="numeric" placeholder="เช่น 3200" value="${g ? g.baseline : ''}">
+      <span class="ci-auto">ดูค่าเฉลี่ยได้จาก Checkเค็ม ใน LINE OA หรือสอบถามผู้วิจัย</span>
+    </div>
+    <div class="form-row">
+      <label for="goalTarget">2. เป้าหมาย (มก./วัน)</label>
+      <div class="label-answer">
+        <input type="number" id="goalTarget" class="act-input" inputmode="numeric" placeholder="เช่น 2500" value="${g ? g.target : ''}">
+        <button type="button" class="btn-gray mini-action" data-suggest="1">💡 แนะนำเป้าหมาย</button>
+      </div>
+    </div>
+    <div class="form-row">
+      <label for="goalWeeks">3. ระยะเวลา</label>
+      <select id="goalWeeks" class="act-select" style="max-width:260px">
+        <option value="1" ${g && g.weeks==1 ? 'selected' : ''}>1 สัปดาห์</option>
+        <option value="2" ${!g || g.weeks==2 ? 'selected' : ''}>2 สัปดาห์</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>4. วิธีที่ฉันจะทำ (เลือกได้หลายข้อ)</label>
+      <div class="check-list">${GOAL_STRATEGIES.map((s,i)=>{
+        const on = g && g.strategies.includes(s);
+        return `<label class="check-item${on ? ' checked' : ''}"><input type="checkbox" data-i="${i}" ${on ? 'checked' : ''}><span class="ci-text">${s}</span></label>`;
+      }).join('')}</div>
+    </div>
+    <div class="tool-actions"><button type="button" class="btn-green" data-save="1">🎯 บันทึกเป้าหมาย</button></div>
+    <div class="act-feedback"></div>`;
+  const base = el.querySelector('#goalBase'), target = el.querySelector('#goalTarget'), fb = el.querySelector('.act-feedback');
+  el.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+    cb.onchange = ()=>cb.closest('.check-item').classList.toggle('checked', cb.checked);
+  });
+  // แนะนำ: ลดประมาณ 20% (ปัดเป็นหลัก 50) แต่ไม่ต่ำกว่า 2,000 ถ้าเดิมยังสูงกว่านั้น
+  el.querySelector('[data-suggest]').onclick = ()=>{
+    const b = Number(base.value);
+    if(!b){ setFeedback(fb, 'info', '✏️ กรอกโซเดียมเฉลี่ยตอนนี้ก่อน แล้วค่อยกดแนะนำ'); return; }
+    const cut = Math.round(b * 0.8 / 50) * 50;
+    target.value = b > 2000 ? Math.max(2000, cut) : Math.round(b * 0.9 / 50) * 50;
+  };
+  el.querySelector('[data-save]').onclick = ()=>{
+    const b = Number(base.value), t = Number(target.value);
+    if(!b || b < 300 || b > 15000){ setFeedback(fb, 'bad', '✏️ กรอกโซเดียมเฉลี่ยตอนนี้ให้ถูกต้อง (ตัวเลข มก./วัน)'); return; }
+    if(!t || t >= b){ setFeedback(fb, 'bad', '✏️ เป้าหมายต้องน้อยกว่าค่าเฉลี่ยตอนนี้'); return; }
+    const goal = {
+      baseline:b, target:t, weeks:Number(el.querySelector('#goalWeeks').value),
+      strategies:[...el.querySelectorAll('input[type=checkbox]:checked')].map(cb=>GOAL_STRATEGIES[cb.dataset.i]),
+      date:new Date().toISOString().slice(0,10)
+    };
+    saveJSON('hbp_goal', goal);
+    sendToBackend({type:'goal', name:studentName(), baseline:goal.baseline, target:goal.target, weeks:goal.weeks, strategies:goal.strategies.join(', ')});
+    setFeedback(fb, 'ok', `✅ บันทึกเป้าหมายแล้ว${t > 2000 ? ' — ก้าวแรกที่ดี! เมื่อทำได้แล้ว ค่อย ๆ ลดให้ถึง 2,000 มก./วัน' : ''}`);
+    const old = el.querySelector('.goal-summary');
+    if(old) old.remove();
+    el.insertAdjacentHTML('afterbegin', goalSummaryHtml(goal));
+  };
+}
+
+function renderReflect(el){
+  const pre = localStorage.getItem('hbp_preScore'), post = localStorage.getItem('hbp_postScore');
+  const quiz = loadJSON('hbp_quiz2'), risk = loadJSON('hbp_risk'), goal = loadJSON('hbp_goal'), saved = loadJSON('hbp_reflect') || {};
+  const card = (label, value)=>`<div class="summary-card"><small>${label}</small><b>${value}</b></div>`;
+  const prompts = [
+    {k:"changed", t:"ฉันเปลี่ยนไปอย่างไร เมื่อเทียบกับเป้าหมายที่ตั้งไว้?"},
+    {k:"barrier", t:"อะไรที่ทำให้ทำได้ หรือทำไม่ได้?"},
+    {k:"keep", t:"พฤติกรรมดี ๆ ที่ฉันตั้งใจทำต่อหลังจบโปรแกรม"}
+  ];
+  el.innerHTML = `<div class="summary-grid">
+      ${card('แบบทดสอบก่อน → หลังเรียน', `${pre ?? '-'} → ${post ?? '-'} /10`)}
+      ${card('แบบทดสอบท้ายบทเรียน', quiz ? `${quiz.score}/${quiz.total}` : '-')}
+      ${card('ความเสี่ยงครั้งแรก → ล่าสุด', risk ? `${risk.first.score} → ${risk.latest.score} ข้อ` : '-')}
+      ${card('เป้าหมายโซเดียม', goal ? `${fmt(goal.target)} มก./วัน` : '-')}
+    </div>
+    <div class="tool-actions" style="margin:0 0 18px"><button type="button" class="btn-gray mini-action" data-risk="1">🧂 ประเมินความเสี่ยงอีกครั้ง เพื่อเทียบกับครั้งแรก</button></div>
+    ${prompts.map(p=>`<div class="form-row"><label for="ref-${p.k}">${p.t}</label>
+      <textarea id="ref-${p.k}" class="act-textarea" data-k="${p.k}">${(saved[p.k] || '').replace(/</g,'&lt;')}</textarea></div>`).join('')}
+    <div class="tool-actions"><button type="button" class="btn-green" data-save="1">💾 บันทึก</button></div>
+    <div class="act-feedback"></div>`;
+  el.querySelector('[data-risk]').onclick = ()=>openTool('risk');
+  el.querySelector('[data-save]').onclick = ()=>{
+    const data = {};
+    el.querySelectorAll('textarea').forEach(ta=>{ data[ta.dataset.k] = ta.value.trim(); });
+    if(!Object.values(data).some(Boolean)){ setFeedback(el.querySelector('.act-feedback'), 'info', '✏️ เขียนอย่างน้อย 1 ข้อก่อนบันทึก'); return; }
+    saveJSON('hbp_reflect', data);
+    sendToBackend({type:'reflection', name:studentName(), changed:data.changed, barrier:data.barrier, keep:data.keep});
+    setFeedback(el.querySelector('.act-feedback'), 'ok', '✅ บันทึกแล้ว ขอบคุณที่ร่วมโปรแกรมจนจบ!');
+  };
+}
+
 /* ================= GAME ================= */
 function buildFoodPool(){
   resetGame();
@@ -1799,29 +2502,46 @@ function checkGameDone(){
 }
 
 /* ================= MEDIA LIBRARY ================= */
+// คลังสื่อ = สื่อจริงจาก 6 ทักษะ (SKILL_MEDIA ที่ใส่ลิงก์แล้ว) + อินโฟกราฟิก/วีดีโอทั่วไป
 function buildMedia(){
-  const grid = document.getElementById('infographicGrid');
-  grid.innerHTML = MEDIA_INFOGRAPHICS.map(item=>{
+  const libItem = (html, words)=>`<div class="lib-item" data-search="${words.toLowerCase().replace(/"/g,'')}">${html}</div>`;
+  const skillInfos = SKILL_MEDIA.flatMap((m,i)=>(m.infographics || [])
+    .filter(info=>[].concat(info.img || []).some(Boolean))
+    .map(info=>libItem(renderInfographicSlot(info, TABS[i].title), `${info.title} ${info.source||''} ${TABS[i].title}`)));
+  const generalInfos = MEDIA_INFOGRAPHICS.map(item=>{
     const legendHtml = item.legend ? `<div class="media-legend">${item.legend.map(l=>`<span><span class="legend-dot" style="background:${l.color}"></span>${l.text}</span>`).join('')}</div>` : '';
-    return `<div class="media-card">
+    return libItem(`<div class="media-card">
       <div class="media-card-title">${item.title}</div>
       ${item.svg || item.html || ''}
       ${legendHtml}
       <div class="media-card-caption">${item.caption}</div>
-    </div>`;
-  }).join('');
+    </div>`, `${item.title} ${item.caption}`);
+  });
+  document.getElementById('infographicGrid').innerHTML = skillInfos.concat(generalInfos).join('');
 
-  const videoGrid = document.getElementById('videoGrid');
-  videoGrid.innerHTML = MEDIA_VIDEOS.map(v=>{
-    const frameInner = v.embedUrl
-      ? `<iframe src="${v.embedUrl}" allowfullscreen loading="lazy"></iframe>`
-      : `<div class="video-placeholder"><span class="vp-icon">🎬</span><p>ยังไม่มีวีดีโอแนบ<br>รอครูผู้สอนเพิ่มลิงก์</p></div>`;
-    return `<div class="media-card video-card">
+  const skillVideos = SKILL_MEDIA.map((m,i)=>m.video && m.video.url
+    ? libItem(renderVideoSlot(m.video, TABS[i].title), `${m.video.title} ${m.video.source||''} ${TABS[i].title}`) : '');
+  const generalVideos = MEDIA_VIDEOS.filter(v=>v.embedUrl).map(v=>libItem(`<div class="media-card video-card">
       <div class="media-card-title">${v.title}</div>
-      <div class="video-frame">${frameInner}</div>
+      <div class="video-frame"><iframe src="${v.embedUrl}" allowfullscreen loading="lazy"></iframe></div>
       <div class="media-card-caption">${v.desc}</div>
-    </div>`;
-  }).join('');
+    </div>`, `${v.title} ${v.desc}`));
+  const videos = skillVideos.concat(generalVideos).filter(Boolean);
+  document.getElementById('videoGrid').innerHTML = videos.length ? videos.join('')
+    : `<div class="media-card video-card"><div class="video-frame"><div class="video-placeholder"><span class="vp-icon">🎬</span><p>ยังไม่มีวีดีโอ<br>รอครูผู้สอนเพิ่มลิงก์</p></div></div></div>`;
+}
+
+function filterMedia(query){
+  const q = query.trim().toLowerCase();
+  [['infographicGrid','infographicEmpty'],['videoGrid','videoEmpty']].forEach(([gridId, emptyId])=>{
+    let shown = 0;
+    document.querySelectorAll(`#${gridId} .lib-item`).forEach(item=>{
+      const hit = !q || item.dataset.search.includes(q);
+      item.classList.toggle('hidden', !hit);
+      if(hit) shown++;
+    });
+    document.getElementById(emptyId).style.display = shown ? 'none' : 'block';
+  });
 }
 
 function showMediaTab(idx){
